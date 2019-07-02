@@ -1,0 +1,54 @@
+{
+  "root": true,
+  "extends": ["eslint:recommended", "plugin:react/recommended", "airbnb-base"],
+  "env": {
+    "node": true,
+    "es6": true,
+    "browser": true,
+    "jest": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": ["react"],
+  "rules": {
+    "curly": ["error", "multi-line"],
+    "indent": ["error", 2],
+    "eol-last": "error",
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "import/extensions": "error",
+    "import/no-extraneous-dependencies": "off",
+    "import/no-named-as-default": "off",
+    "no-unused-expressions": "off",
+    "class-methods-use-this": 0,
+    "import/no-unresolved": 0,
+    "max-len": ["error", 80, 2],
+    "new-cap": "error",
+    "no-param-reassign": "off",
+    "no-trailing-spaces": "warn",
+    "no-underscore-dangle": "error",
+    "one-var": "off",
+    "require-jsdoc": 0,
+    "one-var-declaration-per-line": "off",
+    "prefer-const": "warn",
+    "consistent-return": 0,
+    "arrow-body-style": 0,
+    "semi": ["error", "always"],
+    "quotes": ["error", "single"],
+    "valid-jsdoc": [
+      "error",
+      {
+        "requireReturn": true,
+        "requireReturnType": true,
+        "requireParamDescription": false,
+        "requireReturnDescription": true
+      }
+    ]
+  }
+}
