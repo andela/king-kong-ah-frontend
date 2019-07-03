@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+import BaseRoute from '<components>/BaseRoute';
 import './index.css';
 
 const App = () => {
-  return <h1> Welcome to Authors Haven </h1>;
+  return (
+    <Router>
+      <Fragment>
+        <BaseRoute />
+      </Fragment>
+    </Router>
+  );
 };
 
 ReactDOM.render(<App />, document.getElementById('app'));
