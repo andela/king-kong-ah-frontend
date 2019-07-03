@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Routes from '<routes>/index';
+import Routes from '<core>/routes';
 
 const BaseRoute = () => (
   <Fragment>
