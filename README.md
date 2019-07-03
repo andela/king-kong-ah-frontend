@@ -36,6 +36,7 @@ npm test
 
 ```
 ## Contributors
+- Benny Ogidan
 - Ilori Ezekiel (@EazyBee)
 - Oluyale Emmanuel
 - Ugege Lewis
