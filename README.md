@@ -1,3 +1,5 @@
+![Build Status](https://travis-ci.com/andela/king-kong-ah-frontend.svg?branch=develop) [![Coverage Status](https://coveralls.io/repos/github/andela/king-kong-ah-frontend/badge.svg?branch=develop)](https://coveralls.io/github/andela/king-kong-ah-frontend?branch=develop) [![Test Coverage](https://api.codeclimate.com/v1/badges/20c1ab998121dc9344fd/test_coverage)](https://codeclimate.com/github/andela/king-kong-ah-frontend/test_coverage)
+
 # Authors Haven - A Social platform for the creative at heart.
 
 ## Vision

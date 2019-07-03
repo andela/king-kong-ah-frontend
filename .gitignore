@@ -6,3 +6,6 @@ dist
 
 ## DS.Store
 .DS_Store
+
+## Coverage
+coverage/
