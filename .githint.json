@@ -1,0 +1,149 @@
+{
+  "options": {
+      "detectPull": true
+  },
+  "checks": {
+      "Branch Name": {
+          "script": "/^((ft-)|(ch-)|(bg-))[a-z0-9\\-]+[\\d]+$/.test(branch.name)",
+          "message": [
+              "Branches created should be named using the following format:",
+              "{story type}-{2-3 word summary}-{pivotal tracker id}",
+              "    * bg = Bug",
+              "    * ch = Chore",
+              "    * ft = Feature",
+              "",
+              "Example: ft-resources-rest-endpoints-111504508"
+          ]
+      },
+      "Commit Message": {
+          "script": [
+              "const message = commit.commit.message.trim()",
+              "const messageLines = message.split('\\n')",
+              "const len = messageLines.length",
+              "if (len >= 5) {",
+              "   if (messageLines[0].trim() !== '' && messageLines[1].trim() === '' && messageLines[2].trim() !== ''",
+              "   && messageLines[len - 1].trim() !== '' && messageLines[len - 2].trim() === '' && messageLines[len - 3].trim() !== '') {",
+              "       return true;",
+              "   }",
+              "}",
+              "return false;"
+          ],
+          "message": "A commit message consists of a header, a body and a footer, separated by blank lines."
+      },
+      "Commit Message Lines": {
+          "script": [
+              "const message = commit.commit.message.trim()",
+              "const messageLines = message.split('\\n')",
+              "return !(messageLines.find(line => line.length > 100));"
+          ],
+          "message": [
+              "Any line of the commit message cannot be longer than 100 characters!",
+              "This allows the message to be easier to read on github as well as in various git tools."
+          ]
+      },
+      "Commit Message Header": {
+          "script": [
+              "const message = commit.commit.message.trim()",
+              "const messageLines = message.split('\\n')",
+              "if (messageLines.length >= 5) {",
+              "   const header = messageLines[0]",
+              "   return /^(chore|feat|fix|release)\\([\\w\\s-.]+\\):\\s*[a-z].+[^\\.]$/.test(header)",
+              "}",
+              "return false;"
+          ],
+          "message": [
+              "The commit message header is a single line that contains succinct description",
+              "of the change containing a type, a scope and a subject.",
+              "The commit message header should be in the following format:",
+              "`{type}({scope}): {subject}`",
+              "",
+              "`type` - This describes the kind of change that this commit is providing.",
+              "  * feat (feature)",
+              "  * fix (bug fix)",
+              "  * chore (maintain)",
+              "  * release",
+              "",
+              "`scope` - can be anything specifying place of the commit change",
+              "",
+              "`subject` - This is a very short description of the change.",
+              "  * use imperative, present tense: “change” not “changed” nor “changes”",
+              "  * don't capitalize first letter",
+              "  * no dot (.) at the end"
+          ]
+      },
+      "Commit Message Footer": {
+          "script": [
+              "const message = commit.commit.message.trim()",
+              "const messageLines = message.split('\\n')",
+              "if (messageLines.length >= 5) {",
+              "   const footer = messageLines[messageLines.length - 1]",
+              "   return /^\\[(Finishes|Fixes|Delivers|Chores)\\s*(#[0-9]+[,]?\\s*)+]$/.test(footer)",
+              "}",
+              "return false;"
+          ],
+          "message": [
+              "Finished, fixed or delivered stories should be listed in the footer",
+              "prefixed with 'Finishes', 'Fixes' , 'Delivers', or 'Chores' keyword like this:",
+              "",
+              "[Finishes #1234567]",
+              "",
+              "or in a case of multiple stories:",
+              "[Finishes #0001234, #0123456, #12345678]"
+          ]
+      },
+      "PR Title": {
+          "script": "/^#[0-9]+\\s*[\\w\\s-().]+$/.test(pull.title)",
+          "message": [
+              "The PR title should be in the following format:",
+              "`#{pivotal tracker id} {story description}`",
+              "",
+              "Example of a valid PR title:",
+              "",
+              "#11504508 Build out REST Endpoint for Resources (CRUD)"
+          ]
+      },
+      "PR Description": {
+          "script": [
+              "const body = pull.body",
+              "return body.indexOf('#### What does this PR do?') > -1",
+              "       && body.indexOf('#### Description of task to be completed?') > -1",
+              "       && body.indexOf('#### How should this be manually tested?') > -1",
+              "       && body.indexOf('#### Any background context you want to provide?') > -1",
+              "       && body.indexOf('#### What are the relevant pivotal tracker stories?') > -1",
+              "       && body.indexOf('#### Screenshots (if appropriate)') > -1"
+          ],
+          "message": [
+              "The description of the PR should contain the following headings",
+              "and corresponding content in Markdown format.",
+              "",
+              "`#### What does this PR do?`",
+              "`#### Description of task to be completed?`",
+              "`#### How should this be manually tested?`",
+              "`#### Any background context you want to provide?`",
+              "`#### What are the relevant pivotal tracker stories?`",
+              "`#### Screenshots (if appropriate)`"
+          ]
+      },
+      "PR Reccomended Label": {
+          "script": [
+              "const labelLen = (pull.labels.length === 1)",
+              "const found = pull.labels.find(",
+              "  l => l.name === 'Ready for review by TTL'",
+              "  || l.name === 'Ready for review'",
+              "  || l.name === 'Work in Progress')",
+              "return labelLen && !!found"
+          ],
+          "message": [
+            "PR must have label 'Ready for review by TTL'",
+            "or",
+            "PR must have label 'Ready for review'",
+            "or",
+            "PR must have label 'Work in Progress'"
+          ]
+      },
+      "PR Approvals": {
+          "script": "pull.reviews.filter(r => r.state === 'APPROVED').length >= 2",
+          "message": "PR must have at least 2 approvals"
+      }
+  }
+}
