@@ -51,9 +51,9 @@ module.exports = {
     modules: [path.resolve(__dirname, '../src'), 'node_modules'],
     alias: {
       '<src>': path.resolve(__dirname, '../src'),
-      '<pages>': path.resolve(__dirname, '../src/pages'),
+      '<pages>': path.resolve(__dirname, '../src/components/pages'),
       '<components>': path.resolve(__dirname, '../src/components'),
-      '<routes>': path.resolve(__dirname, '../src/components/routes'),
+      '<core>': path.resolve(__dirname, '../src/core'),
     },
     extensions: [' ', '.js', '.jsx'],
   },
