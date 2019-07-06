@@ -4,7 +4,8 @@
   "description": "## Vision",
   "main": "webpack.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
+    "make-badges": "node_modules/.bin/jest-badges-readme",
     "build": "webpack --env.mode production",
     "start": "webpack-dev-server  --env.mode development --open"
   },
@@ -30,6 +31,24 @@
       "pre-commit": "lint-staged"
     }
   },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(css|less)$": "<rootDir>/src/config/assetsTransformer.js",
+      "^<components>/(.*)$": "<rootDir>/src/components/$1",
+      "^<src>/(.*)$": "<rootDir>/client/src/$1",
+      "^<pages>/(.*)$": "<rootDir>/src/components/pages/$1",
+      "^<core>/(.*)$": "<rootDir>/src/core/$1"
+    },
+    "coverageReporters": [
+      "json-summary",
+      "text",
+      "lcov"
+    ],
+    "collectCoverage": true,
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/src/config/assetsTransformer.js"
+    ]
+  },
   "devDependencies": {
     "@babel/core": "^7.3.4",
     "@babel/plugin-proposal-class-properties": "^7.3.4",
@@ -39,6 +58,7 @@
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.3.4",
+    "@testing-library/react": "^8.0.4",
     "autoprefixer": "^9.4.10",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
@@ -53,6 +73,7 @@
     "file-loader": "^3.0.1",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^3.0.0",
+    "jest": "^24.8.0",
     "lint-staged": "^9.0.0",
     "mini-css-extract-plugin": "^0.5.0",
     "style-loader": "^0.23.1",
