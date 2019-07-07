@@ -1,11 +1,30 @@
 {
   "name": "king-kong-ah-frontend",
+  "jest": {
+    "verbose": true,
+    "moduleNameMapper": {
+      "\\.(css|less)$": "<rootDir>/src/config/assetsTransformer.js",
+      "^<components>/(.*)$": "<rootDir>/src/components/$1",
+      "^<src>/(.*)$": "<rootDir>/client/src/$1",
+      "^<pages>/(.*)$": "<rootDir>/src/components/pages/$1",
+      "^<core>/(.*)$": "<rootDir>/src/core/$1"
+    },
+    "coverageReporters": [
+      "json-summary",
+      "text",
+      "lcov"
+    ],
+    "collectCoverage": true,
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/src/config/assetsTransformer.js"
+    ]
+  },
   "version": "1.0.0",
   "description": "## Vision",
   "main": "webpack.config.js",
   "scripts": {
-    "test": "jest",
-    "make-badges": "node_modules/.bin/jest-badges-readme",
+    "test": "jest --coverage",
+    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
     "build": "webpack --env.mode production",
     "start": "webpack-dev-server  --env.mode development --open"
   },
@@ -31,24 +50,6 @@
       "pre-commit": "lint-staged"
     }
   },
-  "jest": {
-    "moduleNameMapper": {
-      "\\.(css|less)$": "<rootDir>/src/config/assetsTransformer.js",
-      "^<components>/(.*)$": "<rootDir>/src/components/$1",
-      "^<src>/(.*)$": "<rootDir>/client/src/$1",
-      "^<pages>/(.*)$": "<rootDir>/src/components/pages/$1",
-      "^<core>/(.*)$": "<rootDir>/src/core/$1"
-    },
-    "coverageReporters": [
-      "json-summary",
-      "text",
-      "lcov"
-    ],
-    "collectCoverage": true,
-    "coveragePathIgnorePatterns": [
-      "<rootDir>/src/config/assetsTransformer.js"
-    ]
-  },
   "devDependencies": {
     "@babel/core": "^7.3.4",
     "@babel/plugin-proposal-class-properties": "^7.3.4",
@@ -63,6 +64,7 @@
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
     "clean-webpack-plugin": "^2.0.0",
+    "coveralls": "^3.0.4",
     "css-loader": "^2.1.0",
     "error-overlay-webpack-plugin": "^0.4.0",
     "eslint": "^5.15.1",
