@@ -5,7 +5,8 @@
     "moduleNameMapper": {
       "\\.(css|less)$": "<rootDir>/src/config/assetsTransformer.js",
       "^<components>/(.*)$": "<rootDir>/src/components/$1",
-      "^<src>/(.*)$": "<rootDir>/client/src/$1",
+      "^<src>/(.*)$": "<rootDir>/src/$1",
+      "^<variables>/(.*)$": "<rootDir>/src/styles/variables/$1",
       "^<pages>/(.*)$": "<rootDir>/src/components/pages/$1",
       "^<core>/(.*)$": "<rootDir>/src/core/$1"
     },
@@ -26,7 +27,10 @@
     "test": "jest --coverage",
     "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
     "build": "webpack --env.mode production",
-    "start": "webpack-dev-server  --env.mode development --open"
+    "start": "webpack-dev-server  --env.mode development --open",
+    "test:dev": "jest src --watch",
+    "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build"
   },
   "repository": {
     "type": "git",
@@ -76,8 +80,10 @@
     "html-webpack-plugin": "^3.2.0",
     "husky": "^3.0.0",
     "jest": "^24.8.0",
+    "jest-dom": "^3.5.0",
     "lint-staged": "^9.0.0",
     "mini-css-extract-plugin": "^0.5.0",
+    "react-styleguidist": "^9.1.11",
     "style-loader": "^0.23.1",
     "uglifyjs-webpack-plugin": "^2.1.2",
     "webpack": "^4.29.6",
@@ -86,8 +92,10 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
+    "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-router-dom": "^5.0.1"
+    "react-router-dom": "^5.0.1",
+    "styled-components": "^4.3.2"
   }
 }
