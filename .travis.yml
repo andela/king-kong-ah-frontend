@@ -1,18 +1,21 @@
 language: node_js
 node_js:
-  - "stable"
+- stable
 cache:
   directories:
-    - node_modules
+  - node_modules
+env:
+  global:
+    secure: QP3eBVFKj/iSgwIHzh3te9KNHCu8yq8VMA/pG+iFUnSheMFFxBqksPTtIuThTRH2PEqneixy/Y6zwgeOaQucFM2qkvYM7NUmgzbP0xtKveQt12GuIT2yo9b8ePhnFwus8L1vIUMY5cfDPoG+/w+eCUtKxLGZsrwv+mJpTy5Xxd0EBccBAvmRr3+OtnVOSssYH+CKAFWjqDHXiB8JUO+5BhUFlOo+HH8PTsMDjIf8YRWddUOj2cYd8fzId4eK7PryX7m42l+857xutMiyd67uZcQlWu97A5sbdv+9KjJXWalqqN9jYBlnx7k8WUrI+d9ToiC+OJtlWSej/Jt8HXXSgMENM0cEhqex/UNEtESj1s1lIhaHqZfRjBTbCASeF9xxT8fpS9rBkVrQpxBs1ZzkvKYtYj0/+xbRGTfG3ozYOQsCPxQsg7Btzh6bLsWERkOGz1I2/3JKPG878HsnlEXSg2RwlXu7UAYXI10yGUVLEjXEnuCfDzEg/9tG7GlA6Kr0dW8itVc8jkJJGXmxrinO8y4MQ1Qf498WqodnmLwy0vZHhl9zJOGBveBJaCkrncrOWUR9MtXFH5l4LLHM5n8YnABSe9FbubUMTw6ypwOvUh7V1xBBEyJXy2KzIz4x9/UMnAdi0VuiMJYHg69KToj3B/lsLJJVO24StXOiNjtfqnk=
+install:
+- npm install -q --no-color --no-progress
 script:
-  - npm test
-  - npm run build
-
+- npm test -- -u --coverage
+- npm run build
 before_script:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
-
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+- chmod +x ./cc-test-reporter
+- "./cc-test-reporter before-build"
 after_script:
-  - coveralls < coverage/lcov.info
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+- "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
+- npm run coveralls
