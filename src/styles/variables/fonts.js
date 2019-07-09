@@ -1,4 +1,5 @@
 export const fontSizes = {
+  small: '0.8rem',
   normal: '1.6rem',
 };
 

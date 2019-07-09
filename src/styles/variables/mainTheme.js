@@ -1,6 +1,8 @@
 import spacing from './spacing';
 import { fontSizes, fontWeights } from './fonts';
-import { buttonColors, textColors } from './colorPalette';
+import { buttonColors, textColors, backgroundColors } from './colorPalette';
+import borderRadius from './border';
+import width from './width';
 
 export default {
   spacing,
@@ -8,4 +10,7 @@ export default {
   fontWeights,
   buttonColors,
   textColors,
+  backgroundColors,
+  borderRadius,
+  width,
 };
