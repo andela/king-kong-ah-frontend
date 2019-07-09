@@ -26,6 +26,7 @@
   "scripts": {
     "test": "jest --coverage",
     "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
+    "heroku-postbuild": "npm run build",
     "build": "webpack --env.mode production",
     "start": "webpack-dev-server  --env.mode development --open",
     "test:dev": "jest src --watch",
@@ -92,6 +93,7 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
