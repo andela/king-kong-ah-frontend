@@ -19,6 +19,7 @@ export default {
   backgroundColors,
   borderRadius,
   width,
+  boxShadows,
   borderColors,
   boxShadows,
 };
