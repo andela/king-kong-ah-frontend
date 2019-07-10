@@ -13,3 +13,8 @@ export const textColors = {
 export const backgroundColors = {
   lightPink: '#F4EDED',
 };
+
+export const borderColors = {
+  primary: '#B02091',
+  black: '#191919',
+};
