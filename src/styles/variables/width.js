@@ -1,4 +1,4 @@
-const width = {
+export const width = {
   fullWidth: '100%',
   searchBarWidth: '50%',
 };
