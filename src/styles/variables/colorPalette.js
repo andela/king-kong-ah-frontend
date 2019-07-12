@@ -21,3 +21,9 @@ export const borderColors = {
   black: '#191919',
   lightGrey: '#DDDDDD',
 };
+
+export const iconColors = {
+  primary: '#B02091',
+  gold: '#FFCC4A',
+  black: '#191919',
+};
