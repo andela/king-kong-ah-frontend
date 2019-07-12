@@ -1,9 +1,15 @@
-import React, { Fragment } from 'react';
-import Text from '../UI/atoms/Text/Text';
+import React from 'react';
+import PageLayout from '<templates>/pageLayout';
+import Text from '<atoms>/Text/Text';
+import headerMapper from '<helpers>/headerMapper';
+// import loadData from '<helpers>/dummyLoader';
+import items from './navItems';
 
 const Homepage = () => {
+  const navItems = headerMapper(items);
+
   return (
-    <Fragment>
+    <PageLayout navItems={navItems}>
       <Text
         content="true"
         textTransform="uppercase"
@@ -16,7 +22,7 @@ const Homepage = () => {
       >
         Welcome to Authors Haven
       </Text>
-    </Fragment>
+    </PageLayout>
   );
 };
 

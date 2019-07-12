@@ -60,7 +60,6 @@ const InputField = ({
 
 InputField.propTypes = {
   type: PropTypes.oneOf(['number', 'email', 'password', 'text']).isRequired,
-  id: PropTypes.string,
   placeholder: PropTypes.string,
   name: PropTypes.string,
   value: PropTypes.string,
@@ -73,6 +72,7 @@ InputField.propTypes = {
   fontSize: PropTypes.oneOf(Object.keys(fontSizes)),
   inputWidth: PropTypes.oneOf(Object.keys(width)),
   borderRadius: PropTypes.oneOf(Object.keys(themeBorderRadius)),
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 InputField.defaultProps = {

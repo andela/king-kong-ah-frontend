@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import theme from '<variables>/mainTheme';
 
-
 /**
  * @description - Container Component
  *
@@ -29,8 +28,10 @@ const FlexContainer = ({
   borderColor,
   borderRadius,
   boxShadow,
-  alignItems,
   justifyContent,
+  containerWidth,
+  alignItems,
+  flexDirection,
 }) => (
   <FlexContainer.Container
     margin={margin}
@@ -40,8 +41,10 @@ const FlexContainer = ({
     borderColor={borderColor}
     borderRadius={borderRadius}
     boxShadow={boxShadow}
-    alignItems={alignItems}
     justifyContent={justifyContent}
+    containerWidth={containerWidth}
+    alignItems={alignItems}
+    flexDirection={flexDirection}
   >
     {children}
   </FlexContainer.Container>
@@ -56,22 +59,25 @@ FlexContainer.Container = styled.div`
     boxShadow,
     backgroundColor,
     borderColor,
-    alignItems,
     justifyContent,
+    containerWidth,
+    alignItems,
+    flexDirection,
     theme: {
-      spacing, backgroundColors, borderColors, boxShadows,
+      spacing, backgroundColors, borderColors, boxShadows, width,
     },
   }) => `
     display: ${display};
-    flex-direction:column;
+    flex-direction:${flexDirection};
     background-color: ${backgroundColors[backgroundColor]};
     margin: ${spacing[margin]};
     padding: ${spacing[padding]};
     border-radius: ${spacing[borderRadius]};
     box-shadow: ${boxShadows[boxShadow]};
     border: 1px solid ${borderColors[borderColor] || 'transparent'};
-    align-items: ${alignItems}
     justify-content: ${justifyContent}
+    width: ${width[containerWidth]}
+    align-items: ${alignItems}
   `}
 `;
 
@@ -85,7 +91,7 @@ FlexContainer.defaultProps = {
 };
 
 const {
-  spacing, backgroundColors, borderColors, boxShadows,
+  spacing, backgroundColors, borderColors, boxShadows, width,
 } = theme;
 
 FlexContainer.propTypes = {
@@ -97,10 +103,22 @@ FlexContainer.propTypes = {
   borderColor: PropTypes.oneOf(Object.keys(borderColors)),
   borderRadius: PropTypes.oneOf(Object.keys(spacing)),
   boxShadow: PropTypes.oneOf(Object.keys(boxShadows)),
-  alignItems: PropTypes.oneOf(['flex-start', 'flex-end',
-    'center', 'baseline', 'stretch']),
-  justifyContent: PropTypes.oneOf(['flex-start', 'flex-end',
-    'center', 'space-between', 'space-around']),
+  containerWidth: PropTypes.oneOf(Object.keys(width)),
+  alignItems: PropTypes.oneOf([
+    'flex-start',
+    'flex-end',
+    'center',
+    'baseline',
+    'stretch',
+  ]),
+  justifyContent: PropTypes.oneOf([
+    'flex-start',
+    'flex-end',
+    'center',
+    'space-between',
+    'space-around',
+  ]),
+  flexDirection: PropTypes.oneOf(['row', 'column']),
 };
 
 export default FlexContainer;

@@ -1,4 +1,4 @@
-import HomePage from '<pages>/Homepage';
+import HomePage from '<pages>/homepage/Homepage';
 
 const Routes = {
   default: [

@@ -12,7 +12,8 @@
       "^<fixtures>/(.*)$": "<rootDir>/src/fixtures/$1",
       "^<atoms>/(.*)$": "<rootDir>/src/components/UI/atoms/$1",
       "^<molecules>/(.*)$": "<rootDir>/src/components/UI/molecules/$1",
-      "^<helpers>/(.*)$": "<rootDir>/src/helpers/$1"
+      "^<helpers>/(.*)$": "<rootDir>/src/helpers/$1",
+      "^<templates>/(.*)$": "<rootDir>/src/components/templates/$1"
     },
     "coverageReporters": [
       "json-summary",
@@ -100,9 +101,11 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "jest-dom": "^4.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-loader-spinner": "^2.3.0",
     "react-router-dom": "^5.0.1",
     "styled-components": "^4.3.2",
     "styled-icons": "^8.1.0",

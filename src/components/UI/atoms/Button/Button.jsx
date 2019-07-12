@@ -31,7 +31,10 @@ Button.propTypes = {
   display: PropTypes.oneOf(['block', 'inline', 'inline-block']),
   buttonType: PropTypes.oneOf(['default', 'getStarted', 'submit']),
   onClick: PropTypes.func.isRequired,
-  children: PropTypes.string.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+  ]).isRequired,
 };
 
 Button.defaultProps = {
@@ -59,15 +62,19 @@ const buttonBackground = {
 
 const buttonWidth = {
   default: '12rem',
-  getStarted: '12rem',
+  getStarted: '14rem',
+  submit: '30.2rem',
+};
+
+const buttonFade = {
+  default: '12rem',
+  getStarted: 'none',
   submit: '30.2rem',
 };
 
 Button.Container = styled.button`
   ${({
-    buttonType,
-    display,
-    theme,
+    buttonType, display, theme, marginLeft,
   }) => `
   width: ${buttonWidth[buttonType]};
   height: ${theme.height.defaultButtonHeight};
@@ -78,6 +85,7 @@ Button.Container = styled.button`
   border-radius: ${buttonRadius[buttonType]};
   border: 1px solid ${buttonBorderColor[buttonType]};
   cursor: pointer;
+  margin-left: ${theme.spacing[marginLeft]}
 
   &:hover {
     background-color: ${theme.buttonHover[buttonType]};
@@ -92,6 +100,19 @@ Button.Container = styled.button`
   
   &:focus {
     outline: 0;
+  }
+
+  @media ${theme.device.mobileS} {
+    display: ${buttonFade[buttonType]};
+  }
+  @media ${theme.device.mobileM} {
+    display: ${buttonFade[buttonType]};
+  }
+  @media ${theme.device.mobileL} {
+    display: ${buttonFade[buttonType]};
+  }
+  @media ${theme.device.tablet} {
+    display: ${buttonFade[buttonType]};
   }
 `}
 `;

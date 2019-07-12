@@ -1,5 +1,6 @@
 const spacing = {
   zero: '0rem',
+  xxxs: '0.5rem',
   xs: '0.9rem',
   xxs: '1.5rem',
   sm: '1.6rem',

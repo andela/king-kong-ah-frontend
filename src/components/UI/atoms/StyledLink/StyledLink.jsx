@@ -28,6 +28,7 @@ const StyledLink = ({
   margin,
   onClick,
   children,
+  marginleft,
 }) => {
   return isExternal
     ? (<StyledLink.External
@@ -37,6 +38,7 @@ const StyledLink = ({
       fontSize={fontSize}
       margin={margin}
       onClick={onClick}
+      marginleft={marginleft}
     >
       {children}
     </StyledLink.External>)
@@ -47,6 +49,7 @@ const StyledLink = ({
         fontSize={fontSize}
         margin={margin}
         onClick={onClick}
+        marginleft={marginleft}
       >
         {children}
       </StyledLink.Internal>
@@ -64,7 +67,8 @@ StyledLink.propTypes = {
   isExternal: PropTypes.bool,
   fontSize: PropTypes.oneOf(Object.keys(fontSizes)),
   onClick: PropTypes.func,
-  margin: PropTypes.oneOf(Object.keys(spacing)),
+  margin: PropTypes.string,
+  marginleft: PropTypes.oneOf(Object.keys(spacing)),
 };
 
 StyledLink.defaultProps = {
@@ -76,7 +80,7 @@ StyledLink.defaultProps = {
 };
 
 const linkStyle = ({
-  margin, fontSize, theme, tag,
+  margin, fontSize, theme, tag, marginleft,
 }) => `
     text-decoration: none;
     display: inline-block;
@@ -84,13 +88,14 @@ const linkStyle = ({
     transition: .5s border ease-in-out;
     border: solid 1px transparent;
     font-family: 'Roboto';
-    margin: ${spacing[margin]};
+    margin: ${theme.spacing[margin]};
     font-size: ${theme.fontSizes[fontSize]};
     color: ${theme.textColors.primary};
     background: ${(tag && backgroundColors.lightPink) || 'transparent'};
     padding: ${(tag && theme.spacing.xs) || '0'};
     box-shadow: ${(tag && theme.boxShadows.articleCard) || 'none'};
     width: ${(tag && theme.spacing.smd) || 'auto'};
+    margin-left: ${theme.spacing[marginleft]};
     &:visited {
       color: ${theme.textColors.primary};
     }
