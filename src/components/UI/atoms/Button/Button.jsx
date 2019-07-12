@@ -59,15 +59,19 @@ const buttonBackground = {
 
 const buttonWidth = {
   default: '12rem',
-  getStarted: '12rem',
+  getStarted: '14rem',
+  submit: '30.2rem',
+};
+
+const buttonFade = {
+  default: '12rem',
+  getStarted: 'none',
   submit: '30.2rem',
 };
 
 Button.Container = styled.button`
   ${({
-    buttonType,
-    display,
-    theme,
+    buttonType, display, theme,
   }) => `
   width: ${buttonWidth[buttonType]};
   height: ${theme.height.defaultButtonHeight};
@@ -92,6 +96,19 @@ Button.Container = styled.button`
   
   &:focus {
     outline: 0;
+  }
+
+  @media ${theme.device.mobileS} {
+    display: ${buttonFade[buttonType]};
+  }
+  @media ${theme.device.mobileM} {
+    display: ${buttonFade[buttonType]};
+  }
+  @media ${theme.device.mobileL} {
+    display: ${buttonFade[buttonType]};
+  }
+  @media ${theme.device.tablet} {
+    display: ${buttonFade[buttonType]};
   }
 `}
 `;

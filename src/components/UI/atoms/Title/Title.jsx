@@ -68,6 +68,20 @@ Title.Container = styled.span`
     padding-bottom: ${theme.spacing[paddingBottom]};
     font-size: ${theme.fontSizes[fontSize]};
     font-weight: ${theme.fontWeights.bold}
+
+    @media ${theme.device.mobileS} {
+      font-size: 1.8rem;
+    }
+    @media ${theme.device.mobileM} {
+      font-size: 1.8rem;
+    }
+    @media ${theme.device.mobileL} {
+      font-size: 1.8rem;
+    }
+    @media ${theme.device.tablet} {
+      font-size: 1.8rem;
+    }
+
 `}
 `;
 export default Title;

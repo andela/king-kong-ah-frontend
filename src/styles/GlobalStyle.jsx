@@ -4,7 +4,6 @@ const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css?family=Inknut+Antiqua|Roboto');
 
 html {
-  box-sizing: border-box;
   font-size: 62.5%;
   overflow: hidden;
 }

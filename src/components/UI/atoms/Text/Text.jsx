@@ -91,8 +91,21 @@ Text.Container = styled.span`
     padding: ${theme.spacing[padding] || '0'};
     font-size: ${theme.fontSizes[fontSize]};
     font-weight: ${theme.fontWeights[fontWeight]};
-    font-family: ${content === 'true' && 'Inknut Antiqua'};
+    font-family: ${(content === 'true' && 'Inknut Antiqua') || 'roboto'};
     text-transform: ${textTransform};
+
+    @media ${theme.device.mobileS} {
+      font-size: 1.2rem;
+    }
+    @media ${theme.device.mobileM} {
+      font-size: 1.3rem;
+    }
+    @media ${theme.device.mobileL} {
+      font-size: 1.3rem;
+    }
+    @media ${theme.device.tablet} {
+      font-size: 1.3rem;
+    }
 `}
 `;
 export default Text;
