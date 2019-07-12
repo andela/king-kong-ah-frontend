@@ -19,4 +19,5 @@ export const backgroundColors = {
 export const borderColors = {
   primary: '#B02091',
   black: '#191919',
+  lightGrey: '#DDDDDD',
 };
