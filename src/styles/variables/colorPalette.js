@@ -1,5 +1,5 @@
 export const buttonColors = {
-  white: '#FFFFFF',
+  white001: '#FFFFFF',
   black: '#191919',
   primary: '#690375',
   Hover: '#9304A4',
@@ -12,6 +12,8 @@ export const textColors = {
 
 export const backgroundColors = {
   lightPink: '#F4EDED',
+  primary: '#690375',
+  white001: '#FFFFFF',
 };
 
 export const borderColors = {

@@ -8,6 +8,7 @@ import {
 } from './colorPalette';
 import borderRadius from './border';
 import width from './width';
+import { boxShadows } from './shadows';
 
 export default {
   spacing,
@@ -19,4 +20,5 @@ export default {
   borderRadius,
   width,
   borderColors,
+  boxShadows,
 };
