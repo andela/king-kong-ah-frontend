@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, cleanup } from '<src>/helpers/testUtils';
 import Divider from './Divider';
-import 'jest-dom/extend-expect';
+import '@testing-library/jest-dom/extend-expect';
 
 afterEach(cleanup);
 

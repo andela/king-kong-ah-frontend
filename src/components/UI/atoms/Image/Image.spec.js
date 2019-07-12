@@ -2,7 +2,7 @@
 import React from 'react';
 import { render, cleanup } from '<src>/helpers/testUtils';
 import Image from './Image';
-import 'jest-dom/extend-expect';
+import '@testing-library/jest-dom/extend-expect';
 
 afterEach(cleanup);
 
