@@ -5,14 +5,17 @@ import {
   textColors,
   backgroundColors,
   borderColors,
+  iconColors,
 } from './colorPalette';
 import borderRadius from './border';
 import width from './width';
 import { boxShadows } from './shadows';
+import { iconSizes } from './icons';
 
 export default {
   spacing,
   fontSizes,
+  iconSizes,
   fontWeights,
   buttonColors,
   textColors,
@@ -21,5 +24,5 @@ export default {
   width,
   boxShadows,
   borderColors,
-  boxShadows,
+  iconColors,
 };
