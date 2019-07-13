@@ -8,6 +8,7 @@ export const buttonColors = {
 export const textColors = {
   primary: '#B02091',
   grey: '#7A757E',
+  error: '#FF0000',
 };
 
 export const backgroundColors = {

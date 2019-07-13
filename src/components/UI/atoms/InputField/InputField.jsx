@@ -72,11 +72,11 @@ InputField.propTypes = {
 };
 
 InputField.defaultProps = {
-  padding: 'zero',
+  padding: 'xs',
   fontSize: 'normal',
   color: 'primary',
   content: 'false',
-  background: 'lightPink',
+  backgroundColor: 'lightPink',
 };
 
 InputField.Container = styled.input`
