@@ -57,6 +57,7 @@ module.exports = {
       '<core>': path.resolve(__dirname, '../src/core'),
       '<atoms>': path.resolve(__dirname, '../src/components/UI/atoms'),
       '<image>':path.resolve(__dirname,'../public/assets/images'),
+      '<molecules>': path.resolve(__dirname, '../src/components/UI/molecules'),
     },
     extensions: [' ', '.js', '.jsx'],
   },

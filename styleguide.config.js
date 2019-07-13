@@ -6,6 +6,10 @@ module.exports = {
       name: 'Atoms',
       components: 'src/components/UI/atoms/**/[A-Z]*.jsx',
     },
+    {
+      name: 'Molecules',
+      components: 'src/components/UI/molecules/**/[A-Z]*.jsx',
+    },
   ],
   styleguideComponents: {
     Wrapper: path.join(__dirname, '/src/styles/ThemeWrapper/ThemeWrapper.jsx'),

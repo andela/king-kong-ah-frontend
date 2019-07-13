@@ -10,20 +10,20 @@ import spacing from '<variables>/spacing';
  *
  * @prop {string} height - height
  * @prop {string} color - color
- * @prop {string} maxWidth - maxWidth
+ * @prop {string} width - width
  * @prop {string} margin - margin
 
  *
  * @return {component} Divider
  */
 const Divider = ({
-  maxWidth,
+  width,
   height,
   margin,
   color,
 }) => (
   <Divider.Container
-    maxWidth={maxWidth}
+    width={width}
     height={height}
     margin={margin}
     color={color}
@@ -32,7 +32,7 @@ const Divider = ({
 );
 
 Divider.propTypes = {
-  maxWidth: PropTypes.oneOf(Object.keys(spacing)),
+  width: PropTypes.oneOf(Object.keys(spacing)),
   height: PropTypes.oneOf(Object.keys(spacing)),
   margin: PropTypes.oneOf(Object.keys(spacing)),
   color: PropTypes.oneOf(Object.keys(borderColors)),
@@ -40,23 +40,25 @@ Divider.propTypes = {
 
 Divider.defaultProps = {
   color: 'primary',
-  maxWidth: 'xxl',
+  width: 'xxl',
   height: 'zero',
-  margin: 'md',
+  margin: 'xs',
 };
 
 Divider.Container = styled.div`
 ${({
-    maxWidth,
+    width,
     height,
     margin,
     color,
     theme,
   }) => `
-border: 1px solid ${theme.borderColors[color]}
-max-width: ${theme.spacing[maxWidth]}
-height: ${theme.spacing[height]}
-margin: ${theme.spacing[margin]}
+content: '';
+display: inline-block;
+border: 1px solid ${theme.borderColors[color]};
+width: ${theme.spacing[width]};
+height: ${theme.spacing[height]};
+margin: ${theme.spacing[margin]};
 `}
 `;
 export default Divider;

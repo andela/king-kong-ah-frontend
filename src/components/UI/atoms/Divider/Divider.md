@@ -7,7 +7,7 @@ Divider Default:
 Divider with all attributes: 
 ```jsx
 <Divider
-  maxWidth="xxl"
+  width="xxl"
   heigth="zero"
   color="black" />
 ```
@@ -15,7 +15,7 @@ Divider with all attributes:
 Divider with max-width:
 ```jsx
 <Divider
-  maxWidth="md"
+  width="md"
   />
 ```
 
