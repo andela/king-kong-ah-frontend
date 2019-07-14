@@ -50,7 +50,6 @@ Title.propTypes = {
 Title.defaultProps = {
   fontSize: 'normal',
   fontWeight: 'bold',
-  paddingBottom: 'md',
   display: 'block',
 };
 

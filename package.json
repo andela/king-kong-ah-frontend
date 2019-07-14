@@ -8,7 +8,8 @@
       "^<src>/(.*)$": "<rootDir>/src/$1",
       "^<variables>/(.*)$": "<rootDir>/src/styles/variables/$1",
       "^<pages>/(.*)$": "<rootDir>/src/components/pages/$1",
-      "^<core>/(.*)$": "<rootDir>/src/core/$1"
+      "^<core>/(.*)$": "<rootDir>/src/core/$1",
+      "^<fixtures>/(.*)$": "<rootDir>/src/fixtures/$1"
     },
     "coverageReporters": [
       "json-summary",
@@ -100,7 +101,8 @@
     "react-router-dom": "^5.0.1",
     "styled-components": "^4.3.2",
     "webpack": "^4.29.6",
-    "webpack-cli": "^3.2.3",
-    "webpack-merge": "^4.2.1"
+    "webpack-cli": "^3.3.6",
+    "webpack-merge": "^4.2.1",
+    "styled-icons": "^8.1.0"
   }
 }
