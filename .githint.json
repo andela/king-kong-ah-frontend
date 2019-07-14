@@ -1,6 +1,7 @@
 {
   "options": {
-      "detectPull": true
+        "detectPull": "commit.author.login.toLowerCase() !== 'greenkeeper[bot]'",
+        "skip": "commit.author.login.toLowerCase() === 'greenkeeper[bot]'"
   },
   "checks": {
       "Branch Name": {
