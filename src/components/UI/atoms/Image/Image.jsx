@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { borderRadius } from '<variables>/border';
 import { boxShadows } from '<variables>/shadows';
 import { borderColors } from '<variables>/colorPalette';
+import spacing from '<variables>/spacing';
 
 /**
  * @description - Image Component
@@ -28,6 +29,7 @@ const Image = (
     boxShadow,
     borderRadiusType,
     borderColor,
+    margin,
   },
 ) => {
   return <Image.Container
@@ -39,6 +41,7 @@ const Image = (
     boxShadow={boxShadow}
     borderRadiusType={borderRadiusType}
     borderColor={borderColor}
+    margin={margin}
   />;
 };
 
@@ -50,6 +53,7 @@ ${({
     boxShadow,
     borderRadiusType,
     borderColor,
+    margin,
     theme,
   }) => {
     return `
@@ -58,6 +62,7 @@ ${({
   box-shadow:${theme.boxShadows[boxShadow]};
   border: ${`1px solid ${theme.borderColors[borderColor]}`};
   border-radius:${theme.borderRadius[borderRadiusType]};
+  margin: ${theme.spacing[margin]}
   `;
   }}`;
 
@@ -69,6 +74,7 @@ Image.propTypes = {
   height: PropTypes.string,
   boxShadow: PropTypes.oneOf(Object.keys(boxShadows)),
   borderColor: PropTypes.oneOf(Object.keys(borderColors)),
+  margin: PropTypes.oneOf(Object.keys(spacing)),
   borderRadiusType: PropTypes.oneOf(Object.keys(borderRadius)),
 };
 
