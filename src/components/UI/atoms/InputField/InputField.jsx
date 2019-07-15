@@ -12,6 +12,7 @@ import width from '<variables>/width';
  * @description - Input field Component
  *
  * @prop {string} fontSize - font Size
+ * @prop {string} id - for label
  * @prop {string} color - color
  * @prop {string} type - type
  * @prop {string} placeholder - placeholder
@@ -25,6 +26,7 @@ import width from '<variables>/width';
  */
 const InputField = ({
   type,
+  id,
   placeholder,
   name,
   value,
@@ -40,6 +42,7 @@ const InputField = ({
 }) => (
   <InputField.Container
     type={type}
+    id={id}
     placeholder={placeholder}
     name={name}
     value={value}
@@ -57,6 +60,7 @@ const InputField = ({
 
 InputField.propTypes = {
   type: PropTypes.oneOf(['number', 'email', 'password', 'text']).isRequired,
+  id: PropTypes.string,
   placeholder: PropTypes.string,
   name: PropTypes.string,
   value: PropTypes.string,
@@ -72,11 +76,11 @@ InputField.propTypes = {
 };
 
 InputField.defaultProps = {
-  padding: 'zero',
+  padding: 'xs',
   fontSize: 'normal',
   color: 'primary',
   content: 'false',
-  background: 'lightPink',
+  backgroundColor: 'lightPink',
 };
 
 InputField.Container = styled.input`

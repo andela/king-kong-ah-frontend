@@ -63,7 +63,7 @@ Icon.defaultProps = {
   color: 'primary',
 };
 
-Icon.Container = styled.svg`
+Icon.Container = styled.div`
 ${({
     color,
     height,

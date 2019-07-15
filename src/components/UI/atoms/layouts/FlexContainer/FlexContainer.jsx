@@ -55,6 +55,7 @@ FlexContainer.Container = styled.div`
     },
   }) => `
     display: ${display};
+    flex-direction:column;
     background-color: ${backgroundColors[backgroundColor]};
     margin: ${spacing[margin]};
     padding: ${spacing[padding]};
