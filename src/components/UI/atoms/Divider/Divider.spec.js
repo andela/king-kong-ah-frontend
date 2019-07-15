@@ -15,10 +15,10 @@ describe('Divider', () => {
   });
 
   it('should render the Divider Component with max-width', () => {
-    const { container } = render(<Divider maxWidth="md" />);
+    const { container } = render(<Divider width="md" />);
 
     expect(container.lastChild).toHaveStyle(`
-            maxWidth: md
+            width: md
         `);
   });
 

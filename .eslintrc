@@ -49,6 +49,10 @@
         "requireParamDescription": false,
         "requireReturnDescription": true
       }
-    ]
+    ],
+    "react/jsx-curly-spacing": ["warn", {
+      "when": "never", 
+      "children": true
+    }]
   }
 }
