@@ -15,6 +15,8 @@ import theme from '<variables>/mainTheme';
  * @prop {string} borderColor - border color
  * @prop {string} borderRadius - add border radius
  * @prop {string} boxShadow - boxShadow
+ * @prop {string} alignItems - alignItems
+ * @prop {string} justifyContent - justifyContent
  *
  * @return {component} FlexContainer
  */
@@ -27,6 +29,8 @@ const FlexContainer = ({
   borderColor,
   borderRadius,
   boxShadow,
+  alignItems,
+  justifyContent,
 }) => (
   <FlexContainer.Container
     margin={margin}
@@ -36,6 +40,8 @@ const FlexContainer = ({
     borderColor={borderColor}
     borderRadius={borderRadius}
     boxShadow={boxShadow}
+    alignItems={alignItems}
+    justifyContent={justifyContent}
   >
     {children}
   </FlexContainer.Container>
@@ -50,6 +56,8 @@ FlexContainer.Container = styled.div`
     boxShadow,
     backgroundColor,
     borderColor,
+    alignItems,
+    justifyContent,
     theme: {
       spacing, backgroundColors, borderColors, boxShadows,
     },
@@ -62,6 +70,8 @@ FlexContainer.Container = styled.div`
     border-radius: ${spacing[borderRadius]};
     box-shadow: ${boxShadows[boxShadow]};
     border: 1px solid ${borderColors[borderColor] || 'transparent'};
+    align-items: ${alignItems}
+    justify-content: ${justifyContent}
   `}
 `;
 
@@ -79,7 +89,7 @@ const {
 } = theme;
 
 FlexContainer.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   margin: PropTypes.oneOf(Object.keys(spacing)),
   padding: PropTypes.oneOf(Object.keys(spacing)),
   backgroundColor: PropTypes.oneOf(Object.keys(backgroundColors)),
@@ -87,6 +97,10 @@ FlexContainer.propTypes = {
   borderColor: PropTypes.oneOf(Object.keys(borderColors)),
   borderRadius: PropTypes.oneOf(Object.keys(spacing)),
   boxShadow: PropTypes.oneOf(Object.keys(boxShadows)),
+  alignItems: PropTypes.oneOf(['flex-start', 'flex-end',
+    'center', 'baseline', 'stretch']),
+  justifyContent: PropTypes.oneOf(['flex-start', 'flex-end',
+    'center', 'space-between', 'space-around']),
 };
 
 export default FlexContainer;

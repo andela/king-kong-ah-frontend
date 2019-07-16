@@ -12,7 +12,7 @@ Icon with all attributes
   color="black"
   display="block"
   margin="md"
-  icon="starEmpty"
+  iconName="starEmpty"
   />
 ```
 
@@ -28,7 +28,7 @@ Icon with color
 ```jsx
 <Icon
   color="gold"
-  icon="starFull"
+  iconName="starFull"
   />
 ```
 
