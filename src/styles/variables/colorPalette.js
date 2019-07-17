@@ -21,12 +21,14 @@ export const textColors = {
   primary: '#B02091',
   grey: '#7A757E',
   red: '#FF0000',
+  transparent: 'transparent',
 };
 
 export const backgroundColors = {
   lightPink: '#F4EDED',
   primary: '#690375',
   white001: '#FFFFFF',
+  transparent: 'transparent',
 };
 
 export const borderColors = {

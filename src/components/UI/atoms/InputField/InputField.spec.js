@@ -28,7 +28,6 @@ describe('Input Fields', () => {
     const { container } = render(
       <InputField type="text" padding="xs" />,
     );
-
     expect(container.firstChild).toHaveStyle(`
     padding: 0.9rem;
   `);

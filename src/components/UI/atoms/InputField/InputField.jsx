@@ -14,6 +14,7 @@ import width from '<variables>/width';
  * @prop {string} fontSize - font Size
  * @prop {string} id - for label
  * @prop {string} color - color
+ * @prop {string} hoverColor - hoverColor
  * @prop {string} type - type
  * @prop {string} placeholder - placeholder
  * @prop {string} name - name
@@ -35,6 +36,7 @@ const InputField = ({
   onFocus,
   fontSize,
   color,
+  hoverColor,
   padding,
   backgroundColor,
   inputWidth,
@@ -51,6 +53,7 @@ const InputField = ({
     onFocus={onFocus}
     fontSize={fontSize}
     color={color}
+    hoverColor={hoverColor}
     padding={padding}
     backgroundColor={backgroundColor}
     inputWidth={inputWidth}
@@ -69,6 +72,7 @@ InputField.propTypes = {
   onFocus: PropTypes.func,
   backgroundColor: PropTypes.oneOf(Object.keys(backgroundColors)),
   color: PropTypes.oneOf(Object.keys(textColors)),
+  hoverColor: PropTypes.oneOf(Object.keys(textColors)),
   padding: PropTypes.oneOf(Object.keys(spacing)),
   fontSize: PropTypes.oneOf(Object.keys(fontSizes)),
   inputWidth: PropTypes.oneOf(Object.keys(width)),
@@ -80,6 +84,7 @@ InputField.defaultProps = {
   fontSize: 'normal',
   color: 'primary',
   content: 'false',
+  hoverColor: 'primary',
   backgroundColor: 'lightPink',
 };
 
@@ -92,8 +97,12 @@ InputField.Container = styled.input`
     backgroundColor,
     inputWidth,
     borderRadius,
+    hoverColor,
   }) => `
     color: ${theme.textColors[color]};
+    ::placeholder {
+    color: #D97BC4;
+  }
     padding: ${theme.spacing[padding]};
     width: ${theme.width[inputWidth]};
     font-size: ${theme.fontSizes[fontSize]};
@@ -104,7 +113,10 @@ InputField.Container = styled.input`
     transition: .5s border linear;
     box-sizing: border-box;
     &:hover {
-      border: solid 1px ${theme.textColors[color]};
+      border: solid 1px ${theme.textColors[hoverColor]};
+    }
+    &:focus {
+      outline-style: none;
     }
 `}
 `;

@@ -7,7 +7,7 @@ Text Input Field Default:
   fontSize="normal"
   inputWidth="fullWidth"
   backgroundColor="lightPink"
-  onChange={e => setText(e.target.value)}
+  onChange={e => e.target.value}
   padding="xs"
 ></InputField>
 ```
@@ -23,7 +23,7 @@ Search Bar Input Field Default:
   inputWidth="searchBarWidth"
   backgroundColor="lightPink"
   padding="sm"
-  onChange={e => setText(e.target.value)}
+  onChange={e => e.target.value}
   onFocus={e => e.target.placeholder = ""}
 ></InputField>
 ```

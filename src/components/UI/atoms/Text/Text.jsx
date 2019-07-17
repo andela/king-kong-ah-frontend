@@ -91,7 +91,7 @@ Text.Container = styled.span`
     padding: ${theme.spacing[padding] || '0'};
     font-size: ${theme.fontSizes[fontSize]};
     font-weight: ${theme.fontWeights[fontWeight]};
-    font-family: ${content === 'true' && 'Inknut Antiqua'};
+    font-family: ${(content === 'true' && 'Inknut Antiqua') || 'roboto'};
     text-transform: ${textTransform};
 `}
 `;
