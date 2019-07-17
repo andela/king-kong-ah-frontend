@@ -12,7 +12,8 @@
       "^<fixtures>/(.*)$": "<rootDir>/src/fixtures/$1",
       "^<atoms>/(.*)$": "<rootDir>/src/components/UI/atoms/$1",
       "^<molecules>/(.*)$": "<rootDir>/src/components/UI/molecules/$1",
-      "^<helpers>/(.*)$": "<rootDir>/src/helpers/$1"
+      "^<helpers>/(.*)$": "<rootDir>/src/helpers/$1",
+      "^<organisms>/(.*)$": "<rootDir>/src/components/UI/organisms/$1"
     },
     "coverageReporters": [
       "json-summary",
