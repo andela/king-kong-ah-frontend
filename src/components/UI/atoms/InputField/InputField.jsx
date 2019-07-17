@@ -14,6 +14,7 @@ import width from '<variables>/width';
  * @prop {string} fontSize - font Size
  * @prop {string} id - for label
  * @prop {string} color - color
+ * @prop {bool} transparentHover - transparentHover
  * @prop {string} type - type
  * @prop {string} placeholder - placeholder
  * @prop {string} name - name
@@ -30,11 +31,11 @@ const InputField = ({
   placeholder,
   name,
   value,
-  onChange,
   error,
   onFocus,
   fontSize,
   color,
+  transparentHover,
   padding,
   backgroundColor,
   inputWidth,
@@ -46,15 +47,16 @@ const InputField = ({
     placeholder={placeholder}
     name={name}
     value={value}
-    onChange={onChange}
     error={error}
     onFocus={onFocus}
     fontSize={fontSize}
     color={color}
+    transparentHover={transparentHover}
     padding={padding}
     backgroundColor={backgroundColor}
     inputWidth={inputWidth}
     borderRadius={borderRadius}
+    onChange={e => e.target.value}
   />
 );
 
@@ -69,6 +71,7 @@ InputField.propTypes = {
   onFocus: PropTypes.func,
   backgroundColor: PropTypes.oneOf(Object.keys(backgroundColors)),
   color: PropTypes.oneOf(Object.keys(textColors)),
+  transparentHover: PropTypes.oneOf([true, false]),
   padding: PropTypes.oneOf(Object.keys(spacing)),
   fontSize: PropTypes.oneOf(Object.keys(fontSizes)),
   inputWidth: PropTypes.oneOf(Object.keys(width)),
@@ -80,6 +83,7 @@ InputField.defaultProps = {
   fontSize: 'normal',
   color: 'primary',
   content: 'false',
+  transparentHover: false,
   backgroundColor: 'lightPink',
 };
 
@@ -92,8 +96,12 @@ InputField.Container = styled.input`
     backgroundColor,
     inputWidth,
     borderRadius,
+    transparentHover,
   }) => `
     color: ${theme.textColors[color]};
+    ::placeholder {
+    color: ${theme.textColors.pink};
+  }
     padding: ${theme.spacing[padding]};
     width: ${theme.width[inputWidth]};
     font-size: ${theme.fontSizes[fontSize]};
@@ -104,7 +112,11 @@ InputField.Container = styled.input`
     transition: .5s border linear;
     box-sizing: border-box;
     &:hover {
-      border: solid 1px ${theme.textColors[color]};
+      border: solid 1px ${(transparentHover
+      && theme.backgroundColors.transparent) || theme.backgroundColors.primary};
+    }
+    &:focus {
+      outline-style: none;
     }
 `}
 `;
