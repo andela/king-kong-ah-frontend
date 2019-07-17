@@ -37,7 +37,11 @@ const InputTextField = ({
 
   return (
 
+<<<<<<< HEAD
     <FlexContainer padding='xs'>
+=======
+    <FlexContainer padding='xsx'>
+>>>>>>> feat(AuthForm): add form feature
       {label && <Label
         id={id}
         htmlFor={id}

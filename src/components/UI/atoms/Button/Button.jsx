@@ -62,8 +62,25 @@ const buttonBackground = {
 const buttonWidth = {
   default: '12rem',
 <<<<<<< HEAD
+<<<<<<< HEAD
   getStarted: '14rem',
   submit: '30.2rem',
+=======
+  getStarted: '12rem',
+  submit: '40.09rem',
+};
+
+const buttonTopMargin = {
+  default: 'inherit',
+  getStarted: 'inherit',
+  submit: '2rem',
+};
+
+const buttonFontSize = {
+  default: 'normal',
+  getStarted: 'normal',
+  submit: 'title',
+>>>>>>> feat(AuthForm): add form feature
 };
 
 const buttonFade = {

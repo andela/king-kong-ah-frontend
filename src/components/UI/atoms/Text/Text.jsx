@@ -92,7 +92,11 @@ Text.Container = styled.span`
     font-size: ${theme.fontSizes[fontSize]};
     font-weight: ${theme.fontWeights[fontWeight]};
 <<<<<<< HEAD
+<<<<<<< HEAD
     font-family: ${(content === 'true' && 'Inknut Antiqua') || 'roboto'};
+=======
+    font-family: ${(content === 'true' && 'Inknut Antiqua') || 'Roboto'};
+>>>>>>> feat(AuthForm): add form feature
 =======
     font-family: ${(content === 'true' && 'Inknut Antiqua') || 'Roboto'};
 >>>>>>> feat(AuthForm): add form feature

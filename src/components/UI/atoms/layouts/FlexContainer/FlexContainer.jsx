@@ -2,6 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import theme from '<variables>/mainTheme';
+<<<<<<< HEAD
+=======
+
+>>>>>>> feat(AuthForm): add form feature
 import width from '<variables>/width';
 
 /**
@@ -32,8 +36,11 @@ const FlexContainer = ({
   borderRadius,
   boxShadow,
   justifyContent,
+<<<<<<< HEAD
   containerWidth,
   alignItems,
+=======
+>>>>>>> feat(AuthForm): add form feature
   flexDirection,
   containerWidth,
 }) => (
@@ -46,8 +53,11 @@ const FlexContainer = ({
     borderRadius={borderRadius}
     boxShadow={boxShadow}
     justifyContent={justifyContent}
+<<<<<<< HEAD
     containerWidth={containerWidth}
     alignItems={alignItems}
+=======
+>>>>>>> feat(AuthForm): add form feature
     flexDirection={flexDirection}
     containerWidth={containerWidth}
   >
@@ -65,8 +75,11 @@ FlexContainer.Container = styled.div`
     backgroundColor,
     borderColor,
     justifyContent,
+<<<<<<< HEAD
     containerWidth,
     alignItems,
+=======
+>>>>>>> feat(AuthForm): add form feature
     flexDirection,
     theme: {
       spacing, backgroundColors, borderColors, boxShadows,
@@ -84,7 +97,10 @@ FlexContainer.Container = styled.div`
     flex-direction: ${flexDirection};
     width: ${width[containerWidth]}
 <<<<<<< HEAD
+<<<<<<< HEAD
     align-items: ${alignItems}
+=======
+>>>>>>> feat(AuthForm): add form feature
 =======
 >>>>>>> feat(AuthForm): add form feature
   `}
@@ -138,6 +154,9 @@ FlexContainer.propTypes = {
   flexDirection: PropTypes.oneOf(['row', 'column',
     'row-reverse', 'column-reverse']),
   containerWidth: PropTypes.oneOf(Object.keys(width)),
+<<<<<<< HEAD
+>>>>>>> feat(AuthForm): add form feature
+=======
 >>>>>>> feat(AuthForm): add form feature
 };
 

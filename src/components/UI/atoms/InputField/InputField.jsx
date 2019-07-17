@@ -100,14 +100,20 @@ InputField.Container = styled.input`
   }) => `
     color: ${theme.textColors[color]};
 <<<<<<< HEAD
+<<<<<<< HEAD
     ::placeholder {
     color: ${theme.textColors.pink};
   }
 =======
+=======
+>>>>>>> feat(AuthForm): add form feature
 
     ::placeholder {
       color: ${theme.textColors.pink};
     }
+<<<<<<< HEAD
+>>>>>>> feat(AuthForm): add form feature
+=======
 >>>>>>> feat(AuthForm): add form feature
     padding: ${theme.spacing[padding]};
     width: ${theme.width[inputWidth]};

@@ -6,7 +6,11 @@ import CardDivider from '<molecules>/CardDivider/CardDivider';
 import ButtonRow from '<molecules>/ButtonRow/ButtonRow';
 import ButtonRowItem from './buttonRowItem';
 import Title from '<atoms>/Title/Title';
+<<<<<<< HEAD
 import Form from '<molecules>/Form/Form';
+=======
+import Form from './Form';
+>>>>>>> feat(AuthForm): add form feature
 
 const AuthForm = ({
   title,
@@ -22,7 +26,10 @@ const AuthForm = ({
         borderRadius='xs'
         boxShadow='section'
         containerWidth='formWidth'
+<<<<<<< HEAD
         padding='xs'
+=======
+>>>>>>> feat(AuthForm): add form feature
       >
         <Title
           fontSize="large"
