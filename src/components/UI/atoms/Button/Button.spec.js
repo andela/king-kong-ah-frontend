@@ -62,7 +62,10 @@ describe('Button', () => {
     );
 
     expect(getByText('Get Started')).toHaveStyle(`
+<<<<<<< HEAD
     height: 3.8rem;
+=======
+>>>>>>> feat(AuthForm): add form feature
     width: 12rem;
     height: 5.0rem;
     display: block;

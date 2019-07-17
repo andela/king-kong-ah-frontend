@@ -67,7 +67,7 @@ const buttonWidth = {
   submit: '30.2rem',
 =======
   getStarted: '12rem',
-  submit: '40.09rem',
+  submit: '43.09rem',
 };
 
 const buttonTopMargin = {

@@ -67,6 +67,7 @@ Title.Container = styled.span`
     color: ${theme.textColors[color]};
     padding-bottom: ${theme.spacing[paddingBottom]};
     font-size: ${theme.fontSizes[fontSize]};
+<<<<<<< HEAD
     font-weight: ${theme.fontWeights.bold}
 
     @media ${theme.device.mobileS} {
@@ -82,6 +83,8 @@ Title.Container = styled.span`
       font-size: 1.8rem;
     }
 
+=======
+>>>>>>> feat(AuthForm): add form feature
     font-weight: ${theme.fontWeights.bold};
     font-family: ${'Roboto'};
 `}
