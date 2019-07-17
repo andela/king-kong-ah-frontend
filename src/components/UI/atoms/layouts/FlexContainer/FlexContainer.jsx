@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import theme from '<variables>/mainTheme';
 
+import width from '<variables>/width';
 
 /**
  * @description - Container Component
@@ -17,6 +18,8 @@ import theme from '<variables>/mainTheme';
  * @prop {string} boxShadow - boxShadow
  * @prop {string} alignItems - alignItems
  * @prop {string} justifyContent - justifyContent
+ * @prop {string} flexDirection - flex direction
+ * @prop {string} containerWidth - container width
  *
  * @return {component} FlexContainer
  */
@@ -31,6 +34,8 @@ const FlexContainer = ({
   boxShadow,
   alignItems,
   justifyContent,
+  flexDirection,
+  containerWidth,
 }) => (
   <FlexContainer.Container
     margin={margin}
@@ -42,6 +47,8 @@ const FlexContainer = ({
     boxShadow={boxShadow}
     alignItems={alignItems}
     justifyContent={justifyContent}
+    flexDirection={flexDirection}
+    containerWidth={containerWidth}
   >
     {children}
   </FlexContainer.Container>
@@ -58,12 +65,13 @@ FlexContainer.Container = styled.div`
     borderColor,
     alignItems,
     justifyContent,
+    flexDirection,
     theme: {
       spacing, backgroundColors, borderColors, boxShadows,
     },
+    containerWidth,
   }) => `
     display: ${display};
-    flex-direction:column;
     background-color: ${backgroundColors[backgroundColor]};
     margin: ${spacing[margin]};
     padding: ${spacing[padding]};
@@ -72,6 +80,8 @@ FlexContainer.Container = styled.div`
     border: 1px solid ${borderColors[borderColor] || 'transparent'};
     align-items: ${alignItems}
     justify-content: ${justifyContent}
+    flex-direction: ${flexDirection};
+    width: ${width[containerWidth]}
   `}
 `;
 
@@ -82,6 +92,7 @@ FlexContainer.defaultProps = {
   boxShadow: 'none',
   borderRadius: 'zero',
   margin: 'zero',
+  flexDirection: 'column',
 };
 
 const {
@@ -101,6 +112,9 @@ FlexContainer.propTypes = {
     'center', 'baseline', 'stretch']),
   justifyContent: PropTypes.oneOf(['flex-start', 'flex-end',
     'center', 'space-between', 'space-around']),
+  flexDirection: PropTypes.oneOf(['row', 'column',
+    'row-reverse', 'column-reverse']),
+  containerWidth: PropTypes.oneOf(Object.keys(width)),
 };
 
 export default FlexContainer;

@@ -6,26 +6,37 @@ import CardDivider from '<molecules>/CardDivider/CardDivider';
 import ButtonRow from '<molecules>/ButtonRow/ButtonRow';
 import ButtonRowItem from './buttonRowItem';
 import Title from '<atoms>/Title/Title';
-import InputData from './InputData';
+import Form from './Form';
 
-const AuthForm = (props) => {
-  const { title, dividerText, InputDataItem } = props;
+const AuthForm = ({
+  title,
+  dividerText,
+  callback,
+  rules,
+  inputData,
+}) => {
   return (
     <Fragment>
-      <FlexContainer borderColor='primary' borderRadius='xs'>
+      <FlexContainer
+        borderColor='primary'
+        borderRadius='xs'
+        boxShadow='section'
+        containerWidth='formWidth'
+      >
         <Title
           fontSize="large"
           textAlign="center"
           color="primary"
           display="inline"
-          paddingBottom="md"
+          paddingBottom="zero"
         >
           {title}
         </Title>
-        <form>
-          <InputData InputDataItem={InputDataItem} />
-          {'button props'}
-        </form>
+        <Form
+          callback={callback}
+          rules={rules}
+          inputData={inputData}
+        />
         <CardDivider
           text= {dividerText}
           fontSize='title'
@@ -35,8 +46,8 @@ const AuthForm = (props) => {
         <Router>
           <ButtonRow
             images={ButtonRowItem}
-            width="58px"
-            height="58px"
+            width="5.8rem"
+            height="4.515rem"
             boxShadow="icon"
             altText="social media button"
             margin="xs"
@@ -50,7 +61,9 @@ const AuthForm = (props) => {
 AuthForm.propTypes = {
   title: PropTypes.string.isRequired,
   dividerText: PropTypes.string.isRequired,
-  InputDataItem: PropTypes.array.isRequired,
+  callback: PropTypes.func.isRequired,
+  rules: PropTypes.object.isRequired,
+  inputData: PropTypes.array.isRequired,
 };
 
 export default AuthForm;

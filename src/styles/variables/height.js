@@ -1,5 +1,5 @@
 const heigths = {
-  defaultButtonHeight: '3.8rem',
+  defaultButtonHeight: '5.0rem',
 };
 
 export default heigths;

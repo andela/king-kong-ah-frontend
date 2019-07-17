@@ -94,6 +94,10 @@ InputField.Container = styled.input`
     borderRadius,
   }) => `
     color: ${theme.textColors[color]};
+
+    ::placeholder {
+      color: ${theme.textColors.pink};
+    }
     padding: ${theme.spacing[padding]};
     width: ${theme.width[inputWidth]};
     font-size: ${theme.fontSizes[fontSize]};

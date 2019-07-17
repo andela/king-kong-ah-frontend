@@ -21,6 +21,7 @@ export const textColors = {
   primary: '#B02091',
   grey: '#7A757E',
   red: '#FF0000',
+  pink: '#D97BC4',
 };
 
 export const backgroundColors = {
