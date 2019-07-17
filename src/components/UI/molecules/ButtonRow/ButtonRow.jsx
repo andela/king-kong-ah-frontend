@@ -18,7 +18,11 @@ const ButtonRow = ({
   images,
 }) => {
   return (
-    <FlexContainer alignItems="center" justifyContent="center">
+    <FlexContainer
+      alignItems="center"
+      justifyContent="center"
+      display="flex"
+      flexDirection="row">
       {renderImages()}
     </FlexContainer>
   );

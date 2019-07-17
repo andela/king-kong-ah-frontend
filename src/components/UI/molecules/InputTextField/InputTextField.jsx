@@ -37,7 +37,7 @@ const InputTextField = ({
 
   return (
 
-    <FlexContainer>
+    <FlexContainer padding='xsx'>
       {label && <Label
         id={id}
         htmlFor={id}
@@ -79,6 +79,8 @@ InputTextField.propTypes = {
 
 InputTextField.defaultProps = {
   type: 'text',
+  inputWidth: 'fullWidth',
+  borderRadius: 'edgeRadius',
 };
 
 export default InputTextField;

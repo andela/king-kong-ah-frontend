@@ -19,6 +19,7 @@ import width from '<variables>/width';
  * @prop {string} alignItems - alignItems
  * @prop {string} justifyContent - justifyContent
  * @prop {string} flexDirection - flex direction
+ * @prop {string} containerWidth - container width
  *
  * @return {component} FlexContainer
  */
@@ -34,6 +35,7 @@ const FlexContainer = ({
   alignItems,
   justifyContent,
   flexDirection,
+  containerWidth,
 }) => (
   <FlexContainer.Container
     margin={margin}
@@ -46,6 +48,7 @@ const FlexContainer = ({
     alignItems={alignItems}
     justifyContent={justifyContent}
     flexDirection={flexDirection}
+    containerWidth={containerWidth}
   >
     {children}
   </FlexContainer.Container>
@@ -66,6 +69,7 @@ FlexContainer.Container = styled.div`
     theme: {
       spacing, backgroundColors, borderColors, boxShadows,
     },
+    containerWidth,
   }) => `
     display: ${display};
     background-color: ${backgroundColors[backgroundColor]};
@@ -77,6 +81,7 @@ FlexContainer.Container = styled.div`
     align-items: ${alignItems}
     justify-content: ${justifyContent}
     flex-direction: ${flexDirection};
+    width: ${width[containerWidth]}
   `}
 `;
 
@@ -107,7 +112,9 @@ FlexContainer.propTypes = {
     'center', 'baseline', 'stretch']),
   justifyContent: PropTypes.oneOf(['flex-start', 'flex-end',
     'center', 'space-between', 'space-around']),
-  flexDirection: PropTypes.oneOf(['row', 'column']),
+  flexDirection: PropTypes.oneOf(['row', 'column',
+    'row-reverse', 'column-reverse']),
+  containerWidth: PropTypes.oneOf(Object.keys(width)),
 };
 
 export default FlexContainer;
