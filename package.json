@@ -72,6 +72,7 @@
     "@babel/runtime": "^7.3.4",
     "@testing-library/jest-dom": "^4.0.0",
     "@testing-library/react": "^8.0.5",
+    "@testing-library/react-hooks": "^1.1.0",
     "autoprefixer": "^9.4.10",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
@@ -91,6 +92,7 @@
     "lint-staged": "^9.0.0",
     "mini-css-extract-plugin": "^0.8.0",
     "react-styleguidist": "^9.1.11",
+    "react-test-renderer": "^16.8.6",
     "style-loader": "^0.23.1",
     "uglifyjs-webpack-plugin": "^2.1.2",
     "webpack-dev-server": "^3.2.1"
@@ -103,9 +105,10 @@
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
     "styled-components": "^4.3.2",
+    "styled-icons": "^8.1.0",
+    "validatorjs": "^3.15.1",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.6",
-    "webpack-merge": "^4.2.1",
-    "styled-icons": "^8.1.0"
+    "webpack-merge": "^4.2.1"
   }
 }
