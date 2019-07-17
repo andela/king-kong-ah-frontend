@@ -59,7 +59,8 @@ module.exports = {
       '<molecules>':path.resolve(__dirname,'../src/components/UI/molecules'),
       '<image>':path.resolve(__dirname,'../public/assets/images'),
       '<molecules>': path.resolve(__dirname, '../src/components/UI/molecules'),
-      '<helpers>':path.resolve(__dirname,'../src/helpers')
+      '<helpers>':path.resolve(__dirname,'../src/helpers'),
+      '<api>':path.resolve(__dirname,'../src/api')
     },
     extensions: [' ', '.js', '.jsx'],
   },
