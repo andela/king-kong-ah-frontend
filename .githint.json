@@ -78,7 +78,7 @@
               "const messageLines = message.split('\\n')",
               "if (messageLines.length >= 5) {",
               "   const footer = messageLines[messageLines.length - 1]",
-              "   return /^\\[(Finishes|Fixes|Delivers|Chores)\\s*(#[0-9]+[,]?\\s*)+]$/.test(footer)",
+              "   return /^\\[(Starts|Finishes|Fixes|Delivers|Chores)\\s*(#[0-9]+[,]?\\s*)+]$/.test(footer)",
               "}",
               "return false;"
           ],
