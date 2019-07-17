@@ -82,6 +82,8 @@ Title.Container = styled.span`
       font-size: 1.8rem;
     }
 
+    font-weight: ${theme.fontWeights.bold};
+    font-family: ${'Roboto'};
 `}
 `;
 export default Title;

@@ -37,7 +37,7 @@ const InputTextField = ({
 
   return (
 
-    <FlexContainer padding='xsx'>
+    <FlexContainer padding='xs'>
       {label && <Label
         id={id}
         htmlFor={id}
