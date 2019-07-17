@@ -18,6 +18,7 @@ import width from '<variables>/width';
  * @prop {string} alignItems - alignItems
  * @prop {string} justifyContent - justifyContent
  * @prop {string} flexDirection - flex direction
+ * @prop {string} containerWidth - container width
  *
  * @return {component} FlexContainer
  */
@@ -34,6 +35,7 @@ const FlexContainer = ({
   containerWidth,
   alignItems,
   flexDirection,
+  containerWidth,
 }) => (
   <FlexContainer.Container
     margin={margin}
@@ -47,6 +49,7 @@ const FlexContainer = ({
     containerWidth={containerWidth}
     alignItems={alignItems}
     flexDirection={flexDirection}
+    containerWidth={containerWidth}
   >
     {children}
   </FlexContainer.Container>
@@ -68,6 +71,7 @@ FlexContainer.Container = styled.div`
     theme: {
       spacing, backgroundColors, borderColors, boxShadows,
     },
+    containerWidth,
   }) => `
     display: ${display};
     background-color: ${backgroundColors[backgroundColor]};
@@ -79,7 +83,10 @@ FlexContainer.Container = styled.div`
     justify-content: ${justifyContent}
     flex-direction: ${flexDirection};
     width: ${width[containerWidth]}
+<<<<<<< HEAD
     align-items: ${alignItems}
+=======
+>>>>>>> feat(AuthForm): add form feature
   `}
 `;
 
@@ -106,6 +113,7 @@ FlexContainer.propTypes = {
   borderColor: PropTypes.oneOf(Object.keys(borderColors)),
   borderRadius: PropTypes.oneOf(Object.keys(spacing)),
   boxShadow: PropTypes.oneOf(Object.keys(boxShadows)),
+<<<<<<< HEAD
   containerWidth: PropTypes.oneOf(Object.keys(width)),
   alignItems: PropTypes.oneOf([
     'flex-start',
@@ -122,6 +130,15 @@ FlexContainer.propTypes = {
     'space-around',
   ]),
   flexDirection: PropTypes.oneOf(['row', 'column']),
+=======
+  alignItems: PropTypes.oneOf(['flex-start', 'flex-end',
+    'center', 'baseline', 'stretch']),
+  justifyContent: PropTypes.oneOf(['flex-start', 'flex-end',
+    'center', 'space-between', 'space-around']),
+  flexDirection: PropTypes.oneOf(['row', 'column',
+    'row-reverse', 'column-reverse']),
+  containerWidth: PropTypes.oneOf(Object.keys(width)),
+>>>>>>> feat(AuthForm): add form feature
 };
 
 export default FlexContainer;

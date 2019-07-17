@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+import { fontSizes } from '<variables>/fonts';
+
 /**
  * @description - Button Component
  *
@@ -42,7 +44,7 @@ Button.defaultProps = {
 const buttonRadius = {
   default: 'none',
   getStarted: 'none',
-  submit: '0.4rem',
+  submit: '0.8rem',
 };
 
 const buttonBorderColor = {
@@ -59,6 +61,7 @@ const buttonBackground = {
 
 const buttonWidth = {
   default: '12rem',
+<<<<<<< HEAD
   getStarted: '14rem',
   submit: '30.2rem',
 };
@@ -67,20 +70,38 @@ const buttonFade = {
   default: '12rem',
   getStarted: 'none',
   submit: '30.2rem',
+=======
+  getStarted: '12rem',
+  submit: '40.09rem',
+};
+
+const buttonTopMargin = {
+  default: 'inherit',
+  getStarted: 'inherit',
+  submit: '2rem',
+};
+
+const buttonFontSize = {
+  default: 'normal',
+  getStarted: 'normal',
+  submit: 'title',
+>>>>>>> feat(AuthForm): add form feature
 };
 
 Button.Container = styled.button`
   ${({
     buttonType, display, theme,
   }) => `
+  margin-top: ${buttonTopMargin[buttonType]};
   width: ${buttonWidth[buttonType]};
   height: ${theme.height.defaultButtonHeight};
   display: ${display};
-  font-size: ${theme.fontSizes.normal};
+  font-size: ${fontSizes[buttonFontSize[buttonType]]};
   background: ${buttonBackground[buttonType]};
   color: ${theme.buttonColors[buttonType]};
   border-radius: ${buttonRadius[buttonType]};
   border: 1px solid ${buttonBorderColor[buttonType]};
+  box-sizing: border-box;
   cursor: pointer;
 
   &:hover {

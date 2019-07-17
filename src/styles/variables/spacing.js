@@ -1,6 +1,10 @@
 const spacing = {
   zero: '0rem',
+<<<<<<< HEAD
   xxxs: '0.5rem',
+=======
+  xsx: '0.8rem',
+>>>>>>> feat(AuthForm): add form feature
   xs: '0.9rem',
   xsm: '1.3rem',
   xxs: '1.5rem',

@@ -99,9 +99,16 @@ InputField.Container = styled.input`
     transparentHover,
   }) => `
     color: ${theme.textColors[color]};
+<<<<<<< HEAD
     ::placeholder {
     color: ${theme.textColors.pink};
   }
+=======
+
+    ::placeholder {
+      color: ${theme.textColors.pink};
+    }
+>>>>>>> feat(AuthForm): add form feature
     padding: ${theme.spacing[padding]};
     width: ${theme.width[inputWidth]};
     font-size: ${theme.fontSizes[fontSize]};

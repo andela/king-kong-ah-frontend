@@ -16,7 +16,8 @@
       "^<helpers>/(.*)$": "<rootDir>/src/helpers/$1",
       "^<api>/(.*)$": "<rootDir>/src/api/$1",
       "^<organisms>/(.*)$": "<rootDir>/src/components/UI/organisms/$1",
-      "^<templates>/(.*)$": "<rootDir>/src/components/templates/$1"
+      "^<templates>/(.*)$": "<rootDir>/src/components/templates/$1",
+      "^<hooks>/(.*)$": "<rootDir>/src/hooks/$1"
     },
     "coverageReporters": [
       "json-summary",
