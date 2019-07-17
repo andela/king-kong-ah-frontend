@@ -61,13 +61,12 @@ module.exports = {
       '<molecules>': path.resolve(__dirname, '../src/components/UI/molecules'),
       '<helpers>':path.resolve(__dirname,'../src/helpers'),
       '<api>':path.resolve(__dirname,'../src/api'),
-<<<<<<< HEAD
       '<organisms>': path.resolve(__dirname, '../src/components/UI/organisms'),
       '<templates>': path.resolve(__dirname, '../src/components/templates'),
-=======
       '<organisms>':path.resolve(__dirname,'../src/components/UI/organisms'),
       '<hooks>':path.resolve(__dirname,'../src/hooks')
->>>>>>> feat(AuthForm): add form feature
+      '<hooks>':path.resolve(__dirname,'../src/hooks'),
+      '<api>':path.resolve(__dirname,'../src/api')
     },
     extensions: [' ', '.js', '.jsx'],
   },
