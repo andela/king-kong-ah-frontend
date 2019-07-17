@@ -24,5 +24,4 @@ const useDataFromApi = ({
   request();
 }, [path, data]);
 
-
 export default useDataFromApi;
