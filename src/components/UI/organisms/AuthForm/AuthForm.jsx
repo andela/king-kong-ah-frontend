@@ -6,7 +6,7 @@ import CardDivider from '<molecules>/CardDivider/CardDivider';
 import ButtonRow from '<molecules>/ButtonRow/ButtonRow';
 import ButtonRowItem from './buttonRowItem';
 import Title from '<atoms>/Title/Title';
-import Form from './Form';
+import Form from '<molecules>/Form/Form';
 
 const AuthForm = ({
   title,
@@ -22,6 +22,7 @@ const AuthForm = ({
         borderRadius='xs'
         boxShadow='section'
         containerWidth='formWidth'
+        padding='xs'
       >
         <Title
           fontSize="large"

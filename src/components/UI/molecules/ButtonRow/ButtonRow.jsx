@@ -33,8 +33,8 @@ const ButtonRow = ({
         <StyledLink key={index}>
           <Image
             imageUrl={image.url}
-            width="58px"
-            height="58px"
+            width="5.0rem"
+            height="5.0rem"
             boxShadow="icon"
             altText="social media button"
             margin="xs"
