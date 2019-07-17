@@ -67,7 +67,8 @@ Title.Container = styled.span`
     color: ${theme.textColors[color]};
     padding-bottom: ${theme.spacing[paddingBottom]};
     font-size: ${theme.fontSizes[fontSize]};
-    font-weight: ${theme.fontWeights.bold}
+    font-weight: ${theme.fontWeights.bold};
+    font-family: ${'Roboto'};
 `}
 `;
 export default Title;
