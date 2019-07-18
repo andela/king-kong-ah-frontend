@@ -12,7 +12,8 @@
       "^<fixtures>/(.*)$": "<rootDir>/src/fixtures/$1",
       "^<atoms>/(.*)$": "<rootDir>/src/components/UI/atoms/$1",
       "^<molecules>/(.*)$": "<rootDir>/src/components/UI/molecules/$1",
-      "^<helpers>/(.*)$": "<rootDir>/src/helpers/$1"
+      "^<helpers>/(.*)$": "<rootDir>/src/helpers/$1",
+      "^<api>/(.*)$": "<rootDir>/src/api/$1"
     },
     "coverageReporters": [
       "json-summary",
@@ -98,6 +99,7 @@
     "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
+    "axios": "^0.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "prop-types": "^15.7.2",
