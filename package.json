@@ -14,7 +14,9 @@
       "^<molecules>/(.*)$": "<rootDir>/src/components/UI/molecules/$1",
       "^<helpers>/(.*)$": "<rootDir>/src/helpers/$1",
       "^<organisms>/(.*)$": "<rootDir>/src/components/UI/organisms/$1",
-      "^<hooks>/(.*)$": "<rootDir>/src/hooks/$1"
+      "^<hooks>/(.*)$": "<rootDir>/src/hooks/$1",
+      "^<api>/(.*)$": "<rootDir>/src/api/$1",
+      "^<HOC>/(.*)$": "<rootDir>/src/HOC/$1"
     },
     "coverageReporters": [
       "json-summary",
@@ -100,12 +102,14 @@
     "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
+    "axios": "^0.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
+    "react-toastify": "^5.3.2",
     "styled-components": "^4.3.2",
     "styled-icons": "^8.1.0",
     "validatorjs": "^3.15.1",
