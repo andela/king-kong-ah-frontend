@@ -15,6 +15,8 @@ import spacing from '<variables>/spacing';
  * @prop {string} width - width
  * @prop {string} display - display
  * @prop {string} margin - margin
+ * @prop {string} marginTop - marginTop
+ * @prop {string} marginLeft - marginLeft
  * @prop {string} icon - icon
  *
  * @return {component} Icon
@@ -27,6 +29,8 @@ const Icon = ({
   display,
   margin,
   iconName,
+  marginTop,
+  marginLeft,
 }) => {
   const IconType = iconSource[icons[iconName]];
   return (
@@ -38,6 +42,8 @@ const Icon = ({
       display={display}
       margin={margin}
       iconName={iconName}
+      marginTop={marginTop}
+      marginLeft={marginLeft}
     >
       <IconType />
     </Icon.Container>);
@@ -52,6 +58,8 @@ Icon.propTypes = {
   width: PropTypes.oneOf(Object.keys(iconSizes)),
   display: PropTypes.oneOf(['block', 'inline', 'inline-block', 'none']),
   margin: PropTypes.oneOf(Object.keys(spacing)),
+  marginTop: PropTypes.oneOf(Object.keys(spacing)),
+  marginLeft: PropTypes.oneOf(Object.keys(spacing)),
 };
 
 Icon.defaultProps = {
@@ -70,6 +78,8 @@ ${({
     width,
     display,
     margin,
+    marginTop,
+    marginLeft,
     theme,
   }) => `
 color: ${theme.iconColors[color]};
@@ -77,6 +87,8 @@ height: ${theme.iconSizes[height]};
 width: ${theme.iconSizes[width]};
 display: ${display};
 margin: ${theme.spacing[margin]};
+margin-top: ${theme.spacing[marginTop]};
+margin-left: ${theme.spacing[marginLeft]};
 `}
 `;
 
