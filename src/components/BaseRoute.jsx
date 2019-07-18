@@ -1,11 +1,12 @@
+/* eslint-disable max-len */
 import React, { Fragment } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Routes from '<core>/routes';
+import { UnauthenticatedRoutes } from '<core>/routes';
 
 const BaseRoute = () => (
   <Fragment>
     <Switch>
-      {Routes.default.map(({ exact, path, component }, index) => (
+      {UnauthenticatedRoutes.default.map(({ exact, path, component }, index) => (
         <Route key={index} exact={exact} path={path} component={component} />
       ))}
     </Switch>

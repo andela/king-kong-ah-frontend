@@ -1,6 +1,7 @@
 import HomePage from '<pages>/Homepage';
+import Protected from '<pages>/Protected';
 
-const Routes = {
+export const UnauthenticatedRoutes = {
   default: [
     {
       exact: true,
@@ -10,4 +11,10 @@ const Routes = {
   ],
 };
 
-export default Routes;
+export const ProtectedRoutes = [
+  {
+    exact: true,
+    path: '/protected',
+    component: Protected,
+  },
+];
