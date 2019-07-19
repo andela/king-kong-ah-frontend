@@ -22,9 +22,10 @@ const SearchBar = ({
       padding='xs'
       flexDirection='row'
       borderRadius='xl'
-      backgroundColor={(getStarted && 'transparent') || 'lightPink'}>
-      <Icon height='none' width='search' margin='zero'
-        marginTop='xsm' marginLeft='xs'/>
+      backgroundColor={(getStarted && 'transparent') || 'lightPink'}
+      containerWidth='twoThird'>
+      <Icon height='none' width='normal' margin='sm'
+        marginTop='xsm' marginLeft='sm'/>
       <InputField
         type="text"
         transparentHover={true}
@@ -33,6 +34,7 @@ const SearchBar = ({
         borderRadius="edgeRadius"
         inputWidth="fullWidth"
         backgroundColor="transparent"
+        fontSize="medium"
       ></InputField>
 
 

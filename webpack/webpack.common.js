@@ -63,7 +63,8 @@ module.exports = {
       '<api>':path.resolve(__dirname,'../src/api'),
       '<organisms>': path.resolve(__dirname, '../src/components/UI/organisms'),
       '<templates>': path.resolve(__dirname, '../src/components/templates'),
-      '<hooks>':path.resolve(__dirname,'../src/hooks')
+      '<hooks>':path.resolve(__dirname,'../src/hooks'),
+      '<HOC>':path.resolve(__dirname,'../src/HOC'),
     },
     extensions: [' ', '.js', '.jsx'],
   },

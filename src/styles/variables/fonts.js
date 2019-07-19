@@ -6,6 +6,7 @@ export const fontSizes = {
   medium: '2.4rem',
   large: '3.2rem',
   xlarge: '4.8rem',
+  xxlarge: '7rem',
 };
 
 export const fontWeights = {

@@ -30,6 +30,8 @@ const Image = (
     borderRadiusType,
     borderColor,
     margin,
+    justifyContent,
+    alignItem,
   },
 ) => {
   return <Image.Container
@@ -42,6 +44,8 @@ const Image = (
     borderRadiusType={borderRadiusType}
     borderColor={borderColor}
     margin={margin}
+    justifyContent={justifyContent}
+    alignItem={alignItem}
   />;
 };
 
@@ -55,6 +59,8 @@ ${({
     borderColor,
     margin,
     theme,
+    justifyContent,
+    alignItem,
   }) => {
     return `
   width: ${width};
@@ -62,7 +68,10 @@ ${({
   box-shadow:${theme.boxShadows[boxShadow]};
   border: ${`1px solid ${theme.borderColors[borderColor]}`};
   border-radius:${theme.borderRadius[borderRadiusType]};
-  margin: ${theme.spacing[margin]}
+  margin: ${theme.spacing[margin]};
+  display: flex;
+  justify-content: ${justifyContent};
+  align-item: ${alignItem};
   `;
   }}`;
 
@@ -76,6 +85,20 @@ Image.propTypes = {
   borderColor: PropTypes.oneOf(Object.keys(borderColors)),
   margin: PropTypes.oneOf(Object.keys(spacing)),
   borderRadiusType: PropTypes.oneOf(Object.keys(borderRadius)),
+  alignItem: PropTypes.oneOf([
+    'flex-start',
+    'flex-end',
+    'center',
+    'baseline',
+    'stretch',
+  ]),
+  justifyContent: PropTypes.oneOf([
+    'flex-start',
+    'flex-end',
+    'center',
+    'space-between',
+    'space-around',
+  ]),
 };
 
 Image.defaultProps = {

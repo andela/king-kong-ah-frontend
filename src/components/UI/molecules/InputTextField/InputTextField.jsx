@@ -53,9 +53,10 @@ const InputTextField = ({
         inputWidth={inputWidth}
         borderRadius={borderRadius}
         error={errorMessage}
-        onChange={onChange} />
+        onChange={onChange} 
+      />
       {errorMessage
-        && <span><Text color='red' fontSize='small' display='block'>
+        && <span><Text color='red' fontSize='normal' display='block'>
           {errorMessage}
         </Text></span>}
     </FlexContainer>

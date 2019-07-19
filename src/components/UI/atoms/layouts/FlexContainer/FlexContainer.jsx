@@ -2,10 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import theme from '<variables>/mainTheme';
-<<<<<<< HEAD
-=======
-
->>>>>>> feat(AuthForm): add form feature
 import width from '<variables>/width';
 
 /**
@@ -36,13 +32,11 @@ const FlexContainer = ({
   borderRadius,
   boxShadow,
   justifyContent,
-<<<<<<< HEAD
-  containerWidth,
   alignItems,
-=======
->>>>>>> feat(AuthForm): add form feature
   flexDirection,
   containerWidth,
+  paddingTop,
+  paddingBottom,
 }) => (
   <FlexContainer.Container
     margin={margin}
@@ -53,13 +47,11 @@ const FlexContainer = ({
     borderRadius={borderRadius}
     boxShadow={boxShadow}
     justifyContent={justifyContent}
-<<<<<<< HEAD
     containerWidth={containerWidth}
     alignItems={alignItems}
-=======
->>>>>>> feat(AuthForm): add form feature
     flexDirection={flexDirection}
-    containerWidth={containerWidth}
+    paddingTop={paddingTop}
+    paddingBottom={paddingBottom}
   >
     {children}
   </FlexContainer.Container>
@@ -75,16 +67,14 @@ FlexContainer.Container = styled.div`
     backgroundColor,
     borderColor,
     justifyContent,
-<<<<<<< HEAD
     containerWidth,
     alignItems,
-=======
->>>>>>> feat(AuthForm): add form feature
     flexDirection,
+    paddingTop,
+    paddingBottom,
     theme: {
       spacing, backgroundColors, borderColors, boxShadows,
     },
-    containerWidth,
   }) => `
     display: ${display};
     background-color: ${backgroundColors[backgroundColor]};
@@ -95,14 +85,10 @@ FlexContainer.Container = styled.div`
     border: 1px solid ${borderColors[borderColor] || 'transparent'};
     justify-content: ${justifyContent}
     flex-direction: ${flexDirection};
-    width: ${width[containerWidth]}
-<<<<<<< HEAD
-<<<<<<< HEAD
-    align-items: ${alignItems}
-=======
->>>>>>> feat(AuthForm): add form feature
-=======
->>>>>>> feat(AuthForm): add form feature
+    width: ${width[containerWidth]};
+    align-items: ${alignItems};
+    padding-top: ${spacing[paddingTop]};
+    padding-bottom: ${spacing[paddingBottom]};
   `}
 `;
 
@@ -124,12 +110,13 @@ FlexContainer.propTypes = {
   children: PropTypes.node,
   margin: PropTypes.oneOf(Object.keys(spacing)),
   padding: PropTypes.oneOf(Object.keys(spacing)),
+  paddingTop: PropTypes.oneOf(Object.keys(spacing)),
+  paddingBottom: PropTypes.oneOf(Object.keys(spacing)),
   backgroundColor: PropTypes.oneOf(Object.keys(backgroundColors)),
   display: PropTypes.oneOf(['block', 'inline', 'flex', 'inline-block', 'none']),
   borderColor: PropTypes.oneOf(Object.keys(borderColors)),
   borderRadius: PropTypes.oneOf(Object.keys(spacing)),
   boxShadow: PropTypes.oneOf(Object.keys(boxShadows)),
-<<<<<<< HEAD
   containerWidth: PropTypes.oneOf(Object.keys(width)),
   alignItems: PropTypes.oneOf([
     'flex-start',
@@ -146,18 +133,6 @@ FlexContainer.propTypes = {
     'space-around',
   ]),
   flexDirection: PropTypes.oneOf(['row', 'column']),
-=======
-  alignItems: PropTypes.oneOf(['flex-start', 'flex-end',
-    'center', 'baseline', 'stretch']),
-  justifyContent: PropTypes.oneOf(['flex-start', 'flex-end',
-    'center', 'space-between', 'space-around']),
-  flexDirection: PropTypes.oneOf(['row', 'column',
-    'row-reverse', 'column-reverse']),
-  containerWidth: PropTypes.oneOf(Object.keys(width)),
-<<<<<<< HEAD
->>>>>>> feat(AuthForm): add form feature
-=======
->>>>>>> feat(AuthForm): add form feature
 };
 
 export default FlexContainer;

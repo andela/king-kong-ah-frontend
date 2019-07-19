@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { fontSizes } from '<variables>/fonts';
+import { fontSizes, fontWeights } from '<variables>/fonts';
 import { textColors } from '<variables>/colorPalette';
 import spacing from '<variables>/spacing';
 
@@ -25,6 +25,7 @@ const Title = ({
   display,
   paddingBottom,
   children,
+  fontWeight,
 }) => (
   <Title.Container
     fontSize={fontSize}
@@ -32,6 +33,7 @@ const Title = ({
     color={color}
     display={display}
     paddingBottom={paddingBottom}
+    fontWeight={fontWeight}
   >
     {children}
   </Title.Container>
@@ -45,6 +47,7 @@ Title.propTypes = {
   paddingBottom: PropTypes.oneOf(Object.keys(spacing)),
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
     .isRequired,
+  fontWeight: PropTypes.oneOf(Object.keys(fontWeights)),
 };
 
 Title.defaultProps = {
@@ -60,6 +63,7 @@ Title.Container = styled.span`
     color,
     display,
     paddingBottom,
+    fontWeight,
     theme,
   }) => `
     display: ${display};
@@ -67,8 +71,7 @@ Title.Container = styled.span`
     color: ${theme.textColors[color]};
     padding-bottom: ${theme.spacing[paddingBottom]};
     font-size: ${theme.fontSizes[fontSize]};
-<<<<<<< HEAD
-    font-weight: ${theme.fontWeights.bold}
+    font-weight: ${theme.fontWeights[fontWeight]};
 
     @media ${theme.device.mobileS} {
       font-size: 1.8rem;
@@ -82,10 +85,6 @@ Title.Container = styled.span`
     @media ${theme.device.tablet} {
       font-size: 1.8rem;
     }
-
-=======
->>>>>>> feat(AuthForm): add form feature
-    font-weight: ${theme.fontWeights.bold};
     font-family: ${'Roboto'};
 `}
 `;

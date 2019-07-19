@@ -25,6 +25,7 @@ import width from '<variables>/width';
  *
  * @return {component} Text
  */
+
 const InputField = ({
   type,
   id,
@@ -40,6 +41,7 @@ const InputField = ({
   backgroundColor,
   inputWidth,
   borderRadius,
+  onChange,
 }) => (
   <InputField.Container
     type={type}
@@ -56,7 +58,7 @@ const InputField = ({
     backgroundColor={backgroundColor}
     inputWidth={inputWidth}
     borderRadius={borderRadius}
-    onChange={e => e.target.value}
+    onChange={onChange}
   />
 );
 
@@ -99,22 +101,9 @@ InputField.Container = styled.input`
     transparentHover,
   }) => `
     color: ${theme.textColors[color]};
-<<<<<<< HEAD
-<<<<<<< HEAD
-    ::placeholder {
-    color: ${theme.textColors.pink};
-  }
-=======
-=======
->>>>>>> feat(AuthForm): add form feature
-
     ::placeholder {
       color: ${theme.textColors.pink};
     }
-<<<<<<< HEAD
->>>>>>> feat(AuthForm): add form feature
-=======
->>>>>>> feat(AuthForm): add form feature
     padding: ${theme.spacing[padding]};
     width: ${theme.width[inputWidth]};
     font-size: ${theme.fontSizes[fontSize]};

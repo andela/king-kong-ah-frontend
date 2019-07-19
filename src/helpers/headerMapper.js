@@ -12,7 +12,7 @@ const headerMapper = links => Object.keys(links).map((component, index) => {
         <Text
           content="false"
           display="inline"
-          fontSize="medium"
+          fontSize="large"
           color="primary"
           textTransform="capitalize"
         >

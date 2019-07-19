@@ -29,7 +29,7 @@ const AuthForm = ({
           textAlign="center"
           color="primary"
           display="inline"
-          paddingBottom="zero"
+          paddingBottom="xs"
         >
           {title}
         </Title>

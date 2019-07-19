@@ -62,19 +62,14 @@ describe('Button', () => {
     );
 
     expect(getByText('Get Started')).toHaveStyle(`
-<<<<<<< HEAD
-    height: 3.8rem;
-=======
->>>>>>> feat(AuthForm): add form feature
-    width: 12rem;
-    height: 5.0rem;
-    display: block;
-    font-size: 1.6rem;
-    background: transparent;
-    color: #B02091;
-    border-radius: none;
-    border: 1px solid #B02091;
-    cursor: pointer;
+      height: 5.0rem;
+      display: block;
+      font-size: 1.6rem;
+      background: transparent;
+      color: #B02091;
+      border-radius: none;
+      border: 1px solid #B02091;
+      cursor: pointer;
     `);
   });
 });

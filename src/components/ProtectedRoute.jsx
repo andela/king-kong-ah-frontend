@@ -17,7 +17,7 @@ const ProtectedRoute = () => {
               render={props => (fakeAuth.isVerified
                 ? (<Component {...props} />) : (
                   <Redirect to={{
-                    pathname: '/',
+                    pathname: '/login',
                     state: { from: props },
                   }} />))} />
           ))}
