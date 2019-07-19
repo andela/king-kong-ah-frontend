@@ -62,7 +62,6 @@ describe('Button', () => {
     );
 
     expect(getByText('Get Started')).toHaveStyle(`
-    width: 12rem;
     height: 3.8rem;
     display: block;
     font-size: 1.6rem;

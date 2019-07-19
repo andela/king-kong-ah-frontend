@@ -13,6 +13,7 @@ import width from './width';
 import height from './height';
 import { boxShadows } from './shadows';
 import { iconSizes } from './icons';
+import device from './mediaQueries';
 
 export default {
   spacing,
@@ -29,4 +30,5 @@ export default {
   boxShadows,
   borderColors,
   iconColors,
+  device,
 };

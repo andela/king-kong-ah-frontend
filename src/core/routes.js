@@ -1,4 +1,4 @@
-import HomePage from '<pages>/Homepage';
+import HomePage from '<homepage>/HomePage';
 import Protected from '<pages>/Protected';
 
 export const UnauthenticatedRoutes = {

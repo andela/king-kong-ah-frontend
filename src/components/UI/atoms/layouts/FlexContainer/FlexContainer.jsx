@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import theme from '<variables>/mainTheme';
-
 import width from '<variables>/width';
 
 /**
@@ -31,8 +30,9 @@ const FlexContainer = ({
   borderColor,
   borderRadius,
   boxShadow,
-  alignItems,
   justifyContent,
+  containerWidth,
+  alignItems,
   flexDirection,
 }) => (
   <FlexContainer.Container
@@ -43,8 +43,9 @@ const FlexContainer = ({
     borderColor={borderColor}
     borderRadius={borderRadius}
     boxShadow={boxShadow}
-    alignItems={alignItems}
     justifyContent={justifyContent}
+    containerWidth={containerWidth}
+    alignItems={alignItems}
     flexDirection={flexDirection}
   >
     {children}
@@ -60,8 +61,9 @@ FlexContainer.Container = styled.div`
     boxShadow,
     backgroundColor,
     borderColor,
-    alignItems,
     justifyContent,
+    containerWidth,
+    alignItems,
     flexDirection,
     theme: {
       spacing, backgroundColors, borderColors, boxShadows,
@@ -74,9 +76,10 @@ FlexContainer.Container = styled.div`
     border-radius: ${spacing[borderRadius]};
     box-shadow: ${boxShadows[boxShadow]};
     border: 1px solid ${borderColors[borderColor] || 'transparent'};
-    align-items: ${alignItems}
     justify-content: ${justifyContent}
     flex-direction: ${flexDirection};
+    width: ${width[containerWidth]}
+    align-items: ${alignItems}
   `}
 `;
 
@@ -103,10 +106,21 @@ FlexContainer.propTypes = {
   borderColor: PropTypes.oneOf(Object.keys(borderColors)),
   borderRadius: PropTypes.oneOf(Object.keys(spacing)),
   boxShadow: PropTypes.oneOf(Object.keys(boxShadows)),
-  alignItems: PropTypes.oneOf(['flex-start', 'flex-end',
-    'center', 'baseline', 'stretch']),
-  justifyContent: PropTypes.oneOf(['flex-start', 'flex-end',
-    'center', 'space-between', 'space-around']),
+  containerWidth: PropTypes.oneOf(Object.keys(width)),
+  alignItems: PropTypes.oneOf([
+    'flex-start',
+    'flex-end',
+    'center',
+    'baseline',
+    'stretch',
+  ]),
+  justifyContent: PropTypes.oneOf([
+    'flex-start',
+    'flex-end',
+    'center',
+    'space-between',
+    'space-around',
+  ]),
   flexDirection: PropTypes.oneOf(['row', 'column']),
 };
 
