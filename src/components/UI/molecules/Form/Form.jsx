@@ -14,7 +14,11 @@ const Form = ({
   const { values, handleChange, handleSubmit } = useForm(callback, rules);
   inputData.forEach((input) => {
     input.onChange = handleChange;
-    input.value = values[input.name.value];
+    if (values[input.name]) {
+      const { value, err } = values[input.name];
+      input.value = value;
+      input.errorMessage = err;
+    }
   });
   return (
     <form>
