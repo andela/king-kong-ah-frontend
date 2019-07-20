@@ -7,6 +7,7 @@ export const sideEffect = {
   setLoading: (value) => { sideEffect.loading = value; },
   setError: (value) => { sideEffect.error = value; },
   getFetchedData: () => sideEffect.fetchData,
+  getLoading: () => sideEffect.loading,
 };
 
 export default sideEffect;

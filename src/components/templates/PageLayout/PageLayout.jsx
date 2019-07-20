@@ -8,8 +8,8 @@ import PageLoader from './PageLoader';
  * @description - Page layout
  *
  * @prop {children} children - children
- * @prop {navItems} children - navigation items
- *
+ * @prop {navItems} navItems - navigation items
+ * @prop {callback} callback callback
  * @return {Header} Page layout
  */
 const PageLayout = ({ children, navItems, callback }) => {

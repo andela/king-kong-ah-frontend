@@ -1,6 +1,7 @@
 {
   "name": "king-kong-ah-frontend",
   "jest": {
+    "roots": ["<rootDir>/src/"],
     "verbose": true,
     "moduleNameMapper": {
       "\\.(css|less)$": "<rootDir>/src/config/assetsTransformer.js",
