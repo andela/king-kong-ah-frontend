@@ -17,13 +17,12 @@ let params = {
 
 describe('userDataFormAPI hook', () => {
   it('should render', () => {
-    const { error } = renderHook(() => useDataFromApi(params));
-    params = {
-      ...params,
-      path: '/error',
-    };
-    renderHook(() => useDataFromApi(params));
+    const { error, rerender } = renderHook(() => useDataFromApi(params));
+    params = { ...params, path: '/error' };
 
+    rerender();
+
+    expect(sideEffect.getLoading()).toBe(true);
     expect(sideEffect.getFetchedData()).toBe(null);
     expect(error).toBe(undefined);
   });

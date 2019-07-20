@@ -9,11 +9,10 @@ const links = {
   },
   Search: {
     type: 'input',
-    action: e => e.target.value,
   },
   'Get Started': {
     type: 'button',
-    action: e => e.target,
+    action: () => {},
     location: '/signin',
   },
   test: {

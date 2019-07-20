@@ -15,6 +15,7 @@ const useDataFromApi = ({
     const {
       data: apiData, error: apiError,
     } = await requestApi(method, path, data);
+
     apiData && setFetchedData(apiData);
     apiError && setError(apiError);
 
