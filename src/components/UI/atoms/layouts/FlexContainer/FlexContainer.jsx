@@ -18,6 +18,7 @@ import width from '<variables>/width';
  * @prop {string} alignItems - alignItems
  * @prop {string} justifyContent - justifyContent
  * @prop {string} flexDirection - flex direction
+ * @prop {string} paddingTop- padding top
  *
  * @return {component} FlexContainer
  */
@@ -27,6 +28,7 @@ const FlexContainer = ({
   margin,
   padding,
   paddingLeft,
+  paddingTop,
   display,
   backgroundColor,
   borderColor,
@@ -51,6 +53,7 @@ const FlexContainer = ({
     containerWidth={containerWidth}
     alignItems={alignItems}
     flexDirection={flexDirection}
+    paddingTop={paddingTop}
   >
     {children}
   </FlexContainer.Container>
@@ -62,6 +65,7 @@ FlexContainer.Container = styled.div`
     margin,
     padding,
     paddingLeft,
+    paddingTop,
     display,
     borderRadius,
     boxShadow,
@@ -76,19 +80,21 @@ FlexContainer.Container = styled.div`
       spacing, backgroundColors, borderColors, boxShadows,
     },
   }) => `
-    height: ${height}
+    height: ${height};
     display: ${display};
     background-color: ${backgroundColors[backgroundColor]};
     margin: ${spacing[margin]};
     padding: ${spacing[padding]};
-    padding-left: ${spacing[paddingLeft]}
+    padding-left: ${spacing[paddingLeft]};
+    padding-top: ${spacing[paddingTop]};
     border-radius: ${spacing[borderRadius]};
     box-shadow: ${boxShadows[boxShadow]};
-    border: ${borderWidth} solid ${borderColors[borderColor] || 'transparent'};
-    justify-content: ${justifyContent}
+    border: ${borderWidth} ${borderColors[borderColor] || 'transparent'} solid;
+    justify-content: ${justifyContent};
     flex-direction: ${flexDirection};
-    width: ${width[containerWidth]}
-    align-items: ${alignItems}
+    width: ${width[containerWidth]};
+    align-items: ${alignItems};
+    height: ${height};
 
     @media ${theme.device.mobileS} {
       padding: ${spacing[padding] === '0rem' ? spacing[padding] : spacing.sm};
@@ -102,13 +108,13 @@ FlexContainer.Container = styled.div`
     @media ${theme.device.tablet} {
       padding: ${spacing[padding] === '0rem' ? spacing[padding] : spacing.sm};
     }
-  `}
-`;
+  `}`;
 
 FlexContainer.defaultProps = {
   display: 'flex',
   backgroundColor: 'white001',
   padding: 'sm',
+  paddingTop: 'xs',
   boxShadow: 'none',
   borderRadius: 'zero',
   margin: 'zero',
@@ -124,6 +130,7 @@ FlexContainer.propTypes = {
   margin: PropTypes.oneOf(Object.keys(spacing)),
   padding: PropTypes.oneOf(Object.keys(spacing)),
   paddingLeft: PropTypes.oneOf(Object.keys(spacing)),
+  paddingTop: PropTypes.oneOf(Object.keys(spacing)),
   backgroundColor: PropTypes.oneOf(Object.keys(backgroundColors)),
   display: PropTypes.oneOf(['block', 'inline', 'flex', 'inline-block', 'none']),
   borderColor: PropTypes.oneOf(Object.keys(borderColors)),

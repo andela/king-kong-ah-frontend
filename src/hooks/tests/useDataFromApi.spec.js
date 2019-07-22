@@ -18,7 +18,7 @@ let params = {
 describe('userDataFormAPI hook', () => {
   it('should render', () => {
     const { error, rerender } = renderHook(() => useDataFromApi(params));
-    params = { ...params, path: '/error' };
+    params = { ...params, path: 'error' };
 
     rerender();
 

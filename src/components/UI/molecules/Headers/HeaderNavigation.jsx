@@ -7,7 +7,7 @@ const HeaderNavigation = ({ navItems }) => (
     padding="zero"
     justifyContent="flex-end"
     containerWidth="searchBarWidth"
-    alignItems="flex-end"
+    alignItems="center"
     flexDirection="row"
   >
     <Fragment>{navItems.map(items => items)}</Fragment>

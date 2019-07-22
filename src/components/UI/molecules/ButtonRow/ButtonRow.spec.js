@@ -10,10 +10,14 @@ const images = [
   {
     name: 'facebook',
     url: 'https://png.pngtree.com/element_our/sm/20180301/sm_5a9794da1b10e.png',
+    isExternal: true,
+    to: '',
   },
   {
     name: 'google',
     url: 'http://pluspng.com/img-png/google-logo-png-open-2000.png',
+    isExternal: true,
+    to: '',
   },
 ];
 

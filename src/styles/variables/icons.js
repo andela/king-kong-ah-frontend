@@ -6,6 +6,7 @@ export const icons = {
 
 export const iconSizes = {
   none: '0rem',
+  small: '2.0rem',
   normal: '3.0rem',
   medium: '4.8rem',
   big: '8.0rem',

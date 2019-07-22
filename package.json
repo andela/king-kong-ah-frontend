@@ -6,6 +6,7 @@
     ],
     "verbose": true,
     "moduleNameMapper": {
+      "\\.(jpg|ico|jpeg|png)$": "<rootDir>/src/__mocks__/fileMock.js",
       "\\.(css|less)$": "<rootDir>/src/config/assetsTransformer.js",
       "^<components>/(.*)$": "<rootDir>/src/components/$1",
       "^<src>/(.*)$": "<rootDir>/src/$1",
@@ -19,7 +20,10 @@
       "^<helpers>/(.*)$": "<rootDir>/src/helpers/$1",
       "^<api>/(.*)$": "<rootDir>/src/api/$1",
       "^<organisms>/(.*)$": "<rootDir>/src/components/UI/organisms/$1",
-      "^<templates>/(.*)$": "<rootDir>/src/components/templates/$1"
+      "^<templates>/(.*)$": "<rootDir>/src/components/templates/$1",
+      "^<hooks>/(.*)$": "<rootDir>/src/hooks/$1",
+      "^<image>/(.*)$": "<rootDir>/public/assets/images/$1",
+      "^<HOC>/(.*)$": "<rootDir>/src/HOC/$1"
     },
     "coverageReporters": [
       "json-summary",
@@ -115,6 +119,7 @@
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
     "react-spinners": "^0.5.12",
+    "react-toastify": "^5.3.2",
     "styled-components": "^4.3.2",
     "styled-icons": "^8.1.0",
     "validatorjs": "^3.15.1",

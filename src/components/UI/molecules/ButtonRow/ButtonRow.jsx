@@ -18,7 +18,12 @@ const ButtonRow = ({
   images,
 }) => {
   return (
-    <FlexContainer alignItems="center" justifyContent="center">
+    <FlexContainer
+      alignItems="center"
+      justifyContent="center"
+      display="flex"
+      flexDirection="row"
+      padding="zero">
       {renderImages()}
     </FlexContainer>
   );
@@ -26,11 +31,15 @@ const ButtonRow = ({
   function renderImages() {
     return images.map((image, index) => {
       return (
-        <StyledLink key={index}>
+        <StyledLink
+          key={index}
+          isExternal={image.isExternal}
+          to={image.to}
+        >
           <Image
             imageUrl={image.url}
-            width="58px"
-            height="58px"
+            width="5.0rem"
+            height="5.0rem"
             boxShadow="icon"
             altText="social media button"
             margin="xs"
@@ -50,6 +59,8 @@ ButtonRow.propTypes = {
       boxShadow: PropTypes.oneOf(Object.keys(boxShadows)),
       altText: PropTypes.string,
       margin: PropTypes.string,
+      isExternal: PropTypes.bool.isRequired,
+      to: PropTypes.string.isRequired,
     }),
   ),
 };

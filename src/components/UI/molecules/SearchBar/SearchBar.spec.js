@@ -33,7 +33,7 @@ describe('Search Bar', () => {
     display: flex;
     background-color: transparent;
     margin: 0rem;
-    padding: 0.9rem;
+    padding: 0.9rem 0.9rem 0.9rem 0.9rem;
     border-radius: 4.05rem;
     box-shadow: none;
     `);
@@ -48,7 +48,7 @@ describe('Search Bar', () => {
     display: flex;
     background-color: rgb(244, 237, 237);
     margin: 0rem;
-    padding: 0.9rem;
+    padding: 0.9rem 0.9rem 0.9rem 0.9rem;
     border-radius: 4.05rem;
     box-shadow: none;
     `);

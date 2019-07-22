@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+import { fontSizes } from '<variables>/fonts';
+
 /**
  * @description - Button Component
  *
@@ -30,7 +32,7 @@ const Button = ({
 Button.propTypes = {
   display: PropTypes.oneOf(['block', 'inline', 'inline-block']),
   buttonType: PropTypes.oneOf(['default', 'getStarted', 'submit']),
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   children: PropTypes.string.isRequired,
 };
 
@@ -42,7 +44,7 @@ Button.defaultProps = {
 const buttonRadius = {
   default: 'none',
   getStarted: 'none',
-  submit: '0.4rem',
+  submit: '0.8rem',
 };
 
 const buttonBorderColor = {
@@ -59,28 +61,48 @@ const buttonBackground = {
 
 const buttonWidth = {
   default: '12rem',
-  getStarted: '14rem',
-  submit: '30.2rem',
+  getStarted: '18rem',
+  submit: '43.09rem',
+};
+
+const buttonTopMargin = {
+  default: 'inherit',
+  getStarted: 'inherit',
+  submit: '2rem',
+};
+
+const buttonFontSize = {
+  default: 'normal',
+  getStarted: 'medium',
+  submit: 'title',
 };
 
 const buttonFade = {
   default: '12rem',
   getStarted: 'none',
-  submit: '30.2rem',
+  submit: '43.09rem',
+};
+
+const buttonHeight = {
+  default: '5.0rem',
+  getStarted: '5.0rem',
+  submit: '5.54rem',
 };
 
 Button.Container = styled.button`
   ${({
     buttonType, display, theme,
   }) => `
+  margin-top: ${buttonTopMargin[buttonType]};
   width: ${buttonWidth[buttonType]};
-  height: ${theme.height.defaultButtonHeight};
+  height: ${buttonHeight[buttonType]};
   display: ${display};
-  font-size: ${theme.fontSizes.normal};
+  font-size: ${fontSizes[buttonFontSize[buttonType]]};
   background: ${buttonBackground[buttonType]};
   color: ${theme.buttonColors[buttonType]};
   border-radius: ${buttonRadius[buttonType]};
   border: 1px solid ${buttonBorderColor[buttonType]};
+  box-sizing: border-box;
   cursor: pointer;
 
   &:hover {
