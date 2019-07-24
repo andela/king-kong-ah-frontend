@@ -4,6 +4,7 @@ import Text from '<atoms>/Text/Text';
 import headerMapper from '<helpers>/headerMapper';
 import displayLoader from '<helpers>/displayLoader';
 import items from './navItems';
+import RatingsSection from '<organisms>/RatingsSection/RatingsSection';
 
 const HomePage = () => {
   const navItems = headerMapper(items);
@@ -22,6 +23,7 @@ const HomePage = () => {
       >
         Welcome to Authors Haven
       </Text>
+      <RatingsSection fontSize='rating'/>
     </PageLayout>
   );
 };

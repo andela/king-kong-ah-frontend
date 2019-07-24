@@ -80,6 +80,19 @@ FlexContainer.Container = styled.div`
     flex-direction: ${flexDirection};
     width: ${width[containerWidth]}
     align-items: ${alignItems}
+
+    @media ${theme.device.mobileS} {
+      padding: ${spacing[padding] === '0rem' ? spacing[padding] : spacing.sm};
+    }
+    @media ${theme.device.mobileM} {
+      padding: ${spacing[padding] === '0rem' ? spacing[padding] : spacing.sm};
+    }
+    @media ${theme.device.mobileL} {
+      padding: ${spacing[padding] === '0rem' ? spacing[padding] : spacing.sm};
+    }
+    @media ${theme.device.tablet} {
+      padding: ${spacing[padding] === '0rem' ? spacing[padding] : spacing.sm};
+    }
   `}
 `;
 

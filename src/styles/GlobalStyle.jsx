@@ -1,7 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css?family=Inknut+Antiqua|Roboto');
+@import url(
+  'https://fonts.googleapis.com/css?family=Inknut+Antiqua|Roboto|M+PLUS+1p'
+  );
 
 html {
   font-size: 62.5%;

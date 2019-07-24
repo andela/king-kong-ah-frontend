@@ -1,0 +1,3 @@
+```jsx
+<RatingsSection fontSize='xlarge'/>
+```

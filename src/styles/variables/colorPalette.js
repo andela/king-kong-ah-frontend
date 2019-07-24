@@ -22,6 +22,7 @@ export const textColors = {
   grey: '#7A757E',
   red: '#FF0000',
   pink: '#D97BC4',
+  darkPurple: '#790860',
 };
 
 export const backgroundColors = {
