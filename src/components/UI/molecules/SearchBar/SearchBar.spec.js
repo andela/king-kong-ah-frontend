@@ -36,7 +36,6 @@ describe('Search Bar', () => {
     padding: 0.9rem;
     border-radius: 4.05rem;
     box-shadow: none;
-    border: 1px solid transparent;
     `);
   });
 
@@ -52,7 +51,6 @@ describe('Search Bar', () => {
     padding: 0.9rem;
     border-radius: 4.05rem;
     box-shadow: none;
-    border: 1px solid transparent;
     `);
   });
 

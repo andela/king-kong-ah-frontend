@@ -25,6 +25,7 @@ const Title = ({
   display,
   paddingBottom,
   paddingTop,
+  content,
   children,
 }) => (
   <Title.Container
@@ -34,6 +35,7 @@ const Title = ({
     display={display}
     paddingBottom={paddingBottom}
     paddingTop={paddingTop}
+    content={content}
   >
     {children}
   </Title.Container>
@@ -46,6 +48,7 @@ Title.propTypes = {
   display: PropTypes.oneOf(['block', 'inline', 'inline-block', 'none']),
   paddingBottom: PropTypes.oneOf(Object.keys(spacing)),
   paddingTop: PropTypes.oneOf(Object.keys(spacing)),
+  content: PropTypes.oneOf(['true', 'false']),
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
     .isRequired,
 };
@@ -64,6 +67,7 @@ Title.Container = styled.span`
     display,
     paddingBottom,
     paddingTop,
+    content,
     theme,
   }) => `
     display: ${display};
@@ -72,6 +76,7 @@ Title.Container = styled.span`
     padding-bottom: ${theme.spacing[paddingBottom]};
     padding-top:${theme.spacing[paddingTop]};
     font-size: ${theme.fontSizes[fontSize]};
+    font-family: ${(content && 'Inknut Antiqua') || 'roboto'};
     font-weight: ${theme.fontWeights.bold}
 
     @media ${theme.device.mobileS} {

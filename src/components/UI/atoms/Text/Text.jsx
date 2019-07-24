@@ -17,6 +17,7 @@ import spacing from '<variables>/spacing';
  * @prop {string} content - content
  * @prop {string} fontWeight - fontWeight
  * @prop {string} padding - padding
+ * @prop {string} lineheight - lineheight
  * @prop {children} children - children
  *
  * @return {component} Text

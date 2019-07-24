@@ -23,7 +23,7 @@ const HomePage = () => {
       >
         Welcome to Authors Haven
       </Text>
-      <RatingsSection fontSize='rating'/>
+      <RatingsSection fontSize='rating' />
     </PageLayout>
   );
 };

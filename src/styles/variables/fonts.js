@@ -5,6 +5,7 @@ export const fontSizes = {
   normal: '1.6rem',
   title: '2.0rem',
   medium: '2.4rem',
+  medx: '2.6rem',
   large: '3.2rem',
   xlarge: '4.8rem',
   xxlarge: '10rem',
@@ -18,7 +19,9 @@ export const fontWeights = {
 };
 
 export const lineHeights = {
-  single: 1.0,
-  medium: 1.5,
-  double: 2.0,
+  zero: '0',
+  single: '1.0',
+  medium: '1.5',
+  double: '2.0',
+  max: '6.2',
 };
