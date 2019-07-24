@@ -19,6 +19,7 @@ export const buttonHover = {
 
 export const textColors = {
   primary: '#B02091',
+  darkGrey: '#253757',
   grey: '#7A757E',
   red: '#FF0000',
   pink: '#D97BC4',

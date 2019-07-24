@@ -10,4 +10,5 @@ export const iconSizes = {
   medium: '4.8rem',
   big: '8.0rem',
   search: '1.2rem',
+  rate: '1.5rem',
 };
