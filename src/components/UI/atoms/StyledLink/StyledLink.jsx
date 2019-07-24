@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { fontSizes } from '<variables>/fonts';
 import { backgroundColors } from '<variables>/colorPalette';
 import spacing from '<variables>/spacing';
@@ -96,15 +96,21 @@ const linkStyle = ({
     box-shadow: ${(tag && theme.boxShadows.articleCard) || 'none'};
     width: ${(tag && theme.spacing.smd) || 'auto'};
     margin-left: ${theme.spacing[marginleft]};
+    &.active {
+      color: ${(tag && theme.textColors.brightPink)};
+      background-color: ${(tag && theme.backgroundColors.activePink)};
+    };
     &:visited {
       color: ${theme.textColors.primary};
     }
     &:hover {
-      border: ${tag && `solid 1px ${theme.textColors.primary}`};
+      color: ${(tag && theme.textColors.hoverPink)};
+      background-color: ${(tag && theme.backgroundColors.dullRose)};
+      border: ${tag && `solid 1px ${theme.backgroundColors.primary}`};
     };
 `;
 
-StyledLink.Internal = styled(Link)`${linkStyle}`;
+StyledLink.Internal = styled(NavLink)`${linkStyle}`;
 
 StyledLink.External = styled.a`${linkStyle}`;
 
