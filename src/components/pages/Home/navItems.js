@@ -1,16 +1,15 @@
 const navItems = {
   'Sign Up': {
     type: 'link',
-    action: '/',
+    action: '/signup',
   },
   'Sign In': {
     type: 'link',
-    action: '/',
+    action: '/login',
   },
   'Get Started': {
     type: 'button',
-    action: e => e.target,
-    location: '/signin',
+    location: '/signup',
   },
 };
 

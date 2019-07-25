@@ -11,6 +11,7 @@ const RatingsSection = ({ fontSize }) => (
     padding='sm'
     justifyContent='center'
     alignItems='center'
+    paddingTop='xxl'
   >
     <RatingHeadings/>
     <RatingGroup fontSize={fontSize}/>

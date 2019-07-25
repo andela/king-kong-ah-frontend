@@ -25,7 +25,7 @@ const Label = ({
 }) => (
   <Label.Container htmlFor={id} display={display}>
     <Text
-      content='true'
+      content='false'
       color={color}
       fontSize={fontSize}
       fontWeight={fontWeight}
@@ -48,6 +48,7 @@ ${({
   display: ${display};
   font-size: ${theme.fontSizes[fontSize]};
   font-weight: ${theme.fontWeights[fontWeight]};
+  margin-bottom: ${theme.spacing.xs}
 `;
   }}
 `;

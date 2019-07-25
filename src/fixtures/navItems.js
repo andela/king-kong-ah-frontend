@@ -12,7 +12,6 @@ const links = {
   },
   'Get Started': {
     type: 'button',
-    action: () => {},
     location: '/signin',
   },
   test: {

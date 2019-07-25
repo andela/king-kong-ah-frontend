@@ -19,7 +19,7 @@ const PageLayout = ({ children, navItems, callback }) => {
     try {
       await callback();
     } catch (err) {
-      console.log('callback is undefined');
+      // console.log('callback is undefined');
     }
     setIsLoaded(false);
   };

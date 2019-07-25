@@ -30,6 +30,7 @@ const ImageText = ({
     >
       <FlexContainer
         padding="zero"
+        paddingTop="zero"
         containerWidth="imageWidth"
       >
         <Image

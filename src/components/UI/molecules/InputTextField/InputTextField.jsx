@@ -36,8 +36,7 @@ const InputTextField = ({
   const id = btoa(`${name}-${value}`);
 
   return (
-
-    <FlexContainer>
+    <FlexContainer padding='xxxs'>
       {label && <Label
         id={id}
         htmlFor={id}
@@ -54,9 +53,10 @@ const InputTextField = ({
         inputWidth={inputWidth}
         borderRadius={borderRadius}
         error={errorMessage}
-        onChange={onChange} />
+        onChange={onChange}
+      />
       {errorMessage
-        && <span><Text color='red' fontSize='small' display='block'>
+        && <span><Text color='red' fontSize='xsmall' display='block'>
           {errorMessage}
         </Text></span>}
     </FlexContainer>
@@ -79,6 +79,8 @@ InputTextField.propTypes = {
 
 InputTextField.defaultProps = {
   type: 'text',
+  inputWidth: 'fullWidth',
+  borderRadius: 'edgeRadius',
 };
 
 export default InputTextField;

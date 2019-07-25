@@ -1,13 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-
 import { fontSizes } from '<variables>/fonts';
 import { textColors, backgroundColors } from '<variables>/colorPalette';
 import spacing from '<variables>/spacing';
 import themeBorderRadius from '<variables>/border';
 import width from '<variables>/width';
-
 /**
  * @description - Input field Component
  *
@@ -40,6 +38,7 @@ const InputField = ({
   backgroundColor,
   inputWidth,
   borderRadius,
+  onChange,
 }) => (
   <InputField.Container
     type={type}
@@ -56,12 +55,13 @@ const InputField = ({
     backgroundColor={backgroundColor}
     inputWidth={inputWidth}
     borderRadius={borderRadius}
-    onChange={e => e.target.value}
+    onChange={onChange}
   />
 );
-
+const handleChange = (e) => e.target.value;
 InputField.propTypes = {
   type: PropTypes.oneOf(['number', 'email', 'password', 'text']).isRequired,
+  id: PropTypes.string,
   placeholder: PropTypes.string,
   name: PropTypes.string,
   value: PropTypes.string,
@@ -75,9 +75,7 @@ InputField.propTypes = {
   fontSize: PropTypes.oneOf(Object.keys(fontSizes)),
   inputWidth: PropTypes.oneOf(Object.keys(width)),
   borderRadius: PropTypes.oneOf(Object.keys(themeBorderRadius)),
-  id: PropTypes.string,
 };
-
 InputField.defaultProps = {
   padding: 'xs',
   fontSize: 'normal',
@@ -85,8 +83,8 @@ InputField.defaultProps = {
   content: 'false',
   transparentHover: false,
   backgroundColor: 'lightPink',
+  onChange: handleChange,
 };
-
 InputField.Container = styled.input`
   ${({
     padding,
@@ -100,8 +98,8 @@ InputField.Container = styled.input`
   }) => `
     color: ${theme.textColors[color]};
     ::placeholder {
-    color: ${theme.textColors.pink};
-  }
+      color: ${theme.textColors.pink};
+    }
     padding: ${theme.spacing[padding]};
     width: ${theme.width[inputWidth]};
     font-size: ${theme.fontSizes[fontSize]};
@@ -120,5 +118,4 @@ InputField.Container = styled.input`
     }
 `}
 `;
-
 export default InputField;

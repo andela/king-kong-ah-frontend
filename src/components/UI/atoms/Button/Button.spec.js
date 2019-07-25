@@ -42,13 +42,13 @@ describe('Button', () => {
     );
 
     expect(getByText('Submit')).toHaveStyle(`
-      width: 30.2rem;
-      height: 3.8rem;
+      width: 43.09rem;
+      height: 5.54rem;
       display: block;
-      font-size: 1.6rem;
+      font-size: 2.0rem;
       background: #690375;
       color: #FFFFFF;
-      border-radius: 0.4rem;
+      border-radius: 0.8rem;
       border: 1px solid #666666;
       cursor: pointer;
     `);
@@ -62,9 +62,9 @@ describe('Button', () => {
     );
 
     expect(getByText('Get Started')).toHaveStyle(`
-    height: 3.8rem;
+    height: 5.0rem;
     display: block;
-    font-size: 1.6rem;
+    font-size: 2.4rem;
     background: transparent;
     color: #B02091;
     border-radius: none;

@@ -40,7 +40,7 @@ const headerMapper = links => Object.keys(links).map((component, index) => {
       <StyledLink key={index} marginleft="sm" to={links[component].location}>
         <Button
           buttonType="getStarted"
-          onClick={links[component].action}
+          // onClick={links[component].action}
         >
           {component}
         </Button>
