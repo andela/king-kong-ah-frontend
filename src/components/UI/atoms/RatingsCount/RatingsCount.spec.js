@@ -8,9 +8,18 @@ import '@testing-library/jest-dom/extend-expect';
 afterEach(cleanup);
 
 const setup = (color) => {
+  const ratingProps = {
+    counter: 100,
+  };
+
+  if (color) {
+    ratingProps.color = color;
+  }
+
   const utils = render(
     <RatingsCount
-      color={color ? 'darkPurple' : 'pink'}>
+      {...ratingProps}
+    >
       <CountUp end={100} duration={10} />
       <Text
         fontSize='xxlarge'
@@ -49,7 +58,7 @@ describe('Ratings Count Atom', () => {
   });
 
   it('should change color when color prop is passed', () => {
-    const { getByText } = setup('darkPink');
+    const { getByText } = setup('darkPurple');
 
     expect(getByText('+')).toHaveStyle(`
     color: "darkPurple";

@@ -38,6 +38,7 @@ const FlexContainer = ({
   containerWidth,
   alignItems,
   flexDirection,
+  overflowX,
 }) => (
   <FlexContainer.Container
     margin={margin}
@@ -54,6 +55,7 @@ const FlexContainer = ({
     alignItems={alignItems}
     flexDirection={flexDirection}
     paddingTop={paddingTop}
+    overflowX={overflowX}
   >
     {children}
   </FlexContainer.Container>
@@ -76,6 +78,7 @@ FlexContainer.Container = styled.div`
     alignItems,
     borderWidth,
     flexDirection,
+    overflowX,
     theme: {
       spacing, backgroundColors, borderColors, boxShadows,
     },
@@ -95,6 +98,7 @@ FlexContainer.Container = styled.div`
     width: ${width[containerWidth]};
     align-items: ${alignItems};
     height: ${height};
+    overflow-x: ${overflowX}
 
     @media ${theme.device.mobileS} {
       padding: ${spacing[padding] === '0rem' ? spacing[padding] : spacing.sm};
@@ -137,6 +141,7 @@ FlexContainer.propTypes = {
   borderRadius: PropTypes.oneOf(Object.keys(spacing)),
   boxShadow: PropTypes.oneOf(Object.keys(boxShadows)),
   containerWidth: PropTypes.oneOf(Object.keys(width)),
+  overflowX: PropTypes.oneOf(['auto', 'hidden', 'scroll', 'visible']),
   alignItems: PropTypes.oneOf([
     'flex-start',
     'flex-end',

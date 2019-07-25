@@ -20,6 +20,23 @@ describe('Text', () => {
   `);
   });
 
+  it('should render text with line-height', () => {
+    const { getByText } = render(<Text lineHeight="double">Hello</Text>);
+
+    expect(getByText('Hello')).toHaveStyle(`
+    line-height: 2.0;
+  `);
+  });
+
+
+  it('should render text with line-spacing', () => {
+    const { getByText } = render(<Text letterSpacing='xs'>Hello</Text>);
+
+    expect(getByText('Hello')).toHaveStyle(`
+    letter-spacing: 0.9rem;
+  `);
+  });
+
   it('should apply default style', () => {
     const { getByText } = render(<Text>Hello</Text>);
     expect(getByText('Hello')).toHaveStyle(`

@@ -50,4 +50,5 @@ export const iconColors = {
   primary: '#B02091',
   gold: '#FFCC4A',
   black: '#191919',
+  white001: '#FFFFFF',
 };

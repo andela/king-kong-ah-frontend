@@ -50,6 +50,7 @@ PageLayout.Container = styled.div`
   ${({ justifyContent, alignItems }) => `
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: ${justifyContent};
     align-items: ${alignItems};
     flex-direction: column;

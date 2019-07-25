@@ -6,6 +6,7 @@ const requestApi = async (method, path, data) => {
 
   try {
     const response = await api[method](...params);
+
     return {
       data: response.data,
     };

@@ -41,4 +41,15 @@ describe('FlexContainer', () => {
       ${defaultProps}
     `);
   });
+
+  it('should render with margin', () => {
+    const { container } = render(
+      <FlexContainer margin='md'><span/></FlexContainer>,
+    );
+
+    expect(container.firstChild).toHaveStyle(`
+      margin: 3.2rem;
+      ${defaultProps}
+    `);
+  });
 });

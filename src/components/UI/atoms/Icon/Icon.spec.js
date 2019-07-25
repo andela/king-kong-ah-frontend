@@ -35,7 +35,7 @@ describe('Icon', () => {
     const icon = queryByTestId('mockIcon');
 
     expect(icon).toHaveStyle(`
-    height: medium
+    height: 4.8rem;
     `);
   });
 
@@ -45,7 +45,7 @@ describe('Icon', () => {
     const icon = queryByTestId('mockIcon');
 
     expect(icon).toHaveStyle(`
-    width: medium
+    width: 4.8rem;
     `);
   });
 
@@ -66,6 +66,20 @@ describe('Icon', () => {
 
     expect(icon).toHaveStyle(`
     color: primary
+    `);
+  });
+
+  it('should render the Icon with right and left margin', () => {
+    const { queryByTestId } = setup({
+      marginLeft: 'md',
+      marginRight: 'md',
+    });
+
+    const icon = queryByTestId('mockIcon');
+
+    expect(icon).toHaveStyle(`
+    margin-right: 3.2rem;
+    margin-left: 3.2rem;
     `);
   });
 });

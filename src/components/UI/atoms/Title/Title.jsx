@@ -26,6 +26,10 @@ const Title = ({
   paddingBottom,
   paddingTop,
   content,
+  marginBottom,
+  marginLeft,
+  marginRight,
+  hasBottomBorder,
   children,
 }) => (
   <Title.Container
@@ -36,6 +40,10 @@ const Title = ({
     paddingBottom={paddingBottom}
     paddingTop={paddingTop}
     content={content}
+    marginBottom={marginBottom}
+    marginLeft={marginLeft}
+    marginRight={marginRight}
+    hasBottomBorder={hasBottomBorder}
   >
     {children}
   </Title.Container>
@@ -49,6 +57,10 @@ Title.propTypes = {
   paddingBottom: PropTypes.oneOf(Object.keys(spacing)),
   paddingTop: PropTypes.oneOf(Object.keys(spacing)),
   content: PropTypes.oneOf(['true', 'false']),
+  marginBottom: PropTypes.oneOf(Object.keys(spacing)),
+  marginLeft: PropTypes.oneOf(Object.keys(spacing)),
+  marginRight: PropTypes.oneOf(Object.keys(spacing)),
+  hasBottomBorder: PropTypes.bool,
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
     .isRequired,
 };
@@ -57,6 +69,9 @@ Title.defaultProps = {
   fontSize: 'normal',
   fontWeight: 'bold',
   display: 'block',
+  marginBottom: 'zero',
+  marginLeft: 'zero',
+  marginRight: 'zero',
 };
 
 Title.Container = styled.span`
@@ -68,6 +83,10 @@ Title.Container = styled.span`
     paddingBottom,
     paddingTop,
     content,
+    marginBottom,
+    marginLeft,
+    marginRight,
+    hasBottomBorder,
     theme,
   }) => `
     display: ${display};
@@ -78,6 +97,12 @@ Title.Container = styled.span`
     font-size: ${theme.fontSizes[fontSize]};
     font-family: ${(content && 'Inknut Antiqua') || 'roboto'};
     font-weight: ${theme.fontWeights.bold}
+    margin-bottom: ${theme.spacing[marginBottom]};
+    margin-left: ${theme.spacing[marginLeft]};
+    margin-right: ${theme.spacing[marginRight]};
+    font-size: ${theme.fontSizes[fontSize]};
+    font-weight: ${theme.fontWeights.bold};
+    border-bottom: ${hasBottomBorder ? '2px solid #B02091' : 'none'};
 
     @media ${theme.device.mobileS} {
       font-size: 1.8rem;
