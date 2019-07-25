@@ -1,0 +1,3 @@
+```jsx
+<RatingGroup fontSize='xlarge'/>
+```

@@ -52,6 +52,7 @@ PageLayout.Container = styled.div`
     display: flex;
     justify-content: ${justifyContent};
     align-items: ${alignItems};
+    flex-direction: column;
 `}
 `;
 

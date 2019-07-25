@@ -31,6 +31,8 @@ const Text = ({
   padding,
   content,
   children,
+  letterSpacing,
+  paddingTop,
 }) => (
   <Text.Container
     fontSize={fontSize}
@@ -41,6 +43,8 @@ const Text = ({
     content={content}
     padding={padding}
     fontWeight={fontWeight}
+    letterSpacing={letterSpacing}
+    paddingTop={paddingTop}
   >
     {children}
   </Text.Container>
@@ -62,6 +66,8 @@ Text.propTypes = {
   content: PropTypes.oneOf(['true', 'false']),
   padding: PropTypes.oneOf(Object.keys(spacing)),
   fontWeight: PropTypes.oneOf(Object.keys(fontWeights)),
+  letterSpacing: PropTypes.oneOf(Object.keys(spacing)),
+  paddingTop: PropTypes.oneOf(Object.keys(spacing)),
 };
 
 Text.defaultProps = {
@@ -84,6 +90,8 @@ Text.Container = styled.span`
     textAlign,
     color,
     theme,
+    letterSpacing,
+    paddingTop,
   }) => `
     text-align: ${textAlign};
     color: ${theme.textColors[color]};
@@ -93,6 +101,8 @@ Text.Container = styled.span`
     font-weight: ${theme.fontWeights[fontWeight]};
     font-family: ${(content === 'true' && 'Inknut Antiqua') || 'roboto'};
     text-transform: ${textTransform};
+    letter-spacing: ${theme.spacing[letterSpacing]};
+    padding-top: ${theme.spacing[paddingTop] || '0'};
 
     @media ${theme.device.mobileS} {
       font-size: 1.2rem;
