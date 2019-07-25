@@ -24,6 +24,7 @@ const Title = ({
   color,
   display,
   paddingBottom,
+  paddingTop,
   children,
 }) => (
   <Title.Container
@@ -32,6 +33,7 @@ const Title = ({
     color={color}
     display={display}
     paddingBottom={paddingBottom}
+    paddingTop={paddingTop}
   >
     {children}
   </Title.Container>
@@ -43,6 +45,7 @@ Title.propTypes = {
   color: PropTypes.oneOf(Object.keys(textColors)),
   display: PropTypes.oneOf(['block', 'inline', 'inline-block', 'none']),
   paddingBottom: PropTypes.oneOf(Object.keys(spacing)),
+  paddingTop: PropTypes.oneOf(Object.keys(spacing)),
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
     .isRequired,
 };
@@ -60,12 +63,14 @@ Title.Container = styled.span`
     color,
     display,
     paddingBottom,
+    paddingTop,
     theme,
   }) => `
     display: ${display};
     text-align: ${textAlign};
     color: ${theme.textColors[color]};
     padding-bottom: ${theme.spacing[paddingBottom]};
+    padding-top:${theme.spacing[paddingTop]};
     font-size: ${theme.fontSizes[fontSize]};
     font-weight: ${theme.fontWeights.bold}
 

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { fontWeights, fontSizes } from '<variables>/fonts';
+import { fontWeights, fontSizes, lineHeights } from '<variables>/fonts';
 import { textColors } from '<variables>/colorPalette';
 import spacing from '<variables>/spacing';
 
@@ -30,6 +30,7 @@ const Text = ({
   fontWeight,
   padding,
   content,
+  lineHeight,
   children,
   letterSpacing,
   paddingTop,
@@ -45,6 +46,7 @@ const Text = ({
     fontWeight={fontWeight}
     letterSpacing={letterSpacing}
     paddingTop={paddingTop}
+    lineHeight={lineHeight}
   >
     {children}
   </Text.Container>
@@ -65,6 +67,7 @@ Text.propTypes = {
   ]),
   content: PropTypes.oneOf(['true', 'false']),
   padding: PropTypes.oneOf(Object.keys(spacing)),
+  lineHeight: PropTypes.oneOf(Object.keys(lineHeights)),
   fontWeight: PropTypes.oneOf(Object.keys(fontWeights)),
   letterSpacing: PropTypes.oneOf(Object.keys(spacing)),
   paddingTop: PropTypes.oneOf(Object.keys(spacing)),
@@ -77,6 +80,7 @@ Text.defaultProps = {
   fontWeight: 'normal',
   textAlign: 'left',
   fontSize: 'normal',
+  lineHeight: 'double',
 };
 
 Text.Container = styled.span`
@@ -89,11 +93,13 @@ Text.Container = styled.span`
     display,
     textAlign,
     color,
+    lineHeight,
     theme,
     letterSpacing,
     paddingTop,
   }) => `
     text-align: ${textAlign};
+    line-height: ${theme.lineHeights[lineHeight]};
     color: ${theme.textColors[color]};
     display: ${display};
     padding: ${theme.spacing[padding] || '0'};

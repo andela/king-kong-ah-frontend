@@ -1,5 +1,5 @@
 import spacing from './spacing';
-import { fontSizes, fontWeights } from './fonts';
+import { fontSizes, fontWeights, lineHeights } from './fonts';
 import {
   buttonColors,
   textColors,
@@ -21,6 +21,7 @@ export default {
   fontSizes,
   iconSizes,
   fontWeights,
+  lineHeights,
   buttonColors,
   textColors,
   backgroundColors,

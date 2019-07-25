@@ -16,3 +16,9 @@ export const fontWeights = {
   bold: 700,
   heavy: 900,
 };
+
+export const lineHeights = {
+  single: 1.0,
+  medium: 1.5,
+  double: 2.0,
+};
