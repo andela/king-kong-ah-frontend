@@ -23,8 +23,10 @@ import width from '<variables>/width';
  */
 const FlexContainer = ({
   children,
+  height,
   margin,
   padding,
+  paddingLeft,
   display,
   backgroundColor,
   borderColor,
@@ -37,7 +39,9 @@ const FlexContainer = ({
 }) => (
   <FlexContainer.Container
     margin={margin}
+    height={height}
     padding={padding}
+    paddingLeft={paddingLeft}
     display={display}
     backgroundColor={backgroundColor}
     borderColor={borderColor}
@@ -54,8 +58,10 @@ const FlexContainer = ({
 
 FlexContainer.Container = styled.div`
   ${({
+    height,
     margin,
     padding,
+    paddingLeft,
     display,
     borderRadius,
     boxShadow,
@@ -64,18 +70,21 @@ FlexContainer.Container = styled.div`
     justifyContent,
     containerWidth,
     alignItems,
+    borderWidth,
     flexDirection,
     theme: {
       spacing, backgroundColors, borderColors, boxShadows,
     },
   }) => `
+    height: ${height}
     display: ${display};
     background-color: ${backgroundColors[backgroundColor]};
     margin: ${spacing[margin]};
     padding: ${spacing[padding]};
+    padding-left: ${spacing[paddingLeft]}
     border-radius: ${spacing[borderRadius]};
     box-shadow: ${boxShadows[boxShadow]};
-    border: 1px solid ${borderColors[borderColor] || 'transparent'};
+    border: ${borderWidth} solid ${borderColors[borderColor] || 'transparent'};
     justify-content: ${justifyContent}
     flex-direction: ${flexDirection};
     width: ${width[containerWidth]}
@@ -114,6 +123,7 @@ FlexContainer.propTypes = {
   children: PropTypes.node,
   margin: PropTypes.oneOf(Object.keys(spacing)),
   padding: PropTypes.oneOf(Object.keys(spacing)),
+  paddingLeft: PropTypes.oneOf(Object.keys(spacing)),
   backgroundColor: PropTypes.oneOf(Object.keys(backgroundColors)),
   display: PropTypes.oneOf(['block', 'inline', 'flex', 'inline-block', 'none']),
   borderColor: PropTypes.oneOf(Object.keys(borderColors)),
@@ -135,6 +145,7 @@ FlexContainer.propTypes = {
     'space-around',
   ]),
   flexDirection: PropTypes.oneOf(['row', 'column']),
+  height: PropTypes.string,
 };
 
 export default FlexContainer;

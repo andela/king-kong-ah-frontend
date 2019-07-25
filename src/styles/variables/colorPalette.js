@@ -24,6 +24,8 @@ export const textColors = {
   red: '#FF0000',
   pink: '#D97BC4',
   darkPurple: '#790860',
+  lightBrown: '#C2A3A3',
+  white001: '#FFFFFF',
 };
 
 export const backgroundColors = {
@@ -31,6 +33,7 @@ export const backgroundColors = {
   primary: '#690375',
   white001: '#FFFFFF',
   transparent: 'transparent',
+  darkPink: '#B02091',
 };
 
 export const borderColors = {
