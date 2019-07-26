@@ -36,6 +36,8 @@ const Text = ({
   children,
   letterSpacing,
   paddingTop,
+  hasLineHeight,
+  hasLetterSpacing,
 }) => (
   <Text.Container
     fontSize={fontSize}
@@ -50,6 +52,8 @@ const Text = ({
     paddingTop={paddingTop}
     lineHeight={lineHeight}
     marginBottom={marginBottom}
+    hasLineHeight={hasLineHeight}
+    hasLetterSpacing={hasLetterSpacing}
   >
     {children}
   </Text.Container>
@@ -74,6 +78,8 @@ Text.propTypes = {
   fontWeight: PropTypes.oneOf(Object.keys(fontWeights)),
   letterSpacing: PropTypes.oneOf(Object.keys(spacing)),
   paddingTop: PropTypes.oneOf(Object.keys(spacing)),
+  hasLineHeight: PropTypes.bool,
+  hasLetterSpacing: PropTypes.bool,
   marginBottom: PropTypes.oneOf(Object.keys(spacing)),
 };
 
@@ -113,6 +119,7 @@ Text.Container = styled.span`
     font-size: ${theme.fontSizes[fontSize]};
     font-weight: ${theme.fontWeights[fontWeight]};
     font-family: ${(content && 'Inknut Antiqua') || 'Roboto'};
+    margin-bottom: ${theme.spacing[marginBottom]};
     text-transform: ${textTransform};
     letter-spacing: ${theme.spacing[letterSpacing]};
     padding-top: ${theme.spacing[paddingTop] || '0'};

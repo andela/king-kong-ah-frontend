@@ -39,9 +39,10 @@ const StarRating = ({
           key={index}
           color='gold'
           iconName={icons}
-          width='search'
-          height='rate'
+          width='smaller'
+          height='smaller'
           margin='icon'
+          paddingBottom='smm'
         />
       );
     });

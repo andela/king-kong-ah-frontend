@@ -1,5 +1,6 @@
 export const width = {
   fullWidth: '100%',
+  oneThird: '60%',
   twoThird: '75%',
   searchBarWidth: '50%',
   imageWidth: '46%',

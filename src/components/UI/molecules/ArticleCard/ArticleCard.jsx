@@ -8,6 +8,7 @@ import Text from '<atoms>/Text/Text';
 import Title from '<atoms>/Title/Title';
 import Divider from '<atoms>/Divider/Divider';
 import StarRating from '<molecules>/StarRating/StarRating';
+import StyledLink from '<atoms>/StyledLink/StyledLink';
 
 const ArticleCard = ({
   imageUrl,
@@ -15,29 +16,32 @@ const ArticleCard = ({
   description,
   rating,
   author,
+  id,
 }) => {
   return (
     <ArticleCard.Container>
-      <FlexContainer
-        boxShadow="articleCard"
-        alignItems='center'
-        justifyContent = 'center'
-        margin="md"
-      >
-        {renderImage()}
-        {title && (renderTitle())}
-        {description && (renderText())}
-        {renderDivider()}
-        {author && (renderAuthor())}
-        {renderRating()}
-      </FlexContainer>
+      <StyledLink to={`/article/${id}`}>
+        <FlexContainer
+          boxShadow="articleCard"
+          alignItems='center'
+          justifyContent = 'center'
+          margin="md"
+        >
+          {renderImage()}
+          {title && (renderTitle())}
+          {description && (renderText())}
+          {renderDivider()}
+          {author && (renderAuthor())}
+          {renderRating()}
+        </FlexContainer>
+      </StyledLink>
     </ArticleCard.Container>
   );
 
   function renderDivider() {
     return (
       <Divider
-        width="mds"
+        width="xxl"
       />
     );
   }
@@ -56,7 +60,7 @@ const ArticleCard = ({
     return (
       <Text
         textAlign = 'center'
-        fontSize = 'smaller'
+        fontSize = 'sm'
         color = 'darkGrey'
         content = 'true'
         lineHeight = 'medium'
@@ -74,6 +78,7 @@ const ArticleCard = ({
         color = 'darkGrey'
         paddingBottom ='xs'
         paddingTop = 'sm'
+        content='true'
       >
         {title}
       </Title>
@@ -84,9 +89,10 @@ const ArticleCard = ({
     return (
       <Title
         textAlign = 'center'
-        fontSize = 'small'
+        fontSize = 'sm'
         color = 'darkGrey'
         paddingBottom ='xxxs'
+        content='true'
       >
         {author}
       </Title>
@@ -105,7 +111,12 @@ const ArticleCard = ({
 
 ArticleCard.Container = styled.div`
   text-align: center;
-  width: 31.4rem;
+  width: 35.4rem;
+  transition: .5s all linear;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
 
 ArticleCard.propTypes = {
@@ -114,6 +125,8 @@ ArticleCard.propTypes = {
   description: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   rating: PropTypes.number,
+  id: PropTypes.string,
 };
+
 
 export default ArticleCard;

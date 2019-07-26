@@ -14,6 +14,7 @@ const spacing = {
   mds: '3.8rem',
   xl: '4.05rem',
   xxl: '6.0rem',
+  xxxl: '8.2rem',
 };
 
 export default spacing;

@@ -6,8 +6,8 @@ import Text from '<atoms>/Text/Text';
 import ArticleCard from '<molecules>/ArticleCard/ArticleCard';
 
 const ArticleCardRow = ({
-  title,
-  articleCardItem,
+  sectionTitle,
+  items,
 }) => {
   return (
     <Fragment>
@@ -18,31 +18,42 @@ const ArticleCardRow = ({
           content='true'
           fontWeight='bold'
           color='grey'
-          paddingTop='sm'
+          padding='smm'
         >
-          {title}
+          {sectionTitle}
         </Text>
-        <FlexContainer flexDirection='row'>
+        <FlexContainer flexDirection='row' paddingTop='zero' overflowX='scroll'>
           {renderArticleCard()}
         </FlexContainer>
       </FlexContainer>
     </Fragment>
   );
   function renderArticleCard() {
-    return articleCardItem.map((item, index) => {
+    return items.map((item, index) => {
+      const {
+        id, articleImage, title, description, rating, user,
+      } = item;
+      const { firstName, lastName } = user;
+      const author = firstName
+        ? (firstName.concat(' ', lastName)).toUpperCase() : firstName;
       return (
         <ArticleCard
           key={index}
-          imageUrl={item.imageUrl}
-          title={item.title}
-          description={item.description}
-          rating={item.rating}
-          author={item.author}
+          imageUrl={articleImage}
+          title={title}
+          description={description}
+          rating={rating}
+          author={author}
+          id={id}
         />
       );
     });
   }
 };
 
+ArticleCardRow.propTypes = {
+  sectionTitle: PropTypes.string.isRequired,
+  items: PropTypes.array,
+};
 
 export default ArticleCardRow;
