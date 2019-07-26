@@ -44,7 +44,7 @@ export const ProtectedRoutes = [
   },
   {
     exact: true,
-    path: '/userpage',
+    path: '/dashboard',
     component: UserPage,
   },
 ];

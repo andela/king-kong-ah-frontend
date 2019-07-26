@@ -9,6 +9,8 @@ import ImageText from '<molecules>/ImageText/ImageText';
 import Footer from '<organisms>/Footer/Footer';
 import footerProps from './footerItems';
 
+import ArticleCardRow from '<organisms>/ArticleCardRow/ArticleCardRow';
+import ArticleCardItem from './articleCardItem';
 
 const HomePage = () => {
   const navItems = headerMapper(items);
@@ -16,6 +18,14 @@ const HomePage = () => {
   return (
     <PageLayout navItems={navItems} callback={displayLoader}>
       <WelcomeSection />
+      <ArticleCardRow
+        title='Featured Article'
+        articleCardItem={ArticleCardItem}
+      />
+      <ArticleCardRow
+        title='Popular Article'
+        articleCardItem={ArticleCardItem}
+      />
       <ImageText
         imageUrl="https://www.cubesmart.com/blog/wp-content/uploads/Brooklyn-Bridge-at-Night-1140x704.jpg"
         title="New York City"

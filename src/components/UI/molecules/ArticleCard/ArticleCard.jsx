@@ -20,9 +20,9 @@ const ArticleCard = ({
     <ArticleCard.Container>
       <FlexContainer
         boxShadow="articleCard"
-        containerWidth='articleCardWidth'
         alignItems='center'
         justifyContent = 'center'
+        margin="md"
       >
         {renderImage()}
         {title && (renderTitle())}
@@ -46,7 +46,7 @@ const ArticleCard = ({
     return (
       <Image
         imageUrl={imageUrl}
-        width='288px'
+        width='240px'
         height='174px'
       />
     );
@@ -105,6 +105,7 @@ const ArticleCard = ({
 
 ArticleCard.Container = styled.div`
   text-align: center;
+  width: 31.4rem;
 `;
 
 ArticleCard.propTypes = {
