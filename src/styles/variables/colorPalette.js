@@ -23,9 +23,11 @@ export const textColors = {
   grey: '#7A757E',
   red: '#FF0000',
   pink: '#D97BC4',
+  brightPink: '#E71EBA',
   darkPurple: '#790860',
   lightBrown: '#C2A3A3',
   white001: '#FFFFFF',
+  hoverPink: '#DC2BB5',
 };
 
 export const backgroundColors = {
@@ -34,6 +36,8 @@ export const backgroundColors = {
   white001: '#FFFFFF',
   transparent: 'transparent',
   darkPink: '#B02091',
+  activePink: '#FFDCDC',
+  dullRose: '#F9E0E0',
 };
 
 export const borderColors = {
