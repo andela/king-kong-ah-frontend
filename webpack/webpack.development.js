@@ -5,6 +5,14 @@ module.exports = {
     historyApiFallback: true,
     port: 6060,
     publicPath: '/',
+    proxy: {
+
+      '/api/**': {
+        target: 'https://king-kong-ah-backend-staging.herokuapp.com/',
+        secure: false,
+        changeOrigin: true,
+      }
+    }
   },
   plugins: [new ErrorOverlayPlugin()],
 };

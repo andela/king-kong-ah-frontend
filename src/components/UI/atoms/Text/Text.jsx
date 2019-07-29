@@ -29,6 +29,7 @@ const Text = ({
   display,
   textTransform,
   fontWeight,
+  marginBottom,
   padding,
   content,
   lineHeight,
@@ -48,6 +49,7 @@ const Text = ({
     letterSpacing={letterSpacing}
     paddingTop={paddingTop}
     lineHeight={lineHeight}
+    marginBottom={marginBottom}
   >
     {children}
   </Text.Container>
@@ -72,6 +74,7 @@ Text.propTypes = {
   fontWeight: PropTypes.oneOf(Object.keys(fontWeights)),
   letterSpacing: PropTypes.oneOf(Object.keys(spacing)),
   paddingTop: PropTypes.oneOf(Object.keys(spacing)),
+  marginBottom: PropTypes.oneOf(Object.keys(spacing)),
 };
 
 Text.defaultProps = {
@@ -82,6 +85,7 @@ Text.defaultProps = {
   textAlign: 'left',
   fontSize: 'normal',
   lineHeight: 'double',
+  marginBottom: 'zero',
 };
 
 Text.Container = styled.span`
@@ -91,6 +95,7 @@ Text.Container = styled.span`
     content,
     fontSize,
     fontWeight,
+    marginBottom,
     display,
     textAlign,
     color,
@@ -104,6 +109,7 @@ Text.Container = styled.span`
     color: ${theme.textColors[color]};
     display: ${display};
     padding: ${theme.spacing[padding] || '0'};
+    margin-bottom: ${theme.spacing[marginBottom]};
     font-size: ${theme.fontSizes[fontSize]};
     font-weight: ${theme.fontWeights[fontWeight]};
     font-family: ${(content && 'Inknut Antiqua') || 'Roboto'};

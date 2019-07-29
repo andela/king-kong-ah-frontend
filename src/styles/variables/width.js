@@ -7,6 +7,7 @@ export const width = {
   articleWidth: '54%',
   formWidth: '51.5rem',
   formInputWidth: '43.09rem',
+  footerSectionWidth: '30%',
 };
 
 export default width;

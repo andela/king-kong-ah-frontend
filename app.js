@@ -2,9 +2,18 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const proxy = require('http-proxy-middleware');
 
 const app = express();
+
 app.use(cors());
+app.use('/api/**',
+  proxy({
+    target: 'https://king-kong-ah-backend-staging.herokuapp.com/',
+    changeOrigin: true,
+  }));
+
+
 app.use(express.static(path.join(__dirname, './dist')));
 
 app.get('*', (req, res) => {

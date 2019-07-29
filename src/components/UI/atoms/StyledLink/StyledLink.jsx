@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { fontSizes } from '<variables>/fonts';
-import { backgroundColors } from '<variables>/colorPalette';
+import { backgroundColors, textColors } from '<variables>/colorPalette';
 import spacing from '<variables>/spacing';
 
 /**
@@ -29,27 +29,31 @@ const StyledLink = ({
   onClick,
   children,
   marginleft,
+  color,
+  display,
 }) => {
+  const props = {
+    tag,
+    color,
+    fontSize,
+    margin,
+    onClick,
+    marginleft,
+    display,
+  };
+
   return isExternal
     ? (<StyledLink.External
       target='_blank'
       href={to}
-      tag={tag}
-      fontSize={fontSize}
-      margin={margin}
-      onClick={onClick}
-      marginleft={marginleft}
+      {...props}
     >
       {children}
     </StyledLink.External>)
     : (
       <StyledLink.Internal
         to={to}
-        tag={tag}
-        fontSize={fontSize}
-        margin={margin}
-        onClick={onClick}
-        marginleft={marginleft}
+        {...props}
       >
         {children}
       </StyledLink.Internal>
@@ -69,6 +73,8 @@ StyledLink.propTypes = {
   onClick: PropTypes.func,
   margin: PropTypes.string,
   marginleft: PropTypes.oneOf(Object.keys(spacing)),
+  color: PropTypes.oneOf(Object.keys(textColors)),
+  display: PropTypes.oneOf(['block', 'inline', 'inline-block', 'none']),
 };
 
 StyledLink.defaultProps = {
@@ -77,20 +83,22 @@ StyledLink.defaultProps = {
   to: '#',
   isExternal: false,
   backgroundColor: 'transparent',
+  color: 'primary',
+  display: 'inline-block',
 };
 
 const linkStyle = ({
-  margin, fontSize, theme, tag, marginleft,
+  margin, fontSize, theme, tag,
+  marginleft, color, display,
 }) => `
     text-decoration: none;
-    display: inline-block;
-    text-align: center;
+    display: ${display};
     transition: .5s border ease-in-out;
     border: solid 1px transparent;
     font-family: 'Roboto';
     margin: ${theme.spacing[margin]};
     font-size: ${theme.fontSizes[fontSize]};
-    color: ${theme.textColors.primary};
+    color: ${theme.textColors[color]};
     background: ${(tag && backgroundColors.lightPink) || 'transparent'};
     padding: ${(tag && theme.spacing.xs) || '0'};
     box-shadow: ${(tag && theme.boxShadows.articleCard) || 'none'};
@@ -101,13 +109,26 @@ const linkStyle = ({
       background-color: ${(tag && theme.backgroundColors.activePink)};
     };
     &:visited {
-      color: ${theme.textColors.primary};
+      color: ${theme.textColors[color]};
     }
     &:hover {
       color: ${(tag && theme.textColors.hoverPink)};
       background-color: ${(tag && theme.backgroundColors.dullRose)};
       border: ${tag && `solid 1px ${theme.backgroundColors.primary}`};
     };
+
+    @media ${theme.device.mobileS} {
+      font-size: 1.2rem;
+    }
+    @media ${theme.device.mobileM} {
+      font-size: 1.3rem;
+    }
+    @media ${theme.device.mobileL} {
+      font-size: 1.3rem;
+    }
+    @media ${theme.device.tablet} {
+      font-size: 1.3rem;
+    }
 `;
 
 StyledLink.Internal = styled(NavLink)`${linkStyle}`;

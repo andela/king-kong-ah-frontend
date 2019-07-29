@@ -29,6 +29,14 @@ describe('Title', () => {
   `);
   });
 
+  it('should render with border bottom', () => {
+    const { getByText } = render(<Title hasBottomBorder >Authors Haven</Title>);
+
+    expect(getByText('Authors Haven')).toHaveStyle(`
+    border-bottom: 2px solid #B02091;
+  `);
+  });
+
   it('should render text passed as children', () => {
     const { getByText } = render(<Title>Authors Haven</Title>);
 

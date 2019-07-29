@@ -6,6 +6,9 @@ import items from './navItems';
 import RatingsSection from '<organisms>/RatingsSection/RatingsSection';
 import WelcomeSection from '<organisms>/WelcomeSection/WelcomeSection';
 import ImageText from '<molecules>/ImageText/ImageText';
+import Footer from '<organisms>/Footer/Footer';
+import footerProps from './footerItems';
+
 
 const HomePage = () => {
   const navItems = headerMapper(items);
@@ -20,6 +23,7 @@ const HomePage = () => {
         description="New York City comprises 5 boroughs sitting where the Hudson River meets the Atlantic Ocean. At its core is Manhattan, a densely populated borough that’s among the world’s major commercial, financial and cultural centers."
       />
       <RatingsSection fontSize='rating'/>
+      <Footer {...footerProps}/>
     </PageLayout>
   );
 };
