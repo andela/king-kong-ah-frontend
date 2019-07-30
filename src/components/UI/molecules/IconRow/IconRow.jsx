@@ -15,14 +15,22 @@ import { iconNames } from '<variables>/icons';
  */
 const IconRow = ({
   icons,
+  color,
+  justifyContent,
+  alignItems,
+  backgroundColor,
+  containerWidth,
+  marginLeft,
 }) => {
   return (
     <FlexContainer
-      alignItems="center"
-      justifyContent="space-between"
+      alignItems={alignItems}
+      justifyContent={justifyContent}
       flexDirection='row'
       padding='zero'
-      backgroundColor="primary"
+      backgroundColor={backgroundColor}
+      containerWidth={containerWidth}
+      marginLeft={marginLeft}
     >
       {icons.map((icon, index) => (
         <StyledLink
@@ -34,7 +42,7 @@ const IconRow = ({
             height="small"
             width="small"
             margin="zero"
-            color='white001'
+            color={color}
             iconName={icon.name}
             marginRight='sm'
             marginLeft="sm"
@@ -46,7 +54,20 @@ const IconRow = ({
   );
 };
 
+IconRow.defaultProps = {
+  color: 'white001',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  backgroundColor: 'primary',
+};
+
 IconRow.propTypes = {
+  color: PropTypes.string,
+  justifyContent: PropTypes.string,
+  alignItems: PropTypes.string,
+  backgroundColor: PropTypes.string,
+  containerWidth: PropTypes.string,
+  marginLeft: PropTypes.string,
   icons: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.oneOf(Object.keys(iconNames)).isRequired,

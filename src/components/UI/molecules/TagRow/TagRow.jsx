@@ -21,6 +21,10 @@ const TagRow = ({
       alignItems="center"
       justifyContent="center"
       flexDirection='row'
+      containerWidth="minWidth"
+      marginLeft="smd"
+      textAlign="center"
+      margin="smmm"
     >
       {renderTags()}
     </FlexContainer>
@@ -35,6 +39,7 @@ const TagRow = ({
           tag='true'
           margin='xs'
           to={`/${tag.name}`}
+          textAlign="center"
         >
           {tag.name}
         </StyledLink>

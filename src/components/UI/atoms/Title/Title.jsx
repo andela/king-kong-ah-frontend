@@ -32,6 +32,8 @@ const Title = ({
   marginLeft,
   marginRight,
   hasBottomBorder,
+  whiteSpace,
+  titleWidth,
   children,
 }) => (
   <Title.Container
@@ -47,6 +49,8 @@ const Title = ({
     marginLeft={marginLeft}
     marginRight={marginRight}
     hasBottomBorder={hasBottomBorder}
+    whiteSpace={whiteSpace}
+    titleWidth={titleWidth}
   >
     {children}
   </Title.Container>
@@ -61,12 +65,14 @@ Title.propTypes = {
   padding: PropTypes.oneOf(Object.keys(spacing)),
   paddingTop: PropTypes.oneOf(Object.keys(spacing)),
   content: PropTypes.oneOf(['true', 'false']),
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-    .isRequired,
-  hasBottomBorder: PropTypes.bool,
+  marginBottom: PropTypes.oneOf(Object.keys(spacing)),
   marginLeft: PropTypes.oneOf(Object.keys(spacing)),
   marginRight: PropTypes.oneOf(Object.keys(spacing)),
-  marginBottom: PropTypes.oneOf(Object.keys(spacing)),
+  hasBottomBorder: PropTypes.bool,
+  whiteSpace: PropTypes.string,
+  titleWidth: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+    .isRequired,
 };
 
 Title.defaultProps = {
@@ -92,6 +98,8 @@ Title.Container = styled.span`
     marginLeft,
     marginRight,
     hasBottomBorder,
+    whiteSpace,
+    titleWidth,
     theme,
   }) => `
     display: ${display};
@@ -113,6 +121,8 @@ Title.Container = styled.span`
     font-size: ${theme.fontSizes[fontSize]};
     font-weight: ${theme.fontWeights.bold};
     border-bottom: ${hasBottomBorder ? '2px solid #B02091' : 'none'};
+    white-space: ${whiteSpace};
+    width: ${titleWidth};
 
     @media ${theme.device.mobileS} {
       font-size: 1.8rem;

@@ -9,6 +9,7 @@ export const buttonColors = {
   submit: '#FFFFFF',
   transparent: 'transparent',
   dropDown: '#FFFFFF',
+  follow: '#B02091',
 };
 
 export const buttonHover = {
@@ -16,6 +17,7 @@ export const buttonHover = {
   getStarted: '#d82bb3',
   submit: '#9304A4',
   dropDown: '#d82bb3',
+  follow: '#d82bb3',
 };
 
 
@@ -33,6 +35,9 @@ export const textColors = {
   lighterGrey: '#ABA6A6',
   darkerGrey: '#454343',
   linkHover: '#ddd',
+  dark: '#3D3B3B',
+  lightGrey: '#979292',
+  iconPink: '#B8379C',
 };
 
 export const backgroundColors = {
@@ -57,4 +62,5 @@ export const iconColors = {
   gold: '#FFCC4A',
   black: '#191919',
   white001: '#FFFFFF',
+  iconPink: '#B8379C',
 };

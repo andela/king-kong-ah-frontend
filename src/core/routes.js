@@ -5,6 +5,7 @@ import PasswordEmailVerifier from '<pages>/AuthPages/PasswordEmailVerifier';
 import PasswordReset from '<pages>/AuthPages/PasswordReset';
 import Protected from '<pages>/Protected';
 import UserPage from '<pages>/UserPage/UserPage';
+import ArticlePage from '<pages>/ArticlePage/ArticlePage';
 
 export const UnauthenticatedRoutes = {
   default: [
@@ -37,6 +38,11 @@ export const UnauthenticatedRoutes = {
       exact: true,
       path: '/reset-password',
       component: PasswordReset,
+    },
+    {
+      exact: true,
+      path: '/articlepage/:id',
+      component: ArticlePage,
     },
   ],
 };

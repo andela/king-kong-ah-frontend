@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
@@ -31,7 +32,7 @@ const Button = ({
 
 Button.propTypes = {
   display: PropTypes.oneOf(['block', 'inline', 'inline-block']),
-  buttonType: PropTypes.oneOf(['default', 'getStarted', 'submit', 'dropDown']),
+  buttonType: PropTypes.oneOf(['default', 'getStarted', 'submit', 'dropDown', 'follow']),
   onClick: PropTypes.func,
   children: PropTypes.string.isRequired,
 };
@@ -46,6 +47,7 @@ const buttonRadius = {
   getStarted: 'none',
   submit: '0.8rem',
   dropDown: '100%',
+  follow: 'none',
 };
 
 const buttonBorderColor = {
@@ -53,6 +55,7 @@ const buttonBorderColor = {
   getStarted: '#B02091',
   submit: '#666666',
   dropDown: '#B02091',
+  follow: '#B02091',
 };
 
 const buttonBackground = {
@@ -60,6 +63,7 @@ const buttonBackground = {
   getStarted: 'transparent',
   submit: '#690375',
   dropDown: '#B02091',
+  follow: 'transparent',
 };
 
 const buttonWidth = {
@@ -67,12 +71,14 @@ const buttonWidth = {
   getStarted: '18rem',
   submit: '43.09rem',
   dropDown: '4.76rem',
+  follow: '10rem',
 };
 
 const buttonTopMargin = {
   default: 'inherit',
   getStarted: 'inherit',
   submit: '2rem',
+  follow: 'inherit',
 };
 
 const buttonFontSize = {
@@ -80,12 +86,14 @@ const buttonFontSize = {
   getStarted: 'medium',
   submit: 'title',
   dropDown: 'medium',
+  follow: 'title',
 };
 
 const buttonFade = {
   default: '12rem',
   getStarted: 'none',
   submit: '43.09rem',
+  follow: 'none',
 };
 
 const buttonHeight = {
@@ -93,6 +101,7 @@ const buttonHeight = {
   getStarted: '5.0rem',
   submit: '5.54rem',
   dropDown: '4.76rem',
+  follow: '5.0rem',
 };
 
 Button.Container = styled.button`

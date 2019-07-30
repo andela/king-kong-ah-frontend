@@ -20,7 +20,7 @@ const ArticleCard = ({
 }) => {
   return (
     <ArticleCard.Container>
-      <StyledLink to={`/article/${id}`}>
+      <StyledLink to={`/articlepage/${id}`}>
         <FlexContainer
           boxShadow="articleCard"
           alignItems='center'
