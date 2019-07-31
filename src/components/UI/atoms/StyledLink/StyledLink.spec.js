@@ -63,4 +63,20 @@ describe('StyledLink', () => {
 
     expect(container.firstChild).toBeTruthy();
   });
+
+  it('should apply style for dropdown', () => {
+    const { getByText } = setup({
+      dropdown: 'true',
+      to: '/',
+      fontSize: 'medium',
+      padding: 'sm',
+      textAlign: 'left',
+    });
+
+    expect(getByText('Authors Haven')).toHaveStyle(`
+      font-size: '1.6'
+      display: inline-block;
+      text-decoration: none;
+    `);
+  });
 });

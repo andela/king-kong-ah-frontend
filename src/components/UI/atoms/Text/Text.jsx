@@ -116,6 +116,7 @@ Text.Container = styled.span`
     text-transform: ${textTransform};
     letter-spacing: ${theme.spacing[letterSpacing]};
     padding-top: ${theme.spacing[paddingTop] || '0'};
+    overflow-wrap: break-word;
 
     @media ${theme.device.mobileS} {
       font-size: 1.2rem;

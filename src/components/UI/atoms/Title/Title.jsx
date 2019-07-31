@@ -14,6 +14,7 @@ import spacing from '<variables>/spacing';
  * @prop {string} color - color
  * @prop {string} display - display
  * @prop {string} paddingBottom - padding-bottom
+ * @prop {string} padding - padding
  * @prop {children} children - children
  *
  * @return {component} Title
@@ -24,6 +25,7 @@ const Title = ({
   color,
   display,
   paddingBottom,
+  padding,
   paddingTop,
   content,
   marginBottom,
@@ -38,6 +40,7 @@ const Title = ({
     color={color}
     display={display}
     paddingBottom={paddingBottom}
+    padding={padding}
     paddingTop={paddingTop}
     content={content}
     marginBottom={marginBottom}
@@ -55,6 +58,7 @@ Title.propTypes = {
   color: PropTypes.oneOf(Object.keys(textColors)),
   display: PropTypes.oneOf(['block', 'inline', 'inline-block', 'none']),
   paddingBottom: PropTypes.oneOf(Object.keys(spacing)),
+  padding: PropTypes.oneOf(Object.keys(spacing)),
   paddingTop: PropTypes.oneOf(Object.keys(spacing)),
   content: PropTypes.oneOf(['true', 'false']),
   marginBottom: PropTypes.oneOf(Object.keys(spacing)),
@@ -81,6 +85,7 @@ Title.Container = styled.span`
     color,
     display,
     paddingBottom,
+    padding,
     paddingTop,
     content,
     marginBottom,
@@ -92,6 +97,7 @@ Title.Container = styled.span`
     display: ${display};
     text-align: ${textAlign};
     color: ${theme.textColors[color]};
+    padding: ${theme.spacing[padding]};
     padding-bottom: ${theme.spacing[paddingBottom]};
     padding-top:${theme.spacing[paddingTop]};
     font-size: ${theme.fontSizes[fontSize]};
