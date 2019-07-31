@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { UnauthenticatedRoutes } from '<core>/routes';

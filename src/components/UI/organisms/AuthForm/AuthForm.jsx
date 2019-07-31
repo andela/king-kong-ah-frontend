@@ -38,22 +38,25 @@ const AuthForm = ({
           rules={rules}
           inputData={inputData}
         />
-        <CardDivider
-          text= {dividerText}
-          fontSize='title'
-          width='xxl'
-          margin='zero'
-          display='block'/>
-        <Router>
-          <ButtonRow
-            images={ButtonRowItem}
-            width="5.8rem"
-            height="4.515rem"
-            boxShadow="icon"
-            altText="social media button"
-            margin="zero"
-          />
-        </Router>
+        {
+          dividerText
+          && <Fragment>
+            <CardDivider
+              text= {dividerText}
+              fontSize='title'
+              width='xxl'
+              margin='zero'
+              display='block'/>
+            <Router>
+              <ButtonRow
+                images={ButtonRowItem}
+                boxShadow="icon"
+                altText="social media button"
+                margin="zero"
+              />
+            </Router>
+          </Fragment>
+        }
       </FlexContainer>
     </Fragment>
   );
@@ -61,7 +64,7 @@ const AuthForm = ({
 
 AuthForm.propTypes = {
   title: PropTypes.string.isRequired,
-  dividerText: PropTypes.string.isRequired,
+  dividerText: PropTypes.string,
   callback: PropTypes.func,
   rules: PropTypes.object.isRequired,
   inputData: PropTypes.array.isRequired,
