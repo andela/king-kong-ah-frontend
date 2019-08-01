@@ -11,9 +11,7 @@ const requestApi = async (method, path, data) => {
       data: response.data,
     };
   } catch (err) {
-    return {
-      error: err.message,
-    };
+    throw err.response.data;
   }
 };
 

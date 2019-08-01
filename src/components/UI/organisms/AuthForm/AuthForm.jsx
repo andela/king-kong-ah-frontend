@@ -34,6 +34,7 @@ const AuthForm = ({
           {title}
         </Title>
         <Form
+          dropDown={[]}
           callback={callback}
           rules={rules}
           inputData={inputData}

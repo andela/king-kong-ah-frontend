@@ -43,6 +43,7 @@ export const backgroundColors = {
   darkPink: '#B02091',
   activePink: '#FFDCDC',
   dullRose: '#F9E0E0',
+  grey: '#F9F9F9',
 };
 
 export const borderColors = {

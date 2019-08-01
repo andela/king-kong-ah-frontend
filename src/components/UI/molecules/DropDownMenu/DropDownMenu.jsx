@@ -21,47 +21,40 @@ const DropDownMenu = ({ title, subTitle }) => {
     changeVisible(!isVisible);
   };
   return (
-    <Router>
+    <DropDownMenu.Container>
+      <Button onClick={showMenu} buttonType="dropDown">
+        E
+      </Button>
+      {isVisible && (
+        <DropDownMenu.Menu>
+          <Overlay onClick={showMenu} />
+          <FlexContainer
+            borderColor="primary"
+            boxShadow="articleCard"
+            padding="zero"
+            flexDirection="column"
+            containerWidth="dropDownMenu"
+          >
+            <DropDownHeader title={title} subTitle={subTitle} />
 
-      <DropDownMenu.Container>
-        <Button onClick={showMenu} buttonType='dropDown'>E</Button>
-        {isVisible
-          && <DropDownMenu.Menu>
-            <Overlay onClick={showMenu} />
-            <FlexContainer borderColor="primary"
-              boxShadow="articleCard"
-              padding="zero"
-              flexDirection="column"
-              containerWidth="dropDownMenu"
-            >
-              <DropDownHeader
-                title={title}
-                subTitle={subTitle}/>
+            <FlexContainer padding="zero">
+              <DropDownLink
+                border={true}
+                links={['Write Article', 'Article', 'Bookmarks']}
+              />
 
-              <FlexContainer padding="zero">
-                <DropDownLink
-                  border={true}
-                  links={['Write Article', 'Article', 'Bookmarks']}/>
-
-                <DropDownLink
-                  links={['Profile', 'Sign Out']}/>
-
-
-              </FlexContainer>
-
+              <DropDownLink links={['Profile', 'Sign Out']} />
             </FlexContainer>
-          </DropDownMenu.Menu>
-        }
-      </DropDownMenu.Container>
-
-    </Router>
-
+          </FlexContainer>
+        </DropDownMenu.Menu>
+      )}
+    </DropDownMenu.Container>
   );
 };
 
 DropDownMenu.propTypes = {
   title: PropTypes.string.isRequired,
-  subTitle: PropTypes.string.isRequired,
+  subTitle: PropTypes.string.isRequired
 };
 
 DropDownMenu.Container = styled.div`
@@ -93,6 +86,5 @@ DropDownMenu.Menu = styled.div`
 
 `}
 `;
-
 
 export default DropDownMenu;

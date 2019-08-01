@@ -29,7 +29,10 @@ const Form = ({
       >
         {
           inputData.map((input, key) => (
-            <InputTextField {...input} key={key} inputWidth='formInputWidth'/>
+            <InputTextField
+              {...input} key={key}
+              inputWidth='formInputWidth'
+            />
           ))
         }
         <FlexContainer padding='xs'>
@@ -49,5 +52,6 @@ Form.propTypes = {
   callback: PropTypes.func.isRequired,
   rules: PropTypes.object.isRequired,
   inputData: PropTypes.array.isRequired,
+  dropDown: PropTypes.array.isRequired,
 };
 export default Form;

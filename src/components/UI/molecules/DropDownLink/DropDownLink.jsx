@@ -25,7 +25,7 @@ const DropDownLink = ({ links, border }) => (
         return (<StyledLink
           key={linkText}
           dropdown='true'
-          to={link}
+          to={link === 'signout' ? '/' : link}
           fontSize='medium'
           padding='xs'
           paddingTop='zero'

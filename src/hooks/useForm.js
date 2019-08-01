@@ -71,9 +71,13 @@ const useForm = (callback, rules) => {
 
   const handleChange = (event) => {
     if (validateOnChange(event)) {
+      const element = event.target;
+      const value = element.type === 'select-one'
+        ? element.options[element.selectedIndex].value
+        : element.value;
       setValues({
         ...values,
-        [event.target.name]: { value: event.target.value },
+        [event.target.name]: { value },
       });
     }
   };
