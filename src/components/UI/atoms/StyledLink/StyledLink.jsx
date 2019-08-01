@@ -11,9 +11,11 @@ import spacing from '<variables>/spacing';
  *
  * @prop {string} to
  * @prop {string} tag
+ * @prop {string} dropdown
  * @prop {boolean} isExternal
  * @prop {string} fontSize
  * @prop {string} margin
+ * @prop {string} padding
  * @prop {function} onClick
  * @prop {children} children
  *
@@ -23,8 +25,10 @@ import spacing from '<variables>/spacing';
 const StyledLink = ({
   to,
   tag,
+  dropdown,
   isExternal,
   fontSize,
+  padding,
   margin,
   onClick,
   children,
@@ -40,6 +44,8 @@ const StyledLink = ({
     onClick,
     marginleft,
     display,
+    dropdown,
+    padding,
   };
 
   return isExternal
@@ -68,6 +74,8 @@ StyledLink.propTypes = {
   ]).isRequired,
   to: PropTypes.string.isRequired,
   tag: PropTypes.string,
+  dropdown: PropTypes.string,
+  padding: PropTypes.string,
   isExternal: PropTypes.bool,
   fontSize: PropTypes.oneOf(Object.keys(fontSizes)),
   onClick: PropTypes.func,
@@ -89,31 +97,37 @@ StyledLink.defaultProps = {
 
 const linkStyle = ({
   margin, fontSize, theme, tag,
-  marginleft, color, display,
+  marginleft, color, display, dropdown, padding,
 }) => `
     text-decoration: none;
     display: ${display};
+    text-align: ${(dropdown ? 'left' : 'center')};
     transition: .5s border ease-in-out;
     border: solid 1px transparent;
     font-family: 'Roboto';
     margin: ${theme.spacing[margin]};
     font-size: ${theme.fontSizes[fontSize]};
-    color: ${theme.textColors[color]};
+    color: ${(dropdown ? theme.textColors.lighterGrey
+    : theme.textColors[color])};
     background: ${(tag && backgroundColors.lightPink) || 'transparent'};
     padding: ${(tag && theme.spacing.xs) || '0'};
     box-shadow: ${(tag && theme.boxShadows.articleCard) || 'none'};
     width: ${(tag && theme.spacing.smd) || 'auto'};
     margin-left: ${theme.spacing[marginleft]};
+    padding: ${theme.spacing[padding]};
     &.active {
       color: ${(tag && theme.textColors.brightPink)};
       background-color: ${(tag && theme.backgroundColors.activePink)};
     };
     &:visited {
-      color: ${theme.textColors[color]};
+      color: ${(dropdown ? theme.textColors.lighterGrey
+    : theme.textColors[color])};
     }
     &:hover {
-      color: ${(tag && theme.textColors.hoverPink)};
-      background-color: ${(tag && theme.backgroundColors.dullRose)};
+      background-color: ${(dropdown ? theme.textColors.linkHover
+    : (tag && theme.backgroundColors.dullRose))};
+      color: ${dropdown ? theme.textColors.darkerGrey
+    : (tag && theme.textColors.hoverPink)};
       border: ${tag && `solid 1px ${theme.backgroundColors.primary}`};
     };
 

@@ -6,7 +6,7 @@ import '@testing-library/jest-dom/extend-expect';
 afterEach(cleanup);
 
 const defaultProps = `
-  padding: 0.9rem 1.6rem 1.6rem 1.6rem;
+  padding: 1.6rem;
   display: flex;
   backgroundColor: white001;
   border: 1px solid tranparent;

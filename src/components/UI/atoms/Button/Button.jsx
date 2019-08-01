@@ -31,7 +31,7 @@ const Button = ({
 
 Button.propTypes = {
   display: PropTypes.oneOf(['block', 'inline', 'inline-block']),
-  buttonType: PropTypes.oneOf(['default', 'getStarted', 'submit']),
+  buttonType: PropTypes.oneOf(['default', 'getStarted', 'submit', 'dropDown']),
   onClick: PropTypes.func,
   children: PropTypes.string.isRequired,
 };
@@ -45,24 +45,28 @@ const buttonRadius = {
   default: 'none',
   getStarted: 'none',
   submit: '0.8rem',
+  dropDown: '100%',
 };
 
 const buttonBorderColor = {
   default: '#666666',
   getStarted: '#B02091',
   submit: '#666666',
+  dropDown: '#B02091',
 };
 
 const buttonBackground = {
   default: '#B02091',
   getStarted: 'transparent',
   submit: '#690375',
+  dropDown: '#B02091',
 };
 
 const buttonWidth = {
   default: '12rem',
   getStarted: '18rem',
   submit: '43.09rem',
+  dropDown: '4.76rem',
 };
 
 const buttonTopMargin = {
@@ -75,6 +79,7 @@ const buttonFontSize = {
   default: 'normal',
   getStarted: 'medium',
   submit: 'title',
+  dropDown: 'medium',
 };
 
 const buttonFade = {
@@ -87,6 +92,7 @@ const buttonHeight = {
   default: '5.0rem',
   getStarted: '5.0rem',
   submit: '5.54rem',
+  dropDown: '4.76rem',
 };
 
 Button.Container = styled.button`
@@ -115,7 +121,7 @@ Button.Container = styled.button`
     border: 1px solid ${theme.buttonColors.grey};
     box-shadow: inset 1px 0px 5px ${theme.buttonColors.grey};
   }
-  
+
   &:focus {
     outline: 0;
   }
@@ -131,6 +137,9 @@ Button.Container = styled.button`
   }
   @media ${theme.device.tablet} {
     display: ${buttonFade[buttonType]};
+    ${buttonType === 'dropDown' && 'font-size: 1.2rem;'}
+    ${buttonType === 'dropDown' && 'width: 3.4rem;'}
+    ${buttonType === 'dropDown' && 'height: 3.4rem;'}
   }
 `}
 `;

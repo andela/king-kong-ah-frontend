@@ -35,3 +35,14 @@ Publish Button:
   Publish
 </Button>
 ```
+
+DropDown Button:
+
+```jsx
+<Button
+  onClick={() => alert('I show stuff')}
+buttonType="dropDown"
+>
+  Publish
+</Button>
+```

@@ -8,12 +8,14 @@ export const buttonColors = {
   getStarted: '#B02091',
   submit: '#FFFFFF',
   transparent: 'transparent',
+  dropDown: '#FFFFFF',
 };
 
 export const buttonHover = {
   default: '#d82bb3',
   getStarted: '#d82bb3',
   submit: '#9304A4',
+  dropDown: '#d82bb3',
 };
 
 
@@ -28,6 +30,9 @@ export const textColors = {
   lightBrown: '#C2A3A3',
   white001: '#FFFFFF',
   hoverPink: '#DC2BB5',
+  lighterGrey: '#ABA6A6',
+  darkerGrey: '#454343',
+  linkHover: '#ddd',
 };
 
 export const backgroundColors = {
@@ -44,6 +49,7 @@ export const borderColors = {
   primary: '#B02091',
   black: '#191919',
   lightGrey: '#DDDDDD',
+  lighterGrey: '#ABA6A6',
 };
 
 export const iconColors = {

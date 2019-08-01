@@ -72,4 +72,23 @@ describe('Button', () => {
     cursor: pointer;
     `);
   });
+
+  it('should render dropDown buttonType', () => {
+    const { getByText } = render(
+      <Button buttonType="dropDown" onClick={() => alert('hello')}>
+        E
+      </Button>,
+    );
+
+    expect(getByText('E')).toHaveStyle(`
+    height: 4.76rem;
+    display: block;
+    font-size: 2.4rem;
+    background: rgb(176, 32, 145);
+    color: #FFFFFF;
+    border-radius: 100%;
+    border: 1px solid #B02091;
+    cursor: pointer;
+    `);
+  });
 });

@@ -118,7 +118,6 @@ FlexContainer.defaultProps = {
   display: 'flex',
   backgroundColor: 'white001',
   padding: 'sm',
-  paddingTop: 'xs',
   boxShadow: 'none',
   borderRadius: 'zero',
   margin: 'zero',

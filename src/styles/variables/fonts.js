@@ -12,6 +12,7 @@ export const fontSizes = {
   sxlarge: '7rem',
   xxlarge: '10rem',
   rating: '11rem',
+  LetterPlaceHolder: '2.7rem',
 };
 
 export const fontWeights = {
