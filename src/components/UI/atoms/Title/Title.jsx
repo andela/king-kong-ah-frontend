@@ -61,12 +61,12 @@ Title.propTypes = {
   padding: PropTypes.oneOf(Object.keys(spacing)),
   paddingTop: PropTypes.oneOf(Object.keys(spacing)),
   content: PropTypes.oneOf(['true', 'false']),
-  marginBottom: PropTypes.oneOf(Object.keys(spacing)),
-  marginLeft: PropTypes.oneOf(Object.keys(spacing)),
-  marginRight: PropTypes.oneOf(Object.keys(spacing)),
-  hasBottomBorder: PropTypes.bool,
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
     .isRequired,
+  hasBottomBorder: PropTypes.bool,
+  marginLeft: PropTypes.oneOf(Object.keys(spacing)),
+  marginRight: PropTypes.oneOf(Object.keys(spacing)),
+  marginBottom: PropTypes.oneOf(Object.keys(spacing)),
 };
 
 Title.defaultProps = {
@@ -98,8 +98,12 @@ Title.Container = styled.span`
     text-align: ${textAlign};
     color: ${theme.textColors[color]};
     padding: ${theme.spacing[padding]};
+    padding-top: ${theme.spacing[paddingTop]};
     padding-bottom: ${theme.spacing[paddingBottom]};
-    padding-top:${theme.spacing[paddingTop]};
+    margin-bottom: ${theme.spacing[marginBottom]};
+    margin-left: ${theme.spacing[marginLeft]};
+    margin-right: ${theme.spacing[marginRight]};
+    font-family: ${(content && 'Inknut Antiqua') || 'Roboto'};
     font-size: ${theme.fontSizes[fontSize]};
     font-family: ${(content && 'Inknut Antiqua') || 'roboto'};
     font-weight: ${theme.fontWeights.bold}

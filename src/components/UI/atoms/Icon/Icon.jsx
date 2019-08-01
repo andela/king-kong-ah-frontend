@@ -71,6 +71,7 @@ Icon.defaultProps = {
   display: 'block',
   margin: 'md',
   color: 'primary',
+  paddingBottom: 'zero',
 };
 
 Icon.Container = styled.div`

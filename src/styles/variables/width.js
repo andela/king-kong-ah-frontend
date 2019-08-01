@@ -1,11 +1,12 @@
 export const width = {
   fullWidth: '100%',
+  oneThird: '60%',
   twoThird: '75%',
   searchBarWidth: '50%',
-  articleCardWidth: '30%',
   imageWidth: '46%',
   articleWidth: '54%',
   formWidth: '51.5rem',
+  articleCardWidth: '31.4rem',
   formInputWidth: '43.09rem',
   footerSectionWidth: '30%',
   dropDownMenu: '25rem',

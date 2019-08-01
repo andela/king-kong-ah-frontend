@@ -29,8 +29,8 @@ describe('IconRow', () => {
 
     expect(queryByTestId(`${props[0].name}0`)).toHaveStyle(`
       color: #FFFFFF;
-      height: 3rem;
-      width: 3rem;
+      height: 2.5rem;
+      width: 2.5rem;
     `);
   });
 });

@@ -15,6 +15,11 @@ export const UnauthenticatedRoutes = {
     },
     {
       exact: true,
+      path: '/Adventure',
+      component: HomePage,
+    },
+    {
+      exact: true,
       path: '/signup',
       component: SignUpPage,
     },
@@ -44,7 +49,7 @@ export const ProtectedRoutes = [
   },
   {
     exact: true,
-    path: '/userpage',
+    path: '/dashboard',
     component: UserPage,
   },
 ];
