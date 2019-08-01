@@ -1,13 +1,12 @@
 import React from 'react';
+import styled from 'styled-components';
 import FlexContainer from '<atoms>/layouts/FlexContainer/FlexContainer';
 import SearchBar from '<molecules>/SearchBar/SearchBar';
 import Image from '<atoms>/Image/Image';
 import Title from '<atoms>/Title/Title';
-import ImageUrl from '<image>/homepage.png';
-import styled from 'styled-components';
+import imageUrl from '<image>/homepage.png';
 
 const WelcomeSection = () => {
-
   return (
     <WelcomeSection.Container>
       <FlexContainer
@@ -16,7 +15,7 @@ const WelcomeSection = () => {
         containerWidth='fullWidth'
       >
         <Image
-          imageUrl={ImageUrl}
+          imageUrl={imageUrl}
           boxShadow='none'
           altText='welcome'
         />

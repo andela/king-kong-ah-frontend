@@ -1,18 +1,19 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { render, cleanup, fireEvent } from '<src>/helpers/testUtils';
-import Signup from './Signup';
+import PasswordReset from './PasswordReset';
 import formHandler from '<helpers>/formHandler';
 
 jest.mock('<helpers>/formHandler');
-
-
 afterEach(cleanup);
 
-const setup = () => {
+const setup = (search = '?token=fakeToken') => {
   const utils = render(
     <MemoryRouter>
-      <Signup history={{}}/>
+      <PasswordReset
+        history={{ push: () => {} }}
+        location={{ search }}
+      />
     </MemoryRouter>,
   );
 
@@ -21,30 +22,27 @@ const setup = () => {
   };
 };
 
-describe('Signup', () => {
-  it('should render Signup page', () => {
+describe('PasswordReset', () => {
+  it('should render PasswordReset page', () => {
     const { container } = setup();
+    setup('');
 
     expect(container.firstChild).toBeTruthy();
   });
 
-  it('should render with sign up text', () => {
+  it('should render with sign in text', () => {
     const { getByText } = setup();
 
-    expect(getByText('Sign Up')).toBeTruthy();
+    expect(getByText('Sign In')).toBeTruthy();
   });
 
   it('should call handleSubmit once', () => {
     const { getByText, getByTestId } = setup();
 
-    fireEvent.change(getByTestId('firstName'), { target: { value: 'Tosin' } });
     fireEvent.change(
-      getByTestId('lastName'), { target: { value: 'Onifade' } },
+      getByTestId('password'), { target: { value: 'abCDe2com' } },
     );
-    fireEvent.change(getByTestId('email'), { target: { value: 'abc@de.com' } });
-    fireEvent.change(
-      getByTestId('password'), { target: { value: 'eazyBee8#' } },
-    );
+
     fireEvent.click(getByText('Submit'));
 
     expect(formHandler).toHaveBeenCalledTimes(1);

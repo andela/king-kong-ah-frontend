@@ -4,31 +4,31 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PageLayout from '<templates>/PageLayout/PageLayout';
 import AuthForm from '<organisms>/AuthForm/AuthForm';
-import { SignUpData, SignUpRules } from './signupItems';
-import FlexContainer from
-  '<atoms>/layouts/FlexContainer/FlexContainer';
+import { emailData, emailRules } from './passwordItems';
+import FlexContainer from '<atoms>/layouts/FlexContainer/FlexContainer';
 import Image from '<atoms>/Image/Image';
 import imageUrl from '<image>/home.png';
-import { signup } from './navItems';
-import formHandler from '<helpers>/formHandler';
+import { passwordReset } from './navItems';
 import headerMapper from '<helpers>/headerMapper';
+import formHandler from '<helpers>/formHandler';
 
-const navItems = headerMapper(signup);
 
-const SignUp = (props) => {
+const navItems = headerMapper(passwordReset);
+
+const PasswordReset = (props) => {
   const handleSubmit = (values) => {
     const data = {
       method: 'post',
-      path: 'signup',
-      redirectTo: '/dashboard',
+      path: 'recoverEmail',
+      redirectTo: '/',
     };
 
     formHandler(values, props.history, data);
   };
 
   return (
-    <PageLayout navItems={navItems} >
-      <FlexContainer paddingTop='zero'>
+    <PageLayout navItems={navItems}>
+      <FlexContainer>
         <FlexContainer flexDirection='row' height='80%'>
           <FlexContainer>
             <Image
@@ -37,12 +37,11 @@ const SignUp = (props) => {
               altText='welcome'
             />
           </FlexContainer>
-          <FlexContainer padding='zero' >
+          <FlexContainer padding='zero'>
             <AuthForm
-              title="Sign Up"
-              dividerText="Or Sign Up With"
-              rules={SignUpRules}
-              inputData={SignUpData}
+              title="Password Reset"
+              rules={emailRules}
+              inputData={emailData}
               callback={handleSubmit}
             />
             <ToastContainer />
@@ -53,8 +52,8 @@ const SignUp = (props) => {
   );
 };
 
-SignUp.propTypes = {
+PasswordReset.propTypes = {
   history: PropTypes.object.isRequired,
 };
 
-export default SignUp;
+export default PasswordReset;

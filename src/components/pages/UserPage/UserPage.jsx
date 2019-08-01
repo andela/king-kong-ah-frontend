@@ -4,7 +4,7 @@ import headerMapper from '<helpers>/headerMapper';
 import displayLoader from '<helpers>/displayLoader';
 import FlexContainer from '<atoms>/layouts/FlexContainer/FlexContainer';
 import Image from '<atoms>/Image/Image';
-import ImageUrl from '<image>/homepage.png';
+import imageUrl from '<image>/homepage.png';
 import items from './navItems';
 import Title from '<atoms>/Title/Title';
 import SearchBar from '<molecules>/SearchBar/SearchBar';
@@ -22,7 +22,7 @@ const UserPage = () => {
             containerWidth='fullWidth'
           >
             <Image
-              imageUrl={ImageUrl}
+              imageUrl={imageUrl}
               boxShadow='none'
               altText='welcome'
             />

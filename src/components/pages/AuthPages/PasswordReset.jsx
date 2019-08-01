@@ -1,28 +1,40 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PageLayout from '<templates>/PageLayout/PageLayout';
 import AuthForm from '<organisms>/AuthForm/AuthForm';
-import formHandler from '<helpers>/formHandler';
-import { loginData, loginRules } from './loginItems';
+import { passwordData, passwordRules } from './passwordItems';
 import FlexContainer from '<atoms>/layouts/FlexContainer/FlexContainer';
 import Image from '<atoms>/Image/Image';
 import imageUrl from '<image>/home.png';
-import { signin } from './navItems';
+import { passwordReset } from './navItems';
 import headerMapper from '<helpers>/headerMapper';
+import formHandler from '<helpers>/formHandler';
 
-const navItems = headerMapper(signin);
+const navItems = headerMapper(passwordReset);
 
-const Login = (props) => {
+const PasswordReset = (props) => {
+  const [query, setQuery] = useState('');
+
+  useEffect(() => {
+    const token = props.location.search.split('?token=');
+    if (token.length < 2 || token[1].trim() === '') {
+      props.history.push('/password');
+    } else {
+      setQuery(props.location.search.trim());
+    }
+  }, []);
+
   const handleSubmit = async (values) => {
+    values.confirmPassword = values.password;
     const data = {
-      method: 'post',
-      path: 'login',
-      redirectTo: '/dashboard',
+      method: 'patch',
+      path: `auth/reset-password${query}`,
+      redirectTo: '/login',
     };
-    const res = await formHandler(values, props.history, data);
-    res && sessionStorage.setItem('cookies', res.data['access-token']);
+
+    formHandler(values, props.history, data);
   };
 
   return (
@@ -38,10 +50,9 @@ const Login = (props) => {
           </FlexContainer>
           <FlexContainer padding='zero'>
             <AuthForm
-              title="Sign In"
-              dividerText="Or Sign In With"
-              rules={loginRules}
-              inputData={loginData}
+              title="Password Reset"
+              rules={passwordRules}
+              inputData={passwordData}
               callback={handleSubmit}
             />
             <ToastContainer />
@@ -52,9 +63,9 @@ const Login = (props) => {
   );
 };
 
-Login.propTypes = {
+PasswordReset.propTypes = {
+  location: PropTypes.object.isRequired,
   history: PropTypes.object.isRequired,
 };
 
-
-export default Login;
+export default PasswordReset;

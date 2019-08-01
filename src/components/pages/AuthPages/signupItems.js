@@ -1,7 +1,6 @@
 const passwordFormat = 'regex:/S*(S*([a-zA-Z]S*[0-9])|([0-9]S*[a-zA-Z]))S*/';
 export const SignUpRules = {
   email: 'required|email',
-  username: 'required|string|alpha|min:6',
   firstName: 'required|string|alpha|min:2',
   lastName: 'required|string|alpha|min:2',
   password: ['required', 'min:8', passwordFormat],

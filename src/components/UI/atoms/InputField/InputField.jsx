@@ -43,6 +43,7 @@ const InputField = ({
   <InputField.Container
     type={type}
     id={id}
+    data-testid={name}
     placeholder={placeholder}
     name={name}
     value={value}
