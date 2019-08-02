@@ -35,7 +35,7 @@ const ArticleCardRow = ({
       } = item;
       const { firstName, lastName } = user;
       const author = firstName
-        ? (firstName.concat(' ', lastName)).toUpperCase() : firstName;
+        ? (firstName.concat(' ', lastName)) : firstName;
       return (
         <ArticleCard
           key={index}

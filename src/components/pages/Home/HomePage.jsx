@@ -1,7 +1,9 @@
 /* eslint-disable max-len */
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import PageLayout from '<templates>/PageLayout/PageLayout';
-import headerMapper from '<helpers>/headerMapper';
+import eaderMapper from '<helpers>/headerMapper';
 import displayLoader from '<helpers>/displayLoader';
 import items from './navItems';
 import RatingsSection from '<organisms>/RatingsSection/RatingsSection';
@@ -14,11 +16,18 @@ import tags from './tags';
 import TagRow from '<molecules>/TagRow/TagRow';
 
 const HomePage = (props) => {
-  const navItems = headerMapper(items);
+  const navItems = eaderMapper(items);
+
+  const onClick = (id) => {
+    if (props.location.pathname !== '/articles') {
+      return props.history.push(`/articles?category=${id}`);
+    }
+  };
+
   return (
     <PageLayout navItems={navItems} callback={displayLoader}>
       <WelcomeSection />
-      <TagRow tags={tags}/>
+      <TagRow tags={tags} onClick={onClick}/>
       <CardSection
         sectionTitle='Popular Articles'
         categoryId='4df25c1f-4224-4c7b-9807-2711dd337897'
@@ -39,6 +48,11 @@ const HomePage = (props) => {
       <Footer {...footerProps}/>
     </PageLayout>
   );
+};
+
+HomePage.propTypes = {
+  location: PropTypes.object,
+  history: PropTypes.object,
 };
 
 export default HomePage;

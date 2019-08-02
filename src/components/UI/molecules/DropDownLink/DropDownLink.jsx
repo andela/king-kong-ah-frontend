@@ -24,8 +24,9 @@ const DropDownLink = ({ links, border }) => (
         const link = linkText.toLowerCase().replace(/ /g, '');
         return (<StyledLink
           key={linkText}
+          isExternal={false}
           dropdown='true'
-          to={link}
+          to={link === 'signout' ? '/' : link}
           fontSize='medium'
           padding='xs'
           paddingTop='zero'

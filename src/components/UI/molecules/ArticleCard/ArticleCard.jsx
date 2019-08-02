@@ -89,10 +89,12 @@ const ArticleCard = ({
     return (
       <Title
         textAlign = 'center'
-        fontSize = 'sm'
+        fontSize = 'card'
         color = 'darkGrey'
         paddingBottom ='xxxs'
         content='true'
+        fontWeight='heavy'
+        isCapitalized
       >
         {author}
       </Title>

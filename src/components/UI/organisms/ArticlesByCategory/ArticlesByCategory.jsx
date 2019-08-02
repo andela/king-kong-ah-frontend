@@ -9,7 +9,11 @@ const ArticlesByCategory = ({
 }) => {
   return (
     <Fragment>
-      <FlexContainer flexDirection='row' paddingTop='zero' overflowY='scroll'>
+      <FlexContainer
+        flexDirection='row'
+        paddingTop='zero'
+        overflowY='scroll'
+        padding='xxxl'>
         {renderArticlesByCategory()}
       </FlexContainer>
     </Fragment>
@@ -23,7 +27,10 @@ const ArticlesByCategory = ({
           title={item.title}
           description={item.description}
           rating={item.rating}
-          author={item.title}
+          author={
+            item.user.firstName
+              .concat(' ', item.user.lastName)
+          }
           width='xxl'
         />
       );

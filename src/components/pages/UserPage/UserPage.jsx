@@ -1,5 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import PageLayout from '<templates>/PageLayout/PageLayout';
 import headerMapper from '<helpers>/headerMapper';
 import displayLoader from '<helpers>/displayLoader';
@@ -13,18 +15,25 @@ import footerItems from '../Home/footerItems';
 import tags from './tags';
 import TagRow from '<molecules>/TagRow/TagRow';
 
-const UserPage = () => {
+const UserPage = ({ location, history }) => {
   const navItems = headerMapper(items);
+
+  const onClick = (id) => {
+    if (location.pathname !== '/articles') {
+      return history.push(`/articles?category=${id}`);
+    }
+  };
+
   return (
     <PageLayout navItems={navItems} callback={displayLoader}>
       <WriteArticleSection/>
-      <TagRow tags={tags}/>
+      <TagRow tags={tags} onClick={onClick}/>
       <CardSection
-        sectionTitle='Popular Article'
+        sectionTitle='Popular Articles'
         categoryId='4df25c1f-4224-4c7b-9807-2711dd337897'
       />
       <CardSection
-        sectionTitle='Featured Article'
+        sectionTitle='Featured Articles'
         categoryId='7c7c1381-a900-43f7-abd4-a01fb92f2717'
       />
       <ImageText
@@ -37,6 +46,11 @@ const UserPage = () => {
       <Footer {...footerItems}/>
     </PageLayout>
   );
+};
+
+UserPage.propTypes = {
+  location: PropTypes.object,
+  history: PropTypes.object,
 };
 
 export default UserPage;
