@@ -20,12 +20,12 @@ const HomePage = (props) => {
       <WelcomeSection />
       <TagRow tags={tags}/>
       <CardSection
-        title='Popular Article'
+        sectionTitle='Popular Articles'
         categoryId='4df25c1f-4224-4c7b-9807-2711dd337897'
         {...props}
       />
       <CardSection
-        title='Featured Article'
+        sectionTitle='Featured Articles'
         categoryId='7c7c1381-a900-43f7-abd4-a01fb92f2717'
         {...props}
       />

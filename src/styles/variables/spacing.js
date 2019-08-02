@@ -6,15 +6,22 @@ const spacing = {
   xs: '0.9rem',
   xsm: '1.3rem',
   xxs: '1.5rem',
+  xxsm: '1.8rem',
   sm: '1.6rem',
   smd: '25.8rem',
   smm: '2.8rem',
+  smmm: '2.5rem',
   med: '3.0rem',
   md: '3.2rem',
   mds: '3.8rem',
   xl: '4.05rem',
   xxl: '6.0rem',
   xxxl: '8.2rem',
+  big: '67.8rem',
+  smdd: '28.0rem',
+  smddd: '27.5rem',
+  mdd: '8.0rem',
+  xxxxl: '99rem',
 };
 
 export default spacing;

@@ -19,6 +19,8 @@ import width from '<variables>/width';
  * @prop {string} justifyContent - justifyContent
  * @prop {string} flexDirection - flex direction
  * @prop {string} paddingTop- padding top
+ * @prop {string} marginBottom - margin bottom
+ * @prop {string} marginLeft - margin left
  *
  * @return {component} FlexContainer
  */
@@ -26,6 +28,8 @@ const FlexContainer = ({
   children,
   height,
   margin,
+  marginBottom,
+  marginLeft,
   padding,
   paddingLeft,
   paddingTop,
@@ -38,6 +42,7 @@ const FlexContainer = ({
   containerWidth,
   alignItems,
   flexDirection,
+  textAlign,
   overflowX,
 }) => (
   <FlexContainer.Container
@@ -55,6 +60,9 @@ const FlexContainer = ({
     alignItems={alignItems}
     flexDirection={flexDirection}
     paddingTop={paddingTop}
+    marginBottom={marginBottom}
+    marginLeft={marginLeft}
+    textAlign={textAlign}
     overflowX={overflowX}
   >
     {children}
@@ -65,6 +73,8 @@ FlexContainer.Container = styled.div`
   ${({
     height,
     margin,
+    marginBottom,
+    marginLeft,
     padding,
     paddingLeft,
     paddingTop,
@@ -78,6 +88,7 @@ FlexContainer.Container = styled.div`
     alignItems,
     borderWidth,
     flexDirection,
+    textAlign,
     overflowX,
     theme: {
       spacing, backgroundColors, borderColors, boxShadows,
@@ -87,6 +98,8 @@ FlexContainer.Container = styled.div`
     display: ${display};
     background-color: ${backgroundColors[backgroundColor]};
     margin: ${spacing[margin]};
+    margin-bottom: ${spacing[marginBottom]};
+    margin-left: ${spacing[marginLeft]};
     padding: ${spacing[padding]};
     padding-left: ${spacing[paddingLeft]};
     padding-top: ${spacing[paddingTop]};
@@ -98,6 +111,7 @@ FlexContainer.Container = styled.div`
     width: ${width[containerWidth]};
     align-items: ${alignItems};
     height: ${height};
+    text-align: ${textAlign};
     overflow-x: ${overflowX}
 
     @media ${theme.device.mobileS} {
@@ -131,6 +145,8 @@ const {
 FlexContainer.propTypes = {
   children: PropTypes.node,
   margin: PropTypes.oneOf(Object.keys(spacing)),
+  marginBottom: PropTypes.oneOf(Object.keys(spacing)),
+  marginLeft: PropTypes.oneOf(Object.keys(spacing)),
   padding: PropTypes.oneOf(Object.keys(spacing)),
   paddingLeft: PropTypes.oneOf(Object.keys(spacing)),
   paddingTop: PropTypes.oneOf(Object.keys(spacing)),
@@ -140,6 +156,7 @@ FlexContainer.propTypes = {
   borderRadius: PropTypes.oneOf(Object.keys(spacing)),
   boxShadow: PropTypes.oneOf(Object.keys(boxShadows)),
   containerWidth: PropTypes.oneOf(Object.keys(width)),
+  textAlign: PropTypes.string,
   overflowX: PropTypes.oneOf(['auto', 'hidden', 'scroll', 'visible']),
   alignItems: PropTypes.oneOf([
     'flex-start',

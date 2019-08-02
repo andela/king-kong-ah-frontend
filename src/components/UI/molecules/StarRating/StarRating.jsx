@@ -6,14 +6,14 @@ import FlexContainer from '<atoms>/layouts/FlexContainer/FlexContainer';
 import Icon from '<atoms>/Icon/Icon';
 
 /**
- * @description - ButtonRow Component
+ * @description - StarRating Component
  *
  * @prop {string} icon - images
  *
- * @return {component} Icon Row
+ * @return {component} StarRating
  */
 const StarRating = ({
-  rating,
+  rating, marginLeft, paddingTop,
 }) => {
   return (
     <FlexContainer
@@ -22,6 +22,8 @@ const StarRating = ({
       alignItems='center'
       justifyContent='center'
       padding='zero'
+      marginLeft={marginLeft}
+      paddingTop={paddingTop}
     >
       {renderRating()}
     </FlexContainer>
@@ -51,6 +53,8 @@ const StarRating = ({
 
 StarRating.propTypes = {
   rating: PropTypes.number,
+  marginLeft: PropTypes.string,
+  paddingTop: PropTypes.string,
 };
 
 StarRating.defaultProp = {

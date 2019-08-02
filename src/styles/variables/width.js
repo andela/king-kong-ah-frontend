@@ -12,6 +12,8 @@ export const width = {
   dropDownMenu: '25rem',
   dropDownHeader: '16rem',
   LetterPlaceHolder: '5.4rem',
+  minWidth: '70%',
+  zero: '0%',
 };
 
 export default width;
