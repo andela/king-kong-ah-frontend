@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import requestApi from '<helpers>/requestApi';
 
+
 const useDataFromApi = ({
   setLoading,
   setFetchedData,
@@ -11,13 +12,19 @@ const useDataFromApi = ({
 }) => useEffect(() => {
   const request = async () => {
     setLoading(true);
+    setFetchedData({});
 
-    const {
+    let {
       data: apiData, error: apiError,
     } = await requestApi(method, path, data);
 
-    apiData && setFetchedData(apiData);
-    apiError && setError(apiError);
+    if (apiData) {
+      setFetchedData(apiData);
+    }
+    if (apiError) {
+      setError(apiError);
+      apiData = null;
+    }
 
     setLoading(false);
   };

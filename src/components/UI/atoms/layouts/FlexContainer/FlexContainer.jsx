@@ -44,6 +44,7 @@ const FlexContainer = ({
   flexDirection,
   textAlign,
   overflowX,
+  overflowY,
 }) => (
   <FlexContainer.Container
     margin={margin}
@@ -64,6 +65,7 @@ const FlexContainer = ({
     marginLeft={marginLeft}
     textAlign={textAlign}
     overflowX={overflowX}
+    overflowY={overflowY}
   >
     {children}
   </FlexContainer.Container>
@@ -90,6 +92,7 @@ FlexContainer.Container = styled.div`
     flexDirection,
     textAlign,
     overflowX,
+    overflowY,
     theme: {
       spacing, backgroundColors, borderColors, boxShadows,
     },
@@ -113,6 +116,7 @@ FlexContainer.Container = styled.div`
     height: ${height};
     text-align: ${textAlign};
     overflow-x: ${overflowX}
+    overflow-y: ${overflowY}
 
     @media ${theme.device.mobileS} {
       padding: ${spacing[padding] === '0rem' ? spacing[padding] : spacing.sm};
@@ -158,6 +162,7 @@ FlexContainer.propTypes = {
   containerWidth: PropTypes.oneOf(Object.keys(width)),
   textAlign: PropTypes.string,
   overflowX: PropTypes.oneOf(['auto', 'hidden', 'scroll', 'visible']),
+  overflowY: PropTypes.oneOf(['auto', 'hidden', 'scroll', 'visible']),
   alignItems: PropTypes.oneOf([
     'flex-start',
     'flex-end',
