@@ -1,16 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import InputField from '<atoms>/InputField/InputField';
+
+import TextArea from '<atoms>/TextArea/TextArea';
 import Text from '<atoms>/Text/Text';
 import FlexContainer from '<atoms>/layouts/FlexContainer/FlexContainer';
-import Label from '<molecules>/label/Label';
 import themeBorderRadius from '<variables>/border';
 import width from '<variables>/width';
-import { textColors, backgroundColors } from '<variables>/colorPalette';
-import { fontSizes } from '<variables>/fonts';
+import { textColors } from '<variables>/colorPalette';
 
 /**
- * @description - InputFormField component combined with an error field
+ * @description - TextAreaField component combined with an error field
  *
  * @prop {string} - placeholder
  * @prop {string | number} - value
@@ -20,47 +19,28 @@ import { fontSizes } from '<variables>/fonts';
  *
  * @returns {JSX} - Input, Text, FlexContainer Component
  *
- * InputForm field Component
+ * TextAreaField field Component
  */
-const InputTextField = ({
+const TextAreaField = ({
   value,
   placeholder,
   onChange,
   errorMessage,
   inputWidth,
   borderRadius,
-  type,
   name,
-  label,
-  color,
-  backgroundColor,
-  fontSize,
-  inputColor,
 }) => {
-  const id = btoa(`${name}-${value}`);
-
   return (
     <FlexContainer padding='xxxs'>
-      {label && <Label
-        id={id}
-        htmlFor={id}
-        color = {color}
-      >
-        {label}
-      </Label>}
-      <InputField
-        id={id}
+      <TextArea
+        id='codex-editor'
         name={name}
-        type={type}
         placeholder={placeholder}
-        value={value}
         inputWidth={inputWidth}
         borderRadius={borderRadius}
         error={errorMessage}
         onChange={onChange}
-        backgroundColor={backgroundColor}
-        fontSize={fontSize}
-        color={inputColor}
+        value={value}
       />
       {errorMessage
         && <span><Text color='red' fontSize='xsmall' display='block'>
@@ -71,8 +51,7 @@ const InputTextField = ({
   );
 };
 
-InputTextField.propTypes = {
-  type: PropTypes.oneOf(['number', 'email', 'password', 'text']).isRequired,
+TextAreaField.propTypes = {
   label: PropTypes.string,
   inputWidth: PropTypes.oneOf(Object.keys(width)),
   placeholder: PropTypes.string,
@@ -82,15 +61,11 @@ InputTextField.propTypes = {
   borderRadius: PropTypes.oneOf(Object.keys(themeBorderRadius)),
   onChange: PropTypes.func.isRequired,
   color: PropTypes.oneOf(Object.keys(textColors)),
-  inputColor: PropTypes.oneOf(Object.keys(textColors)),
-  backgroundColor: PropTypes.oneOf(Object.keys(backgroundColors)),
-  fontSize: PropTypes.oneOf(Object.keys(fontSizes)),
 };
 
-InputTextField.defaultProps = {
-  type: 'text',
+TextAreaField.defaultProps = {
   inputWidth: 'fullWidth',
   borderRadius: 'edgeRadius',
 };
 
-export default InputTextField;
+export default TextAreaField;

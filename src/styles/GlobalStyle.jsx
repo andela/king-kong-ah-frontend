@@ -23,5 +23,9 @@ body {
   font-family: 'Roboto', 'Inknut Antiqua', sans-serif;
   font-size: 1.6rem;
 }
+
+.ce-block__content{
+  max-width: 95%; 
+}
 `;
 export default GlobalStyle;
