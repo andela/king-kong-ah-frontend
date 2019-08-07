@@ -15,6 +15,7 @@ import StyledLink from '<atoms>/StyledLink/StyledLink';
  */
 const TagRow = ({
   tags,
+  onClick,
 }) => {
   return (
     <FlexContainer
@@ -27,6 +28,7 @@ const TagRow = ({
       margin="smmm"
     >
       {renderTags()}
+
     </FlexContainer>
   );
 
@@ -37,8 +39,8 @@ const TagRow = ({
           key={index}
           id={tag.id}
           tag='true'
+          onClick={() => onClick(tag.id)}
           margin='xs'
-          to={`/${tag.name}`}
           textAlign="center"
         >
           {tag.name}
@@ -50,6 +52,7 @@ const TagRow = ({
 
 TagRow.propTypes = {
   tags: PropTypes.array.isRequired,
+  onClick: PropTypes.func,
 };
 
 export default TagRow;

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { BrowserRouter as Router } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import FlexContainer from '<atoms>/layouts/FlexContainer/FlexContainer';
 import Button from '<atoms>/Button/Button';
@@ -21,11 +20,10 @@ const DropDownMenu = ({ title, subTitle }) => {
     changeVisible(!isVisible);
   };
   return (
-    <Router>
 
-      <DropDownMenu.Container>
-        <Button onClick={showMenu} buttonType='dropDown'>E</Button>
-        {isVisible
+    <DropDownMenu.Container>
+      <Button onClick={showMenu} buttonType='dropDown'>E</Button>
+      {isVisible
           && <DropDownMenu.Menu>
             <Overlay onClick={showMenu} />
             <FlexContainer borderColor="primary"
@@ -51,10 +49,9 @@ const DropDownMenu = ({ title, subTitle }) => {
 
             </FlexContainer>
           </DropDownMenu.Menu>
-        }
-      </DropDownMenu.Container>
+      }
+    </DropDownMenu.Container>
 
-    </Router>
 
   );
 };

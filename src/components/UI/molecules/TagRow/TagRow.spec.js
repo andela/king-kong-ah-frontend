@@ -1,5 +1,4 @@
 import React from 'react';
-import { fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { render, cleanup } from '<src>/helpers/testUtils';
 import TagRow from './TagRow';
@@ -49,12 +48,5 @@ describe('TagRow', () => {
       display: inline-block;
       text-decoration: none;
     `);
-  });
-
-  it('should be clickable', () => {
-    const { container, getByText } = setup();
-
-    fireEvent.click(getByText('Adventure'));
-    expect(container.firstChild).toBeTruthy();
   });
 });

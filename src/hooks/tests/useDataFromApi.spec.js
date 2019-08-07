@@ -23,7 +23,7 @@ describe('userDataFormAPI hook', () => {
     rerender();
 
     expect(sideEffect.getLoading()).toBe(true);
-    expect(sideEffect.getFetchedData()).toBe(null);
+    expect(sideEffect.getFetchedData()).toBe({});
     expect(error).toBe(undefined);
   });
 });

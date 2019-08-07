@@ -34,6 +34,7 @@ const Title = ({
   hasBottomBorder,
   whiteSpace,
   titleWidth,
+  isCapitalized,
   children,
 }) => (
   <Title.Container
@@ -51,6 +52,7 @@ const Title = ({
     hasBottomBorder={hasBottomBorder}
     whiteSpace={whiteSpace}
     titleWidth={titleWidth}
+    isCapitalized={isCapitalized}
   >
     {children}
   </Title.Container>
@@ -73,6 +75,7 @@ Title.propTypes = {
   titleWidth: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
     .isRequired,
+  isCapitalized: PropTypes.bool,
 };
 
 Title.defaultProps = {
@@ -82,6 +85,7 @@ Title.defaultProps = {
   marginBottom: 'zero',
   marginLeft: 'zero',
   marginRight: 'zero',
+  isCapitalized: false,
 };
 
 Title.Container = styled.span`
@@ -100,6 +104,7 @@ Title.Container = styled.span`
     hasBottomBorder,
     whiteSpace,
     titleWidth,
+    isCapitalized,
     theme,
   }) => `
     display: ${display};
@@ -123,6 +128,7 @@ Title.Container = styled.span`
     border-bottom: ${hasBottomBorder ? '2px solid #B02091' : 'none'};
     white-space: ${whiteSpace};
     width: ${titleWidth};
+    text-transform: ${(isCapitalized && 'capitalize') || ''}
 
     @media ${theme.device.mobileS} {
       font-size: 1.8rem;

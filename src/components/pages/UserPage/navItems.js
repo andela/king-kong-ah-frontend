@@ -1,7 +1,9 @@
 const navItems = {
-  Logout: {
-    type: 'button',
-    location: '/',
+  searchBar: {
+    type: 'searchBar',
+  },
+  dropDown: {
+    type: 'dropDown',
   },
 };
 

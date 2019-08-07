@@ -6,17 +6,13 @@ import PasswordReset from '<pages>/AuthPages/PasswordReset';
 import Protected from '<pages>/Protected';
 import UserPage from '<pages>/UserPage/UserPage';
 import ArticlePage from '<pages>/ArticlePage/ArticlePage';
+import ArticleList from '<pages>/ArticleList/ArticleList';
 
 export const UnauthenticatedRoutes = {
   default: [
     {
       exact: true,
       path: '/',
-      component: HomePage,
-    },
-    {
-      exact: true,
-      path: '/Adventure',
       component: HomePage,
     },
     {
@@ -57,5 +53,10 @@ export const ProtectedRoutes = [
     exact: true,
     path: '/dashboard',
     component: UserPage,
+  },
+  {
+    exact: true,
+    path: '/articles',
+    component: ArticleList,
   },
 ];

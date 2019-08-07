@@ -3,6 +3,7 @@ export const fontSizes = {
   small: '1.0rem',
   sm: '1.2rem',
   xsmall: '1.2rem',
+  card: '1.4rem',
   normal: '1.6rem',
   title: '2.0rem',
   medium: '2.4rem',
