@@ -45,3 +45,6 @@ npm test
 - Soyoye Olusoji
 - Akinyele Oluwatosin
 - Owoso Mosinmiloluwa
+
+## Screenshot
+<img width="1440" alt="Screenshot 2019-09-19 at 11 13 09 AM" src="https://user-images.githubusercontent.com/19696366/65235436-81f5d280-dace-11e9-9ce5-61a9c4aa5a53.png">
