@@ -102,7 +102,7 @@
     "jest": "^24.8.0",
     "lint-staged": "^9.0.0",
     "mini-css-extract-plugin": "^0.8.0",
-    "react-styleguidist": "^9.1.11",
+    "react-styleguidist": "^11.0.0",
     "react-test-renderer": "^16.8.6",
     "style-loader": "^1.0.0",
     "uglifyjs-webpack-plugin": "^2.1.2",
